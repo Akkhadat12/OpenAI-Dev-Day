@@ -1,0 +1,39 @@
+# Source and claim register
+
+Research accessed 2026-09-30 Asia/Bangkok. Primary sources only for material claims. Product availability is a snapshot. No exact task-cost, adoption, employment, or market-share dataset is available in this packet.
+
+| ID | Title | Direct URL | Published/event | Accessed | Reliability/limits |
+|---|---|---|---|---|---|
+| SRC01 | OpenAI DevDay 2026 event | https://devday.openai.com/ | 2026-09-29 | 2026-09-30 +07:00 | Official event date; no product-performance evidence. |
+| SRC02 | DevDay 2026 Recap | https://openai.com/index/devday-2026-recap/ | 2026-09-29 | 2026-09-30 +07:00 | Official summary; dynamic product cards not fully exposed in retrieved text. Do not reconstruct missing cards. |
+| SRC03 | Introducing dots | https://openai.com/index/introducing-dots/ | 2026-09-29 | 2026-09-30 +07:00 | Vendor launch statement; rollout/preview/roadmap are different; no independent population study. |
+| SRC04 | Introducing the Agents API | https://openai.com/index/introducing-the-agents-api/ | 2026-09-10 | 2026-09-30 +07:00 | Public-beta launch predates DevDay. Testimonials lack comparable controls and are not general productivity estimates. |
+| SRC05 | Introducing GPT-6.1 Sol | https://openai.com/index/introducing-gpt-6-1-sol/ | 2026-09-29 via official recap link | 2026-09-30 +07:00 | Standard token rates and vendor-selected evaluations; not guaranteed total cost per successful task. |
+| SRC06 | How we build safety security and privacy into dots | https://openai.com/index/how-we-build-safety-security-and-privacy-into-dots/ | 2026-09-29 | 2026-09-30 +07:00 | Primary description of safeguards; acknowledgement of remaining mistakes; not a security guarantee. |
+| SRC07 | MCP Events | https://developers.openai.com/plugins/build/mcp-events | UNDATED living documentation | 2026-09-30 +07:00 | Accessed 2026-09-30. Supported integration scope only; no inference that every app emits events. |
+| SRC08 | Amazon Bedrock Managed Agents powered by OpenAI | https://aws.amazon.com/bedrock/managed-agents-openai/ | UNDATED living product page | 2026-09-30 +07:00 | Preview, per AWS page; architectural claims from provider, not measured adoption. |
+| SRC09 | Scaling Managed Agents Decoupling the brain from the hands | https://www.anthropic.com/engineering/managed-agents | 2026-04-08 | 2026-09-30 +07:00 | Rival primary architectural account; substantiates existing managed-agent competition, not equivalence/ranking. |
+| SRC10 | We are Changing our Developer Productivity Experiment Design | https://metr.org/blog/2026-02-24-uplift-update/ | 2026-02-24 | 2026-09-30 +07:00 | Updated research cautions about selection/time measurement. No valid DevDay-model productivity estimate. |
+| SRC11 | Building effective agents | https://www.anthropic.com/engineering/building-effective-agents | 2024-12-19; living article updated thereafter | 2026-09-30 +07:00 | Use conceptual workflow/agent distinction and simple-system tradeoffs. Historical examples are not current capability comparisons. |
+
+## Claim register
+
+| ID | Exact allowed claim | Type | Sources/location | Scope/unit | Limits/opposing evidence | Allowed visual |
+|---|---|---|---|---|---|---|
+| C01 | DevDay 2026 จัดวันที่ 29 กันยายน 2026 ที่ซานฟรานซิสโก | FACT | SRC01 FAQ | Event only | ไม่ใช่วันที่ไทย และไม่ใช้ปี 2025 | แสดงชื่อ event; วันที่ในเอกสาร |
+| C02 | OpenAI เปิดตัว Dots ที่มีคอมพิวเตอร์บนคลาวด์และดูแลงานต่อเนื่อง; เปิดทยอยให้ eligible plans/markets | FACT about announcement | SRC03 introduction/Get started | Launch status | always-on ไม่แปลว่าประมวลผลเต็มกำลังไม่จำกัด | คอมพิวเตอร์เชื่อมงาน; ไม่มีสเกล usage |
+| C03 | ทีม Dots เป็นวิสัยทัศน์อนาคต; specialist dots เป็น enterprise preview; Microsoft integration อยู่ในแผน | FACT about maturity | SRC03 introduction/specialist section | 2026-09-29 | ห้ามวาดทั้งหมดเป็นสินค้าพร้อมใช้ทั่วไป | เส้นประ roadmap แยกจากภาพของที่ rollout |
+| C04 | Agents API เป็น public beta; ใช้ Codex harness; เลือก environment ได้; จัดการ context/tools/subagents | FACT about documented product | SRC04 launch/build/environment/harness | Announced 2026-09-10 | ไม่ใช่เปิดตัวครั้งแรกในวัน DevDay; beta ไม่รับประกันไร้ข้อผิดพลาด | schematic model/harness/tools/session |
+| C05 | GPT-6.1 Sol standard API ราคา input $2 cached input $0.10 output $10 ต่อหนึ่งล้าน tokens | FACT about published rates | SRC05 Pricing and availability | USD per 1M tokens as accessed 2026-09-30 | ไม่รวม tools/sandbox/retry/review; ไม่ใช่ subscription unit | ค่าตัวเลขพร้อม input/output/cache; ห้ามแปลงเป็น cost/task |
+| C06 | OpenAI กล่าวว่า Sol standard input/output rates เท่ากับหนึ่งในห้าของ Astra | FACT about vendor statement | SRC05 introduction | Same standard token categories | ไม่ใช่ทุกงานถูกลง 80%; evals selected settings not universal | ถ้าใช้ chart ต้องชื่อ metric token price และ baseline เดียวกัน |
+| C07 | Dots มี permission/action review; proactive research ถูกจำกัด read-only; ยังทำผิดได้ | FACT about safeguards | SRC06 proactive research/action checks | Product policy at launch | connected app access ไม่เท่ากับอนุมัติทุก action; safeguards ไม่ใช่ zero risk | ประตู read/draft/approve/write; ไม่มีการรับประกัน |
+| C08 | MCP Events ทำให้ ChatGPT subscribe updates และรับ webhook แล้วทำตามคำสั่งผู้ใช้ | FACT about integration | SRC07 How it works/Before you start | Supported MCP integration | ไม่ใช่ event support ของทุก connector; ไม่สร้าง automation ในงานนี้ | event enters workflow once; no decorative polling loop |
+| C09 | AWS มี Bedrock Managed Agents powered by OpenAI ใน Preview พร้อม identity/permission ของ AWS | FACT about product page | SRC08 main heading/architecture | Provider preview | ไม่ใช่ข้อพิสูจน์ scale adoption หรือ comparative security | AWS boundary metaphor if used; no market share |
+| C10 | Anthropic อธิบาย managed service สำหรับงานระยะยาว แยก session harness sandbox แล้วในเมษายน 2026 | FACT about published architecture | SRC09 opening/interface architecture | 2026-04-08 | ไม่ใช่แนวคิดเฉพาะ OpenAI และไม่จัดอันดับ vendor | two provider paths same categorical size |
+| C11 | METR เตือนผลทดลองใหม่ปี 2026 วัด productivity ปัจจุบันไม่น่าเชื่อถือเพราะ selection/time issues | FACT about research limitation | SRC10 lines 35–45,48–64 | Followup to early-2025 study | ห้ามใช้ slowdown 19% ปี 2025 ตัดสิน Dots/Sol ปี 2026 | evidence caution; no current productivity graph |
+| C12 | Agent vs workflow ต่างกันที่การตัดสินลำดับงาน; flexibility แลก cost/latency/compounding-error risk | CONCEPT supported by engineering source | SRC11 What are agents/When to use | Concept not universal taxonomy | บางผลิตภัณฑ์ใช้ agent เป็น marketing term; ไม่อ้าง fixed chain ไม่มีประโยชน์ | illustrative route branching, no measured percentages |
+| A01 | การเปิดตัวหลายชั้นสอดคล้องกับการแข่งที่ระบบทำงานครบวงจรและ distribution มากกว่าโมเดลอย่างเดียว | INFERENCE | C02,C04,C08,C09,C10 | Strategic interpretation | อีกทางคือ bundling/retention; ยังไม่รู้ economics/adoption | schematic layers not OS literal or market dominance |
+| A02 | Token price ที่ลดลงเอื้อ agent loops แต่ความคุ้มค่าขึ้นกับต้นทุนต่อผลงานที่ยอมรับได้ | ANALYSIS | C05,C06,C11 + accounting definition | No dataset claimed | review/retry/integration อาจชดเชย savings | conceptual cost ingredients; no scaled numeric chart |
+| A03 | Systems of record และ domain knowledge อาจยังมีคุณค่าเมื่อ AI เปลี่ยน interface | INFERENCE | C07,C09 and workflow mechanics | Conditional industry impact | ไม่มีข้อมูลรายได้หรือ SAP displacement; SaaS rents may change | record stays inside boundary; example explicitly hypothetical |
+| A04 | ระยะใกล้น่าจะเติบโตจากงานจำกัดขอบเขต ตรวจผลได้ และย้อนกลับได้ก่อน autonomous high-stakes work | SCENARIO | C07,C11,C12 | Directional base case; no assigned probability | better reliability/low overhead could accelerate broader autonomy | three conditional branches, no forecast date/percent |
+
