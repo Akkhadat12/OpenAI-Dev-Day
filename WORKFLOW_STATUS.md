@@ -27,24 +27,25 @@ DRIVE_FOLDER_VERIFIED_AT: 2026-09-30T22:49:48+07:00
 
 ## Current workflow
 ```yaml
-STAGE: BUILDING
-BLOCKED_FROM_STAGE: null
+STAGE: BLOCKED
+BLOCKED_FROM_STAGE: BUILDING
 ACTIVE_ACTOR: Agent 4 — Builder
 UPDATED_AT: 2026-09-30T23:38:38+07:00
-ARTIFACT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
-LAST_VERIFIED_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
-LAST_VERIFIED_SCOPE: Visual 1.0 plan, 12 storyboard SVGs (32 settled states) rendered in Chromium for safe area, overlap, clearance, label size, copy counts and bundled-font loading; font versions/license/coverage via fontTools; owner narration Doc metadata unchanged. Runtime, motion, keyboard and production QA NOT_RUN.
+ARTIFACT_COMMIT: 96d3348d946006a06da34cf35707e64fc6fd8f4e
+LAST_VERIFIED_COMMIT: 96d3348d946006a06da34cf35707e64fc6fd8f4e
+LAST_VERIFIED_SCOPE: Build runtime 7f0015c (runtime unchanged in later commits). Chromium 141 via Playwright, 32/32 checks in qa/build/e2e-results.json - all 32 states pixel-match storyboards (normal and reduced motion), key contract, 30 s holds with 0 animations/timers, viewports, font-failure fallback; 10 unit tests; build copy/beat audit. NOT verified - Vercel production deployment, other browsers, speech rehearsal, QA.
 CURRENT_CHAT_SCOPE: BUILD_ONLY
 CONTENT_ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
 DESIGN_ARTIFACT_COMMIT: ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4
 VISUAL_ARTIFACT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
-NEXT_ACTOR: Agent 4 — Builder; active owner-dispatched continuation
-NEXT_ACTION: Read 01–05 and the asset manifest. Fill 04_BUILD.md's implementation choices, build the planned web presentation, record BUILD_NOTES.md and verified Vercel metadata, and create 06_SCENE_RATIONALE in the exact recorded topic folder. Prepare the same Vercel project's production deployment for QA, verify PRODUCTION_URL against BUILD_COMMIT, and record any deployment blocker. Use assets/visual/S01–S12.svg beat groups as the geometry of record and the bundled assets/fonts.
+NEXT_ACTOR: Owner (Vercel access), then Agent 4 - Builder
+NEXT_ACTION: Owner re-authenticates the Vercel connector for scope ham-b6fc (team_gUB5J3AIwkqj8c4QbfWNLCgd) or names the project/scope to use. Then Builder deploys this branch as production with vercel.json settings, verifies PRODUCTION_URL serves BUILD_COMMIT via /build-id.json and meta build-commit, records Vercel identity here, refreshes 06_SCENE_RATIONALE with the URL and commit, and publishes READY_FOR_QA.
 REQUIRED_INPUTS: [README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, references/content-draft.md, references/scenes.json, references/source-and-claim-register.md, references/owner-artifacts.json, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, assets/manifest.md, assets/visual/, assets/fonts/, 04_BUILD.md, 05_QA.md, qa/visual-review.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
-BLOCKERS: []
-OWNER_ACTION_REQUIRED: null
+BLOCKERS:
+  - "Vercel production deployment blocked: connector lists no teams; list_projects shows 16 projects in team_gUB5J3AIwkqj8c4QbfWNLCgd but get_project/list_deployments return 403 (re-authenticate to scope ham-b6fc). No project is linked to this repo; openai-devday-accepted-work could not be inspected so was not reused. Nothing created. Details: BUILD_NOTES.md"
+OWNER_ACTION_REQUIRED: Re-authenticate Vercel for scope ham-b6fc, or say which Vercel project/scope to deploy to
 OWNER_DECISIONS:
   SCOPE: Owner confirmed Thai general audience and target 6–8 minutes. Content, Design and Visual were each run as separately owner-dispatched continuations on 2026-09-30.
   THESIS: APPROVED_A_BY_OWNER_IN_LOCAL_CONTINUATION
@@ -59,9 +60,9 @@ OWNER_DECISIONS:
 | references/source-and-claim-register.md | Content | READY | 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57 | 11 sources / 16 IDs; qa/content-review.md |
 | 02_DESIGN_SYSTEM.md | Design | READY | ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4 | qa/design-review.md; qa/design-checks.json |
 | 03_VISUAL_PLAN.md + assets/manifest.md + assets/visual/ + assets/fonts/ | Visual | READY | 8334b9c4d5f49de861c893de9adba7905599ffd8 | qa/visual-review.md; qa/visual/storyboard-checks.json |
-| 04_BUILD.md | Build | TEMPLATE_READY locally | NOT_VERIFIED | no implementation |
+| 04_BUILD.md | Build | FILLED | 96d3348d946006a06da34cf35707e64fc6fd8f4e | implementation choices and scene map |
 | 05_QA.md | QA | CRITERIA_READY locally | NOT_VERIFIED | no production QA |
-| BUILD_NOTES.md / src / assets | Build | PENDING | NOT_VERIFIED | not built |
+| BUILD_NOTES.md / src / tools / tests / vercel.json | Build | BUILT_NOT_DEPLOYED | 7f0015c2bfcb53084abf1d93b542a32d1adc6423 (runtime) | qa/build/e2e-results.json; npm test |
 
 ## Owner-facing Drive deliverables
 | Name | Type | Actor | State | File ID | Observed URL | Source commit | Verified at |
@@ -69,9 +70,9 @@ OWNER_DECISIONS:
 | 01_KNOWLEDGE_SUMMARY.pdf | PDF | Content | READY | 1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo | https://drive.google.com/file/d/1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo/view?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
 | 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Content | READY | 11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ | https://drive.google.com/file/d/11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ/view?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
 | 03A_NARRATION_SCRIPT | Google Doc | Content | READY | 17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8 | https://docs.google.com/document/d/17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8/edit?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
-| 06_SCENE_RATIONALE | Google Doc | Build | PENDING_BUILD | UNSET | UNSET | NOT_VERIFIED | UNSET |
+| 06_SCENE_RATIONALE | Google Doc | Build | DRAFT_PENDING_PRODUCTION (not READY) | 1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY | https://docs.google.com/document/d/1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY/edit?usp=drivesdk | 7f0015c2bfcb53084abf1d93b542a32d1adc6423 | 2026-09-30 (content read back) |
 
-The verified PDF/native Google Doc editions above fulfill Content delivery. Markdown authoring equivalents remain in owner-drafts/. The final rationale belongs to the future Build stage.
+The verified PDF/native Google Doc editions above fulfill Content delivery. Markdown authoring equivalents remain in owner-drafts/. 06_SCENE_RATIONALE exists in the recorded folder as a draft; it becomes READY after the production URL and deployed commit are added.
 
 ## Vercel and build identity
 ```yaml
@@ -85,7 +86,7 @@ FRAMEWORK: UNSET
 INSTALL_COMMAND: UNSET
 BUILD_COMMAND: UNSET
 OUTPUT_DIRECTORY: UNSET
-BUILD_COMMIT: NOT_VERIFIED
+BUILD_COMMIT: NOT_VERIFIED   # candidate source 7f0015c2bfcb53084abf1d93b542a32d1adc6423, not deployed
 FIX_COMMITS_BY_FINDING: {}
 SERVED_BUILD_IDENTITY_EVIDENCE: UNSET
 DEPLOYMENT_ID: UNSET
