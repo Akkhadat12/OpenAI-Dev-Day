@@ -27,32 +27,34 @@ DRIVE_FOLDER_VERIFIED_AT: 2026-09-30T22:49:48+07:00
 
 ## Current workflow
 ```yaml
-STAGE: READY_FOR_VISUAL
+STAGE: READY_FOR_DESIGN
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Visual
-UPDATED_AT: 2026-09-30T22:55:55+07:00
-ARTIFACT_COMMIT: 4ff4448c7bf450f8d4c79b1c1c79f5a7394c5867
-LAST_VERIFIED_COMMIT: 4ff4448c7bf450f8d4c79b1c1c79f5a7394c5867
-LAST_VERIFIED_SCOPE: qa/design-review.md
-NEXT_ACTOR: Visual
-NEXT_ACTION: Fill 03_VISUAL_PLAN.md scene by scene from confirmed Content and Design; verify all reveal states, labels and provenance. Do not build yet.
-REQUIRED_INPUTS: [01_CONTENT.md, references/content-draft.md, references/scenes.json, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md]
+ACTIVE_ACTOR: Content/Research — completed current chat scope
+UPDATED_AT: 2026-09-30T23:02:56+07:00
+ARTIFACT_COMMIT: 67eb8f25b1ec30829fad763057d1f5184deaebec
+LAST_VERIFIED_COMMIT: 67eb8f25b1ec30829fad763057d1f5184deaebec
+LAST_VERIFIED_SCOPE: Content artifacts and owner editions preserved; Design restored to template; Visual not published; qa/content-review.md
+CURRENT_CHAT_SCOPE: CONTENT_ONLY
+CONTENT_ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
+NEXT_ACTOR: Design — owner-dispatched next stage
+NEXT_ACTION: In the next owner-authorized Design run, read the confirmed Content and fill 02_DESIGN_SYSTEM.md. This chat is Content-only and must stop at this handoff; do not start Design, Visual, Build or QA here.
+REQUIRED_INPUTS: [README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, references/content-draft.md, references/scenes.json, references/source-and-claim-register.md, 02_DESIGN_SYSTEM.md, 05_QA.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
 BLOCKERS: []
 OWNER_ACTION_REQUIRED: null
 OWNER_DECISIONS:
-  SCOPE: Owner confirmed Thai general audience and target 6–8 minutes in Local continuation.
+  SCOPE: Owner confirmed Thai general audience and target 6–8 minutes; then explicitly clarified this chat is Content-only.
   THESIS: APPROVED_A_BY_OWNER_IN_LOCAL_CONTINUATION
   FINAL_REVIEW: PENDING
-  PUBLICATION: workflow requests production deployment at later Build; not reached
+  PUBLICATION: Future Build workflow only; no website built or deployed in this Content chat.
 ```
 
 ## Repository deliverables
 | Path | Actor | State | Source commit | Verification |
 |---|---|---|---|---|
-| 01_CONTENT.md + references/content-draft.md | Content | READY | NOT_VERIFIED | qa/content-review.md |
-| references/source-and-claim-register.md | Content | READY | NOT_VERIFIED | 11 sources / 16 IDs; qa/content-review.md |
+| 01_CONTENT.md + references/content-draft.md | Content | READY | 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57 | qa/content-review.md |
+| references/source-and-claim-register.md | Content | READY | 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57 | 11 sources / 16 IDs; qa/content-review.md |
 | 02_DESIGN_SYSTEM.md | Design | PENDING template only | NOT_VERIFIED | master read |
 | 03_VISUAL_PLAN.md | Visual | PENDING template only | NOT_VERIFIED | master read |
 | 04_BUILD.md | Build | TEMPLATE_READY locally | NOT_VERIFIED | no implementation |
@@ -67,7 +69,7 @@ OWNER_DECISIONS:
 | 03A_NARRATION_SCRIPT | Google Doc | Content | READY | 17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8 | https://docs.google.com/document/d/17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8/edit?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
 | 06_SCENE_RATIONALE | Google Doc | Build | PENDING_BUILD | UNSET | UNSET | NOT_VERIFIED | UNSET |
 
-Markdown review drafts exist in owner-drafts. They do not fulfill the formats/access/source-commit requirements above.
+The verified PDF/native Google Doc editions above fulfill Content delivery. Markdown authoring equivalents remain in owner-drafts/. The final rationale belongs to the future Build stage.
 
 ## Vercel and build identity
 ```yaml
@@ -93,7 +95,7 @@ PREVIEW_URL: NOT_DEPLOYED_YET
 PRODUCTION_URL: NOT_DEPLOYED_YET
 URL_ACCESS_MODE: NOT_VERIFIED
 LAST_DEPLOYMENT_VERIFIED_AT: UNSET
-PRODUCTION_DEPLOYMENT_AUTHORIZATION: workflow specifies future production deployment; not reached
+PRODUCTION_DEPLOYMENT_AUTHORIZATION: Current chat is Content-only; workflow describes a future Build stage, not authorization to deploy from this chat.
 REQUIRED_ENVIRONMENT_VARIABLES: []
 ```
 
@@ -110,8 +112,8 @@ QA_FINDING_STATES: {}
 
 ## Current handoff
 ```yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: 4ff4448c7bf450f8d4c79b1c1c79f5a7394c5867
-LAST_HANDOFF_EVIDENCE: qa/design-review.md
+LAST_HANDOFF_ARTIFACT_COMMIT: 67eb8f25b1ec30829fad763057d1f5184deaebec
+LAST_HANDOFF_EVIDENCE: qa/content-review.md; references/owner-artifacts.json; references/workflow-history.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 REMOTE_HANDOFF: VERIFIED
