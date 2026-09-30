@@ -131,91 +131,203 @@ Output: a filled 02_DESIGN_SYSTEM.md on the same GitHub branch. No new Drive fol
 
 Do not solve the ordinary-copy target by making labels tiny or moving readable text into a background image. Split an overloaded scene, simplify its encoding, or move detail into narration/owner documents. Retain indispensable data labels at readable sizes and document their exclusion. Clicking visual objects is optional and must never be required to continue the presentation. Any resulting scene split requires Agent 1 content alignment, stable scene IDs, and downstream updates.
 
-## Fillable topic design specification
+## Current topic design specification — Design 1.0
 
-~~~yaml
-PROJECT_ID: <from status>
-CONTENT_INPUT_COMMIT: <verified SHA>
-DESIGN_VERSION: <version>
-DESIGN_INTENT: <how the visual language serves the thesis>
+This is the filled specification for the current assignment. The shared contract and non-negotiable rules above remain binding. The owner authorized this chat to perform Design on the recorded branch on 2026-09-30. This stage defines a reusable visual language; the Visual Director owns the final scene compositions, asset manifest and cue-by-cue visual plan.
+
+```yaml
+PROJECT_ID: devday-20260930-a7c4
+CONTENT_INPUT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
+DESIGN_BASE_COMMIT: 70dbf364aad5838395a81015e3d80223e3b527ac
+DESIGN_VERSION: "1.0"
+DESIGN_INTENT: Make ongoing work, accepted outcomes and permission boundaries legible through objects and relationships that settle under live Thai narration.
 CANVAS: 1920x1080
 ASPECT_RATIO: "16:9"
-SAFE_AREA: "5% per edge by default; essential text/objects stay inside"
-BACKGROUND: <hex token and meaning>
-FOREGROUND: <hex token and use>
-ACCENT_PRIMARY: <hex token and semantic meaning>
-ACCENT_SECONDARY: <hex token and semantic meaning>
-MUTED: <hex token>
-FONT_PRIMARY: <font family, Thai/Latin coverage, license/source>
-FONT_FALLBACK: <offline-safe fallback>
-TYPE_SCALE: <sizes on reference canvas; use as tokens>
-MIN_LABEL_SIZE: <default 32 logical px; justify topic exception>
-LINE_HEIGHT: <token>
-MAX_TEXT_WIDTH: <canvas fraction>
-SPACING_SCALE: <consistent values>
-OBJECT_STYLE: <geometry/material/light/edge treatment>
-DATA_ENCODING: <scale, units, categorical distinction>
-COMPOSITION_GRID: <anchors and alignments>
-MOTION_EASING: <curve and why>
-ENTRY_DURATION_MS: <default 400–700, tune for meaning>
-REVEAL_DURATION_MS: <default 500–900, tune for meaning>
-SETTLE_DURATION_MS: <default 150–300, tune for meaning>
-EXIT_DURATION_MS: <default 300–500, tune for meaning>
+SAFE_AREA: "x=96..1824; y=54..1026, including strokes, arrowheads and Thai marks"
+BACKGROUND: "#071923; quiet recording field and neutral letterbox"
+SURFACE: "#102E38; bounded workspace or record container, never UI cards"
+FOREGROUND: "#F3F7F6; ordinary copy and primary evidence"
+ACCENT_PRIMARY: "#6DE3C0; currently discussed agent action or accepted result"
+ACCENT_SECONDARY: "#F4BF75; human review, validation or permission boundary"
+MUTED: "#A7C0C8; supporting readable labels"
+LINE: "#73929C; structural boundaries and explanatory connectors"
+FONT_PRIMARY: "Noto Sans Thai 400/500/600 for Thai; Noto Sans 400/500/600 for Latin and numerals; self-host both, SIL OFL 1.1"
+FONT_FALLBACK: "Bundled primary fonts work offline; temporary system stack Noto Sans Thai, Noto Sans, Segoe UI, Tahoma, sans-serif requires layout recheck if used"
+TYPE_SCALE: "label=48; heading=88; cover=96; numerical evidence=144 logical px; no tiny footnotes"
+MIN_LABEL_SIZE: "32 logical px hard floor; use 48 by default; no topic exception"
+LINE_HEIGHT: "Thai=1.4; Latin=1.2; single-line numeric evidence=1.15"
+MAX_TEXT_WIDTH: "ordinary headline <=0.68 canvas width (1306 px); never shrink to fit"
+SPACING_SCALE: "12,24,48,72,96 logical px; minimum object-to-label gap=24"
+OBJECT_STYLE: "flat vector geometry; round caps/joins; 4px structural strokes, 6px focal outlines; no glossy effects or decorative glow"
+DATA_ENCODING: "categorical size equality unless measured data exists; exact S06 rates, equal-size typesetting, no cost-per-task scale"
+COMPOSITION_GRID: "center=(960,540); left/right=(480,540)/(1440,540); thirds x=420/960/1500; alignment grid=24px"
+MOTION_EASING: "cubic-bezier(0.22,1,0.36,1); monotone ease-out, no spring or overshoot"
+ENTRY_DURATION_MS: 500
+REVEAL_DURATION_MS: 650
+SETTLE_DURATION_MS: 200
+EXIT_DURATION_MS: 350
+MAX_BEAT_TRANSLATION_PX: 96
 HOLD: indefinite_until_presenter_input
-REDUCED_MOTION: <immediate or brief fade to same semantic endpoint>
-AUDIO_POLICY: <live narration default; no unsolicited soundtrack>
-~~~
+REDUCED_MOTION: "immediate complete semantic endpoints; 0ms entry/reveal/settle/exit, same Spacebar/R behavior"
+AUDIO_POLICY: "live owner narration; no soundtrack, sound effects or auto-playing audio"
+DEFAULT_MEDIUM: "2D vector schematic; data typesetting in S06; no scene currently needs 3D or documentary media"
+MANDATORY_KEYS: [Spacebar, R]
+OPTIONAL_KEYS: [LeftArrow, F]
+```
 
-Defaults are starting points, not performance claims or requirements to animate every element. Adjust based on rehearsal and document decisions.
+### Narrative and visual intent
 
-### Hierarchy and composition
+The accepted thesis asks viewers to judge agents by work they can accept under clear permissions. Use one consistent vocabulary: a document/result for work, a bounded enclosure for systems or permissions, and a thin connector for a specific relationship. A change in that relationship is the reason to animate. Small dot clusters, assistant chat screens and logos must not become a repeating decorative theme.
 
-Describe dominant focal size, supporting object limits, placement, contrast, safe-area boundaries, and how an eye should move through a reveal. Make Thai glyphs/diacritics, numerals, and mixed-language text legible. Avoid brand-like decorative chrome.
+ไทย: ภาพช่วยให้เห็นว่าเป้าหมายเดินไปเป็นผลงานได้อย่างไร ใครตรวจผล และสิทธิ์หยุดอยู่ตรงไหน รายละเอียดและข้อจำกัดอยู่ในเสียงบรรยาย ภาพต้องหยุดรอได้ ไม่เร่งให้ผู้เล่าตามการเคลื่อนไหว
+
+Preserve the full Thai narration, stable scene IDs S01–S12, claim IDs and editorial 430-second allocation from Content. Duration is rehearsal guidance, not a timer. S01 is the cover initial state; S12 remains in its final hold. No automatic restart. This specification does not add claims, scene splits or on-canvas copy. The earlier withdrawn Design/Visual work is historical, not a current input.
+
+### Palette, hierarchy and composition
+
+Use opaque foreground, muted, mint, amber and line tokens against background/surface. Essential labels never use lowered opacity. Surface is a grouping fill and may be low contrast; any boundary carrying meaning must also use the line or accent stroke. No gradients behind essential text.
+
+| Meaning | Geometry plus color | Constraint |
+|---|---|---|
+| Active work or accepted result | Mint outline plus a distinct work object; accepted result additionally has a check mark | Mint alone never means approved, safe or successful |
+| Human review or authority | Amber boundary plus reviewer silhouette, gate or check criterion | An approval gate is a conceptual workflow, not a product security guarantee |
+| Record/system | Enclosed surface with line outline and stable document objects | Records remain visible when the interface changes |
+| Scenario or schematic relation | Equal-size nodes; direction/path shape, not color alone | Length, area, speed and position convey no probability, volume or market share |
+
+At each beat, one focal cluster occupies approximately 35–55% of the stage width. Supporting objects are smaller or use structural line treatment, with no more than three supporting groups in addition to the focus. A layer stack or three-way branch is one semantic cluster, not several competing focal animations. Leave roughly one-third of the canvas as quiet space; this is a composition target rather than a measured dataset. Reserve space for later reveals at entry so established labels do not shift.
+
+Keep ordinary text on one or at most two lines above or beside the focal cluster; never a persistent page header/footer. Left-to-right means process only where the narration actually describes a process. Center a single outcome; use side-by-side or grouped layouts for comparisons, not dashboard tiles. Safe-area bounds include glyph ascenders/descenders, Thai tone marks, strokes, masks and connector endpoints in every intermediate state.
+
+Fit the stage with scale=min(viewportWidth/1920, viewportHeight/1080), center it, and fill unused space with BACKGROUND. Essential geometry keeps its logical position. Browser resizing only recomputes that fit; it never changes the current scene/beat or its settled endpoint. Verify 1920×1080, 1280×720, 1440×900 and a narrow viewport later in Build/QA. The narrow view remains a letterboxed 16:9 presentation, not vertical slides.
+
+### Typography, coverage and asset requirements
+
+Use the paired [Noto Thai upstream](https://github.com/notofonts/thai) and [Noto Latin upstream](https://github.com/notofonts/latin-greek-cyrillic), both licensed under SIL OFL 1.1 as checked on 2026-09-30. The Visual Director records exact release/file URLs, license files and intended repo-relative font paths in its asset manifest; Builder bundles the selected fonts and preserves their licenses. No font binaries are supplied or claimed verified by this Design stage. Do not rely on a live Google Fonts stylesheet for recording.
+
+Thai text uses the Thai family; Latin and prices use the Latin family. Use normal Thai letter spacing and word breaking, no synthetic bold/italic, and tabular numerals for the three prices. Font weights are 500 for headings/labels, 600 for numbers, and 400 for any necessary supporting label. Font readiness must precede recording; fallback text may remain usable while loading but must not silently be accepted as the intended typography.
+
+Test glyph samples outside the audience canvas: “เป้าหมาย ผลลัพธ์ สิทธิ์ ผู้ใช้ เกณฑ์สำเร็จ”, “GPT-6.1 Sol”, “Cached input”, “$0.10”, and “USD per 1M tokens”. Check tone marks and line boxes at native size and at 1280×720. Default labels then render at 32 screen px; the hard logical floor of 32 is not a reason to shrink routine labels. If copy does not fit, simplify geometry or ask Content to align a justified split; do not reduce type beneath the floor, crop glyphs or convert prose into an image.
+
+### Copy budget and truthful data
+
+The exact Content copy below is the starting inventory, once per scene across all reveals. These are English whitespace word counts; no Thai copy is added. If Visual adds Thai wording, it must record meaningful segmentation and reconcile the inventory with Content. Wordmarks, duplicate copies, attribution and baked-in media text count as ordinary copy. Revealing the same existing label without duplicating it does not add an occurrence.
+
+| Scene | Ordinary copy | Ordinary words | Excluded essential items | Total |
+|---|---|---:|---:|---:|
+| S01 | From answers to responsibility | 4 | 0 | 4 |
+| S02 | Goal / Action / Feedback | 3 | 0 | 3 |
+| S03 | Dots / Ongoing work | 3 | 0 | 3 |
+| S04 | Model / Harness / Tools / State | 4 | 0 | 4 |
+| S05 | A wider industry shift | 4 | 0 | 4 |
+| S06 | Token price | 2 | 11 | 13 |
+| S07 | Cost per accepted outcome | 4 | 0 | 4 |
+| S08 | Read / Draft / Approve / Write | 4 | 0 | 4 |
+| S09 | Interface / Records / Rules | 3 | 0 | 3 |
+| S10 | Measure real outcomes | 3 | 0 | 3 |
+| S11 | Bounded / Broader / Constrained | 3 | 0 | 3 |
+| S12 | Delegate with boundaries | 3 | 0 | 3 |
+
+S06 is an exact-value data visual, not a bar chart. Preserve these pairings: Input → $2; Cached input → $0.10; Output → $10. The three categories need labels to distinguish rates (1+2+1 items); the shared unit “USD per 1M tokens” supplies currency and denominator (4); the three prices supply values (3). Thus excluded=11, ordinary=2 and total=13. A slash in this document separates labels; it is not extra visible copy. Claim C05/source SRC05 fixes the unit and standard API scope as accessed 2026-09-30. Narration supplies model name, standard scope, cache eligibility and price-comparison limits. Do not add a logo or date footnote without counting it.
+
+Use equal font size and equal composition space for all three rates; no counting animation, scaled bars, “80% savings” badge, blended rate or implied task cost. Reveal input, output, then cached input in the spoken order, even if layout order is input/cache/output. Keep the shared unit visible before the first value and in every hold. Each value and its category arrive together; never show a number temporarily without its unit/category.
+
+S07 has no measured cost dataset. Show model/tools/compute/review/rework as categorical ingredients next to an accepted outcome; do not encode numerical contributions with stack height, pie sectors or a fraction graphic whose scale appears measured. S11 branch node area, connector width and visual emphasis are equal. Any additional data chart requires a verified claim, baseline, units and Content alignment before proceeding.
 
 ### Medium decision rules
 
-| Medium | Choose when | Avoid when |
+| Medium | Topic choice and reason | Boundary |
 |---|---|---|
-| 2D diagram | Relationships/mechanisms are clearer through layout | Decorative complexity substitutes for explanation |
-| Chart | Verified data comparisons are central | Data/units are missing or too many labels are needed |
-| Real image/video | Authentic evidence/context matters | Crop or generation creates a false factual implication |
-| 3D/WebGL | Spatial structure, scale, or physical mechanism needs depth | A flat visual communicates equally well |
-| Hybrid | Each layer has a distinct explanatory role | Layers compete for attention |
+| 2D vector diagram | Default for goals, context, harness layers, work, gates, records and conditional branches | Use symbolic geometry rather than simulated product screenshots |
+| Exact-value data typesetting | S06 only, because three unit-labeled rates are easier to read directly | No quantity inferred from geometry; no unsupported ROI chart |
+| Real image/video | Not needed by the accepted narration | If Visual establishes an evidentiary need, verify source, rights, date, crop and readable copy; do not substitute generated evidence |
+| 3D/WebGL | Not selected; every present mechanism is legible in 2D | Add only for a documented spatial need and provide an equivalent fallback |
+| Hybrid | Only if a later approved evidentiary layer has a distinct job | No redundant layers, ambient motion or decorative technology |
 
-### Motion grammar
+These are design guardrails, not finished scene layouts or assets. Visual chooses the minimal medium and records provenance. Authored vectors are illustrations; they must not resemble an authentic Dots/ERP interface or imply certified integration.
 
-For each motion pattern specify semantic job, trigger, affected object, duration, easing, settled geometry, hold appearance, and reduced-motion equivalent.
+### Motion grammar and stable endpoints
 
-~~~text
-ENTRY: establish the scene's focal subject.
-REVEAL: show one narration-linked relationship/change.
-SETTLE: finish movement and reach the semantic endpoint.
-HOLD: remain stable, silent, and inspectable for as long as needed.
-EXIT: transition only after deliberate presenter advance.
-~~~
+Every scene uses ENTRY → initial HOLD → narration-triggered REVEAL → SETTLE → HOLD per beat, then EXIT → next ENTRY only after deliberate Spacebar at its final hold. Entry establishes the initial subject; reveal carries the change. A static scene can enter directly into HOLD. Durations are design defaults, never narration lengths or elapsed-time triggers.
 
-Static scenes may enter directly into HOLD. If several reveal beats exist, each reaches its own stable hold before the next beat.
-
-### Hidden keyboard contract
-
-Use this shared default unless a recorded owner preference requires a consistent update to 03–05:
-
-| Key | Action |
-|---|---|
-| Spacebar — mandatory | During active motion, may first complete/settle the current transition or beat; in hold, reveal next beat or advance scene at final beat |
-| R — mandatory | Cancel active motion and return to the cover (first scene) initial state |
-| Left Arrow — optional | Previous scene in its settled final state, if implemented |
-| F — optional | Request/exit browser fullscreen from a deliberate user gesture, if implemented |
-
-Spacebar and R are the only mandatory controls. Left Arrow and F are optional conveniences; their absence is not a defect. No other keys are required by the default contract. Spacebar alone must support the complete forward narration flow. Clicking visual objects is optional. No shortcut glyphs or instructions appear on the canvas. Browser-owned fullscreen messages cannot be removed by the app; wait for them to clear before recording. Ignore text-entry targets and modifier combinations; do not intercept browser shortcuts. Repeated keys must not skip scenes unpredictably. Reduced motion uses the same input semantics.
-
-## Decisions and exceptions
-
-| Decision ID | Requirement | Topic choice | Reason tied to narration | Verified constraint |
+| Pattern | Semantic job and trigger | Motion/default timing | Exact endpoint and hold | Reduced motion |
 |---|---|---|---|---|
-| DS01 | <rule> | <token/pattern> | <why> | <check> |
+| Establish | Selected scene becomes the current subject | Focal object fades in over 500ms, at most 24px displacement | Initial object at its reserved anchor; initial beat is unconsumed | Show initial endpoint immediately |
+| Add relationship | Spacebar at the corresponding spoken cue | Connector reveal or supporting object placement over 650ms; movement <=96px | Object, connector and associated label fully visible; previous objects stable | Show the complete relationship immediately |
+| Change work state | Spacebar when the narration changes answer/draft/result status | Crossfade compatible geometry over 650ms; no number interpolation | Exactly one intended work state; replaced state absent | Replace immediately |
+| Expose review/boundary | Spacebar at review/permission cue | Gate or reviewer reveals in place over 650ms | Boundary and review distinction complete before any illustrative write | Show complete boundary immediately |
+| Settle | Automatic completion within the current beat, or Spacebar during motion | Final 200ms of the motion budget resolves opacity/geometry to exact values | No drift, glow pulse, connector traversal or render loop; indefinite hold | Already at endpoint |
+| Exit | Spacebar at final hold, except terminal S12 | Outgoing subject fades over 350ms, then incoming entry begins | Single incoming scene at initial endpoint; no outgoing objects/timers | Atomic scene switch to initial endpoint |
 
-The non-negotiable rules stay in force. If an owner explicitly changes a rule, record the instruction, consequence, and affected files in status; do not silently add exceptions.
+The 650ms reveal budget includes its final 200ms settle; do not add a trailing animation or timer. Static entry/exit may use 0ms when nothing meaningful changes, with the choice recorded in Visual. Scene-to-scene crossfades must not show two unrelated diagrams as one apparent relationship. Avoid translating more than 96px per explanatory beat; a connector can reveal along its full path without moving an object that distance.
+
+Use the specified monotone ease-out; no spring, bounce, spin, camera orbit, parallax, particles, blinking cursor or ambient loop. A document/check motif may mark an illustrative accepted endpoint, never guarantee product success. Color changes must also expose a shape/state change. A branch reveals once and holds; a feedback connector does not animate repeatedly around the loop.
+
+Explanatory arrows are 4px strokes, small plain arrowheads, no bounding button/circle, hover effect or clickable affordance. Endpoints must connect the objects whose relation is explained. Visual records each arrow's relationship, direction, cue and stable appearance. A return arrow is valid only for narrated feedback; a bare right-pointing arrow in a corner is forbidden. A line without directional meaning uses no arrowhead. Do not make explanatory connectors optional navigation targets.
+
+### Hidden keyboard contract — deterministic behavior
+
+The future runtime maintains scene ID, reveal index and phase. A single physical key press produces at most one action; ignore key repeats until key release. Cancel superseded motion and pending callbacks when switching scenes, resetting or applying reduced motion. This is a behavioral requirement, not a stack selection.
+
+| State | Spacebar | R |
+|---|---|---|
+| Entry/exit/transition moving | Complete the selected incoming scene's initial endpoint and hold; do not consume its next reveal or skip another scene | Cancel everything and show S01 initial endpoint |
+| Reveal/settle moving | Complete the current beat's exact endpoint and hold; no additional reveal | Cancel everything and show S01 initial endpoint |
+| Hold with reveal remaining | Run the next cue-linked beat once | Show S01 initial endpoint |
+| Final hold of S01–S11 | Switch to next scene's initial state using exit/entry | Show S01 initial endpoint |
+| Final hold of S12 | Remain in the same terminal hold | Show S01 initial endpoint |
+
+After R, the next Spacebar reveals S01's first beat; reset must not return S01's final frame or play abandoned motion. The presenter may pause narration at any hold indefinitely; no additional pause key is needed. Reduced motion follows the same table with immediate endpoints.
+
+Left Arrow and F remain optional, with no owner decision needed for their absence. If implemented, Left Arrow cancels motion and selects the previous scene's settled final state; at S01 it leaves S01 initial. F requests/exits browser fullscreen from that user gesture and preserves scene/beat on success or rejection. Document implemented keys externally in README.md/BUILD_NOTES.md during Build. Browser-owned notifications clear before recording; no app fullscreen error panel appears on the canvas.
+
+Ignore editable targets, input/select/textarea, contenteditable and modifier combinations. Handle only recognized presentation keys; prevent page scrolling only when Spacebar is handled. Do not intercept browser shortcuts or trap Tab. There are no invisible/offscreen focusable navigation buttons to reveal on focus. Screen readers receive one updated scene description and stable reading equivalents rather than a stream of decorative objects; implementation and testing belong to Build/QA.
+
+### Scene alignment guardrails for Visual
+
+The following preserves Content's visual jobs without filling the Visual plan. Visual must map exact spoken cues, initial/reveal/final geometry, asset paths and arrow roles in 03_VISUAL_PLAN.md.
+
+| Scene | Required relationship or change | Guardrail to carry forward |
+|---|---|---|
+| S01 | Answer gives way to work/result responsibility | One focal subject; conceptual result, no productivity metric; R restores the original cover |
+| S02 | Goal/action/feedback and a return to decision | Feedback loop is a schematic; one returning path settles, never cycles perpetually |
+| S03 | Context documents and work persist in a bounded workspace | No reconstructed app UI, computer specs, daily throughput or unlimited-compute implication |
+| S04 | Model plus work-management/tool/state categories; supported event arrives | Reveal layers with holds; harness/state at their spoken cue, tools at its spoken mention; one event, no universal connector support claim |
+| S05 | A second equal categorical provider route joins the managed-execution idea | No vendor ranking; geometry equal, preview/rollout distinctions stay in narration |
+| S06 | Exact input/output/cache rates | Equal-size typesetting; unit always visible, input/output/cache reveal order, no cost/task inference |
+| S07 | Work-cost ingredients plus human review/rework and an accepted result | No scaled stack, price ratio, ROI number or implied comparative share |
+| S08 | Read/draft separated from authority to write | Human/permission boundary precedes illustrative write; no tappable approval buttons or perfect-safety implication |
+| S09 | Interface outside persistent records/rules; draft meets validation | Hypothetical maintenance example only; records stay, no SAP logo/certification or demonstrated real integration |
+| S10 | Test task becomes an inspected accepted outcome | No current speedup/slowdown chart or invented timer reading; avoid old METR result as headline |
+| S11 | Bounded/Broader/Constrained conditional branches | Equal categorical nodes/paths; cue-linked sequential reveals, no probability, adoption year or winner emphasis |
+| S12 | One accepted work object within criteria/permission boundary | Final hold is indefinite; Spacebar does not wrap, R restores cover |
+
+### Accessibility, fallback and performance budgets
+
+Target at least 4.5:1 for all text and 3:1 for meaningful graphical boundaries against their actual adjacent fill, even when the typography is large. This conservative text target follows [W3C contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Design checks opaque token pairings mathematically; actual glyph rendering, translucency, geometry and resized compositions require Visual/Build/QA inspection. Do not claim this specification makes a runtime accessible by itself.
+
+Provide meaningful Thai scene descriptions outside visual rendering and the existing reading/narration equivalents. Shape and position preserve distinctions without color. Group decorative vector elements out of the accessibility tree. Avoid a focusable hidden help panel or a visible screen-reader-only panel on focus; there is no audience UI to tab through. Add no caption transcript to the recording canvas without an owner-authorized rule change.
+
+Portable vectors and bundled fonts are preferred. If an external illustrative asset fails, show a local authored vector conveying the same relationship; if factual evidence is unavailable, do not replace it with generated evidence. Visual must define the specific fallback and provenance before READY_FOR_BUILD. No WebGL context is required by this Design; no WebGL fallback is currently applicable. Font failure requires fallback glyph/layout inspection and is not a reason to silently omit labels.
+
+Future measurement conditions: desktop Chromium, logical 1920×1080 stage, physical viewport 1920×1080 and 1280×720; record actual browser/OS/device and startup network conditions. Design goals, not measured results: handled key input begins or settles visually within 100ms; explanatory motion aims at 60fps with measured p95 frame interval <=33.3ms; warm local recording startup reaches font-ready S01 within 2 seconds. Builder records measurements and any agreed refinement before QA. Hold has zero application-owned repeating animations/timers and no unnecessary continuous rendering; measure a 30-second hold and inspect cancellation/state logic. No performance measurement, browser rendering, timed narration rehearsal or production QA was run during Design.
+
+### Decisions and exceptions
+
+| ID | Requirement | Topic choice | Narration reason | Verification/deferred check |
+|---|---|---|---|---|
+| DS01 | Narration first | Cue-driven beats with indefinite stable holds | Owner needs time to explain work, costs and limits | Written state table; runtime rehearsal later |
+| DS02 | 16:9 and clean canvas | 1920×1080 proportional fit, neutral letterbox, no visible controls | Recording should focus on one relationship | Mathematical bounds; viewport/focus inspection later |
+| DS03 | Readable language | Paired self-hosted Noto Thai/Latin, 48px labels | Thai owner narration and mixed product terms | Upstream licenses checked; binary coverage/rendering later |
+| DS04 | Copy target | Exact Content inventory, 2–4 ordinary words per scene | Spoken script carries detail | Inventory checked; media text audit later |
+| DS05 | Truthful evidence | S06 exact-value rates; categorical geometry elsewhere | Token rate is distinct from accepted-task economics | Source/claim scope and pairings checked; final frames later |
+| DS06 | Color independence | Work object/check, reviewer/gate, record enclosure | Ability, accepted result and permission differ | Token contrast checked; non-color comprehension later |
+| DS07 | Purposeful motion | One active focal beat, no looping, immediate reduced motion | The narrator determines pace | Semantic pattern table; cancellation/hold tests later |
+| DS08 | Hidden controls | Mandatory Spacebar/R, optional Left/F | Complete narration must work without on-screen UI | Deterministic written contract; actual keys later |
+| DS09 | Medium choice | 2D vectors plus unit-labeled numerical evidence | No spatial mechanism requires 3D | Content visual jobs reviewed; Visual owns final assets |
+| DS10 | Scope/storage | Design specification and evidence in this exact branch | Separate authorized Design from downstream stages | No Drive writes, no Visual plan/runtime/deployment changes |
+
+No owner exception to the non-negotiable rules was requested or introduced. No material Design decision remains unresolved. Artifact/font acquisition, actual scene word counts after assets, final compositions, measured speech pacing, performance and runtime behavior are future stage responsibilities, not completed checks here.
+
 
 ## Exit criteria and handoff
 

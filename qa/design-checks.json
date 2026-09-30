@@ -1,0 +1,168 @@
+{
+  "project_id": "devday-20260930-a7c4",
+  "design_version": "1.0",
+  "inspected_baseline_commit": "70dbf364aad5838395a81015e3d80223e3b527ac",
+  "content_input_commit": "5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57",
+  "verified_at": "2026-09-30T16:12:23.113Z",
+  "scope": "Design specification checks only; no rendered runtime, production QA or speech measurement",
+  "copy_inventory": [
+    {
+      "scene": "S01",
+      "copy": "From answers to responsibility",
+      "ordinary": 4,
+      "excluded": 0,
+      "total": 4
+    },
+    {
+      "scene": "S02",
+      "copy": "Goal  Action  Feedback",
+      "ordinary": 3,
+      "excluded": 0,
+      "total": 3
+    },
+    {
+      "scene": "S03",
+      "copy": "Dots  Ongoing work",
+      "ordinary": 3,
+      "excluded": 0,
+      "total": 3
+    },
+    {
+      "scene": "S04",
+      "copy": "Model  Harness  Tools  State",
+      "ordinary": 4,
+      "excluded": 0,
+      "total": 4
+    },
+    {
+      "scene": "S05",
+      "copy": "A wider industry shift",
+      "ordinary": 4,
+      "excluded": 0,
+      "total": 4
+    },
+    {
+      "scene": "S06",
+      "copy": "Token price",
+      "ordinary": 2,
+      "excluded": 11,
+      "total": 13
+    },
+    {
+      "scene": "S07",
+      "copy": "Cost per accepted outcome",
+      "ordinary": 4,
+      "excluded": 0,
+      "total": 4
+    },
+    {
+      "scene": "S08",
+      "copy": "Read  Draft  Approve  Write",
+      "ordinary": 4,
+      "excluded": 0,
+      "total": 4
+    },
+    {
+      "scene": "S09",
+      "copy": "Interface  Records  Rules",
+      "ordinary": 3,
+      "excluded": 0,
+      "total": 3
+    },
+    {
+      "scene": "S10",
+      "copy": "Measure real outcomes",
+      "ordinary": 3,
+      "excluded": 0,
+      "total": 3
+    },
+    {
+      "scene": "S11",
+      "copy": "Bounded  Broader  Constrained",
+      "ordinary": 3,
+      "excluded": 0,
+      "total": 3
+    },
+    {
+      "scene": "S12",
+      "copy": "Delegate with boundaries",
+      "ordinary": 3,
+      "excluded": 0,
+      "total": 3
+    }
+  ],
+  "contrast_method": "Opaque sRGB relative luminance, (Llighter+0.05)/(Ldarker+0.05); unrounded ratios checked before rounding",
+  "contrast": [
+    {
+      "foreground": "FOREGROUND",
+      "background": "BACKGROUND",
+      "ratio": 16.59,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "FOREGROUND",
+      "background": "SURFACE",
+      "ratio": 13.23,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "ACCENT_PRIMARY",
+      "background": "BACKGROUND",
+      "ratio": 11.43,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "ACCENT_PRIMARY",
+      "background": "SURFACE",
+      "ratio": 9.12,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "ACCENT_SECONDARY",
+      "background": "BACKGROUND",
+      "ratio": 10.71,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "ACCENT_SECONDARY",
+      "background": "SURFACE",
+      "ratio": 8.54,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "MUTED",
+      "background": "BACKGROUND",
+      "ratio": 9.4,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "MUTED",
+      "background": "SURFACE",
+      "ratio": 7.49,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "LINE",
+      "background": "BACKGROUND",
+      "ratio": 5.39,
+      "threshold": 3,
+      "result": "PASS"
+    },
+    {
+      "foreground": "LINE",
+      "background": "SURFACE",
+      "ratio": 4.3,
+      "threshold": 3,
+      "result": "PASS"
+    }
+  ],
+  "content_unchanged": true
+}
