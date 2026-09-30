@@ -27,16 +27,16 @@ DRIVE_FOLDER_VERIFIED_AT: 2026-09-30T22:49:48+07:00
 
 ## Current workflow
 ```yaml
-STAGE: PLANNING
+STAGE: READY_FOR_DESIGN
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Content/Research
-UPDATED_AT: 2026-09-30T22:45:13+07:00
-ARTIFACT_COMMIT: NOT_VERIFIED
-LAST_VERIFIED_COMMIT: NOT_VERIFIED
-LAST_VERIFIED_SCOPE: metadata confirms empty repository; all six current masters read; local narrative/claim coverage checked
-NEXT_ACTOR: Content/Research
-NEXT_ACTION: Verify remote seed; create and record this run's owner folder; generate and verify two PDFs and Thai narration Doc; then publish READY_FOR_DESIGN using the two-commit protocol.
-REQUIRED_INPUTS: [README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, references/content-draft.md, references/source-and-claim-register.md, references/bootstrap-notes.md, 05_QA.md]
+ACTIVE_ACTOR: Design
+UPDATED_AT: 2026-09-30T22:53:44+07:00
+ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
+LAST_VERIFIED_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
+LAST_VERIFIED_SCOPE: qa/content-review.md; references/owner-artifacts.json
+NEXT_ACTOR: Design
+NEXT_ACTION: Fill 02_DESIGN_SYSTEM.md using confirmed Content, preserving 16:9 clean canvas, copy budget and hidden controls. Do not build yet.
+REQUIRED_INPUTS: [README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, references/content-draft.md, references/scenes.json, 02_DESIGN_SYSTEM.md, 05_QA.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
 BLOCKERS: []
@@ -51,8 +51,8 @@ OWNER_DECISIONS:
 ## Repository deliverables
 | Path | Actor | State | Source commit | Verification |
 |---|---|---|---|---|
-| 01_CONTENT.md + references/content-draft.md | Content | IN_PROGRESS local draft | NOT_VERIFIED | qa/content-review.md |
-| references/source-and-claim-register.md | Content | IN_PROGRESS local draft | NOT_VERIFIED | 11 sources / 16 IDs |
+| 01_CONTENT.md + references/content-draft.md | Content | READY | NOT_VERIFIED | qa/content-review.md |
+| references/source-and-claim-register.md | Content | READY | NOT_VERIFIED | 11 sources / 16 IDs; qa/content-review.md |
 | 02_DESIGN_SYSTEM.md | Design | PENDING template only | NOT_VERIFIED | master read |
 | 03_VISUAL_PLAN.md | Visual | PENDING template only | NOT_VERIFIED | master read |
 | 04_BUILD.md | Build | TEMPLATE_READY locally | NOT_VERIFIED | no implementation |
@@ -62,9 +62,9 @@ OWNER_DECISIONS:
 ## Owner-facing Drive deliverables
 | Name | Type | Actor | State | File ID | Observed URL | Source commit | Verified at |
 |---|---|---|---|---|---|---|---|
-| 01_KNOWLEDGE_SUMMARY.pdf | PDF | Content | PENDING | UNSET | UNSET | NOT_VERIFIED | UNSET |
-| 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Content | PENDING | UNSET | UNSET | NOT_VERIFIED | UNSET |
-| 03A_NARRATION_SCRIPT | Google Doc | Content | PENDING | UNSET | UNSET | NOT_VERIFIED | UNSET |
+| 01_KNOWLEDGE_SUMMARY.pdf | PDF | Content | READY | 1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo | https://drive.google.com/file/d/1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo/view?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
+| 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Content | READY | 11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ | https://drive.google.com/file/d/11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ/view?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
+| 03A_NARRATION_SCRIPT | Google Doc | Content | READY | 17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8 | https://docs.google.com/document/d/17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8/edit?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
 | 06_SCENE_RATIONALE | Google Doc | Build | PENDING_BUILD | UNSET | UNSET | NOT_VERIFIED | UNSET |
 
 Markdown review drafts exist in owner-drafts. They do not fulfill the formats/access/source-commit requirements above.
@@ -110,11 +110,11 @@ QA_FINDING_STATES: {}
 
 ## Current handoff
 ```yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: NOT_VERIFIED
-LAST_HANDOFF_EVIDENCE: qa/content-review.md
+LAST_HANDOFF_ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
+LAST_HANDOFF_EVIDENCE: qa/content-review.md; references/owner-artifacts.json
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
-REMOTE_HANDOFF: SEED_PUSH_PENDING_VERIFICATION
+REMOTE_HANDOFF: VERIFIED
 ```
 
 
