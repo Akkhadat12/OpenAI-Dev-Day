@@ -72,7 +72,7 @@ NARRATION: |
 CLAIM_IDS: [C01, A01]
 ESTIMATED_SPOKEN_SECONDS: 25
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "เมื่อพูดว่า ‘รับผิดชอบงานต่อเนื่อง’ เปิดเผยกองงานที่ยังเดินต่อหลังหน้าต่างสนทนาปิด. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "เมื่อพูดว่า ‘พางานไปถึงจุดที่ใช้ได้จริง’ เปิดเผยกองงานที่เดินต่อจากคำตอบไปสู่ผลงาน. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "เปลี่ยนกรอบจากกล่องคำตอบไปเป็นผลลัพธ์งาน โดยใช้วัตถุเดียวเป็นจุดสนใจ"
 VISIBLE_COPY_PROPOSAL: "From answers to responsibility"
 VISIBLE_WORD_COUNT: 4
@@ -93,7 +93,7 @@ NARRATION: |
 CLAIM_IDS: [C12]
 ESTIMATED_SPOKEN_SECONDS: 30
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘ดูผลที่ได้ แล้วปรับวิธีทำงาน’ เปิดเผย feedback กลับสู่จุดตัดสินใจ. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘ดูผลที่เกิดขึ้น’ เปิดเผย feedback กลับสู่จุดตัดสินใจ. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "แสดงเป้าหมาย ผลจากเครื่องมือ และการปรับการทำงาน; เป็นวงจรที่หยุดให้ผู้เล่าพูด"
 VISIBLE_COPY_PROPOSAL: "Goal  Action  Feedback"
 VISIBLE_WORD_COUNT: 3
@@ -114,7 +114,7 @@ NARRATION: |
 CLAIM_IDS: [C02]
 ESTIMATED_SPOKEN_SECONDS: 35
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘บริบทของงาน’ เปิดเผยเอกสาร; ‘ติดตามความคืบหน้า’ เปิดเผย draft. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘บริบทของงาน’ เปิดเผยเอกสาร; ‘ติดตามความคืบหน้า’ เปิดเผยร่างผลงาน. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "ใช้ schematic cloud workspace เชื่อมเอกสารกับงานค้าง; หลีกเลี่ยง GUI จำลองที่เหมือนหลักฐาน screenshot"
 VISIBLE_COPY_PROPOSAL: "Dots  Ongoing work"
 VISIBLE_WORD_COUNT: 3
@@ -135,7 +135,7 @@ NARRATION: |
 CLAIM_IDS: [C04, C08]
 ESTIMATED_SPOKEN_SECONDS: 40
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘ส่วนที่จัดการวงจรทำงาน’ เปิดเผย harness/state; ‘รับการเปลี่ยนแปลงจากแอป’ เปิดเผย event. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘ส่วนที่จัดการวงจรทำงาน’ เปิดเผย harness/state; ‘รับการเปลี่ยนแปลงจากแอป’ เปิดเผย event. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "4 ชั้น categorical ไม่มีขนาดแทนมูลค่า; reveal ทีละชั้นตามภารกิจ"
 VISIBLE_COPY_PROPOSAL: "Model  Harness  Tools  State"
 VISIBLE_WORD_COUNT: 4
@@ -156,7 +156,7 @@ NARRATION: |
 CLAIM_IDS: [C09, C10]
 ESTIMATED_SPOKEN_SECONDS: 30
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘ไม่ใช่ OpenAI เพียงรายเดียว’ เปิดเผยอีกเส้นทางขนาดเท่ากัน. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘ไม่ได้มี OpenAI เพียงรายเดียว’ เปิดเผยอีกเส้นทางขนาดเท่ากัน. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "สองเส้นทาง provider convergence สู่ execution boundary; ไม่ใช้ market share chart"
 VISIBLE_COPY_PROPOSAL: "A wider industry shift"
 VISIBLE_WORD_COUNT: 4
@@ -177,7 +177,7 @@ NARRATION: |
 CLAIM_IDS: [C05, C06, A02]
 ESTIMATED_SPOKEN_SECONDS: 35
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘ราคา input กับ output’ เปิดเผยค่าที่มีหน่วย; ‘ไม่ใช่ต้นทุนรวม’ เตรียมเปลี่ยนฉาก. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘สองดอลลาร์ต่อหนึ่งล้าน input tokens’ เปิดเผยราคา input; ‘สิบดอลลาร์ต่อหนึ่งล้าน output tokens’ เปิดเผยราคา output; ‘cached input’ เปิดเผยราคา cache พร้อมหน่วยเดียวกัน. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "แสดงรายการ rates เท่ากันด้านขนาด ไม่มี bar เปรียบเทียบ cost/task"
 VISIBLE_COPY_PROPOSAL: "Token price"
 VISIBLE_WORD_COUNT: 2
@@ -198,7 +198,7 @@ NARRATION: |
 CLAIM_IDS: [A02]
 ESTIMATED_SPOKEN_SECONDS: 40
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘เวลาที่คนต้องตรวจและแก้’ reveal ก้อนงาน review/rework; settle ทุกก้อน. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘เวลาที่คนต้องตรวจหรือแก้’ เปิดเผยก้อน review/rework แล้วหยุดที่ปลายทาง. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "แสดงกองต้นทุนไม่มีสเกล inference/tools/review/rework ผ่านรูปทรง แล้ววางข้างผลลัพธ์ที่ผ่านตรวจ"
 VISIBLE_COPY_PROPOSAL: "Cost per accepted outcome"
 VISIBLE_WORD_COUNT: 4
@@ -219,7 +219,7 @@ NARRATION: |
 CLAIM_IDS: [C07]
 ESTIMATED_SPOKEN_SECONDS: 40
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘สิทธิ์ส่งหรือแก้’ เปิดเผย approval boundary ก่อนเขียน. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘การส่งหรือแก้ข้อมูลจริง’ เปิดเผยขอบเขตการอนุมัติก่อนการเขียน. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "ภาพเอกสารผ่าน boundary gates; คนอนุมัติแยกจาก Agent; ไม่มี UI ปุ่มจริง"
 VISIBLE_COPY_PROPOSAL: "Read  Draft  Approve  Write"
 VISIBLE_WORD_COUNT: 4
@@ -240,7 +240,7 @@ NARRATION: |
 CLAIM_IDS: [A03]
 ESTIMATED_SPOKEN_SECONDS: 40
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘สมมติในงานซ่อมบำรุง’ เปิดเผย maintenance record; ‘คนตรวจสิทธิ์และข้อมูล’ เปิดเผยเกณฑ์. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘ตัวอย่างสมมติในงานซ่อมบำรุง’ เปิดเผย record; ‘อุปกรณ์ถูกตัว รหัสถูกต้อง’ เปิดเผยเกณฑ์ตรวจ. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "ตัวอย่างสมมติ Agent ย้ายร่างเอกสารไป validation gate ภายนอกระบบ records คงอยู่; ห้าม logo รับรอง integration"
 VISIBLE_COPY_PROPOSAL: "Interface  Records  Rules"
 VISIBLE_WORD_COUNT: 3
@@ -261,7 +261,7 @@ NARRATION: |
 CLAIM_IDS: [C11, A02]
 ESTIMATED_SPOKEN_SECONDS: 40
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘เราเองก็ต้องวัด’ reveal quality/time/cost เป็นตัวชี้วัดใน owner script ไม่ต้องเพิ่มบน canvas. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘การวัดเวลาจนงานเสร็จจริง’ เปิดเผยผลงานที่ผ่านตรวจโดยไม่เพิ่มคำอธิบายบนภาพ. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "แสดง test task กับ accepted outcome ที่ตรวจได้ ไม่ใช้ผล slowdown เก่าสร้าง headline ปัจจุบัน"
 VISIBLE_COPY_PROPOSAL: "Measure real outcomes"
 VISIBLE_WORD_COUNT: 3
@@ -282,7 +282,7 @@ NARRATION: |
 CLAIM_IDS: [A04]
 ESTIMATED_SPOKEN_SECONDS: 45
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘กรณีฐาน’ reveal Bounded; ‘ถ้าความน่าเชื่อถือเพิ่ม’ reveal Broader; ‘ถ้าตรวจแก้แพง’ reveal Constrained. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘กรณีฐาน’ เปิดเผย Bounded; ‘กรณีที่เติบโตเร็วกว่า’ เปิดเผย Broader; ‘ส่วนกรณีที่โตช้า’ เปิดเผย Constrained. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "สามแขนงเชิง scenario ไม่มีขนาดบอก probability; เปิดทีละทางแล้วหยุด"
 VISIBLE_COPY_PROPOSAL: "Bounded  Broader  Constrained"
 VISIBLE_WORD_COUNT: 3
@@ -303,7 +303,7 @@ NARRATION: |
 CLAIM_IDS: [A01, A02, A03, A04]
 ESTIMATED_SPOKEN_SECONDS: 30
 MEASUREMENT_BASIS: editorial allocation; actual read-through NOT_RUN
-PRESENTER_CUES: "‘เริ่มจากงานหนึ่งอย่าง’ settle ผลลัพธ์และกรอบ; กด Space ที่ฉากสุดท้ายคงเดิม. Space reveals, settles active motion, then advances at final hold. R cancels and returns to S01 initial state."
+PRESENTER_CUES: "‘เลือกงานหนึ่งอย่าง’ หยุดผลลัพธ์ในกรอบเกณฑ์และสิทธิ์; Space ที่ฉากสุดท้ายคงภาพเดิม. Space เปิดเผยภาพ/หยุดที่ปลายทาง แล้วไปต่อเมื่อเล่าประเด็นครบ; R ยกเลิกการเคลื่อนไหวและกลับหน้าปก."
 VISUAL_JOB: "ผลลัพธ์เดียววางในกรอบ goal/criteria/boundary โดยข้อมูลอยู่ narration; hold indefinite"
 VISIBLE_COPY_PROPOSAL: "Delegate with boundaries"
 VISIBLE_WORD_COUNT: 3

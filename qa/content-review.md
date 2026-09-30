@@ -13,3 +13,13 @@ Date: 2026-09-30 Asia/Bangkok. This is an authoring consistency review, not inde
 - NOT_RUN: independent claim audit, full narration rehearsal, PDF rendering, native Doc readback, remote handoff, Design/Visual, browser/production checks.
 
 Required correction before READY_FOR_DESIGN: resolve bootstrap access/base, review thesis, commit artifacts, create and verify three owner editions in the one recorded folder, then execute artifact/status handoff.
+
+## Local continuation Content verification
+
+- Local and connector identities confirmed; main foundation authorized by owner and remote SHA checked.
+- All six current masters read; PROJECT_ID and original research preserved.
+- Owner accepted thesis A and scope.
+- Every quoted presenter cue now appears exactly in its scene narration (automatically compared).
+- Canonical 12 scenes and claim coverage checked; 430 seconds remains editorial planning, not measured speech.
+- Two PDFs rendered and all seven pages inspected: Thai glyphs readable, no overlap or clipping, 11 live source links present. This is a Content check, not production QA.
+- Final Drive readback and handoff remain pending.
