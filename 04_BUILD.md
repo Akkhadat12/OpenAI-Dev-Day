@@ -141,36 +141,47 @@ Do not create another Drive folder, change a claim without Content review, or su
 ## Fillable implementation choices
 
 ~~~yaml
-PROJECT_ID: <from status>
-CONTENT_INPUT_COMMIT: <SHA>
-DESIGN_INPUT_COMMIT: <SHA>
-VISUAL_INPUT_COMMIT: <SHA>
-FRAMEWORK: <chosen>
-RUNTIME_VERSION: <version>
-PACKAGE_MANAGER: <name/version>
-LOCKFILE_PATH: <repo-relative path>
-INSTALL_COMMAND: <actual>
-DEV_COMMAND: <actual>
-BUILD_COMMAND: <actual>
-OUTPUT_DIRECTORY: <actual>
-APP_ENTRY_PATH: <repo-relative path>
-SCENE_DATA_PATH: <repo-relative path>
+PROJECT_ID: devday-20260930-a7c4
+CONTENT_INPUT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
+DESIGN_INPUT_COMMIT: ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4
+VISUAL_INPUT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
+FRAMEWORK: None. Plain HTML/CSS/ES modules; zero runtime and zero build dependencies (scene art is the Visual stage's inline SVG, so no framework adds value)
+RUNTIME_VERSION: Node >=20 to build (verified on v22.22.2); any current evergreen browser to run (verified Chromium 141 via Playwright 1.56)
+PACKAGE_MANAGER: npm (lockfile with no packages; `npm ci` is a no-op install)
+LOCKFILE_PATH: package-lock.json
+INSTALL_COMMAND: npm ci
+DEV_COMMAND: npm run build && npm run dev   # serves dist/ on http://localhost:4173
+BUILD_COMMAND: npm run build               # node tools/build/build.mjs
+OUTPUT_DIRECTORY: dist
+APP_ENTRY_PATH: src/index.template.html (runtime: src/main.js)
+SCENE_DATA_PATH: src/scene-data.js (geometry/copy: assets/visual/S01-S12.svg; narration/claims: references/scenes.json)
 ASSET_MANIFEST_PATH: assets/manifest.md
-CANVAS_STRATEGY: <fit and letterbox behavior>
-STATE_MODEL: <scene/beat/phase and cancellation strategy>
-ANIMATION_ENGINE: <chosen and why>
-REDUCED_MOTION_STRATEGY: <behavior>
-WEBGL_FALLBACK: <behavior or NOT_APPLICABLE>
-TARGET_BROWSERS: <versions/platforms to verify>
-PERFORMANCE_TARGETS: <agreed values and measurement conditions>
-ENVIRONMENT_VARIABLES: <names and states only; or NONE>
+CANVAS_STRATEGY: 1920x1080 logical stage, scale=min(vw/1920,vh/1080) via CSS transform, centered, neutral #071923 letterbox; resize only recomputes scale
+STATE_MODEL: src/engine.js, DOM-free state machine {scene, beat, phase: hold|reveal|exit|entry}; a token invalidates stale callbacks; every motion has cancel(); Space completes active motion, else next beat/scene; R resets to S01 b0
+ANIMATION_ENGINE: Web Animations API on the inlined SVG groups (fill backwards, so cancel() lands exactly on the settled DOM); no timers, no rAF, no animation libraries; a hold owns zero animations
+REDUCED_MOTION_STRATEGY: prefers-reduced-motion read on every action; entry/reveal/exit run 0 ms and land on the same endpoints with the same key semantics
+WEBGL_FALLBACK: NOT_APPLICABLE (no WebGL)
+TARGET_BROWSERS: desktop Chromium at 1920x1080 and 1280x720 (verified); other sizes checked for letterboxing only
+PERFORMANCE_TARGETS: key-to-motion <100 ms; p95 frame interval <=33.3 ms during reveals; font-ready cover <2 s warm; zero app timers/rAF/animations in hold (Design 1.0 goals; measured values in BUILD_NOTES.md)
+ENVIRONMENT_VARIABLES: NONE required (build reads VERCEL_GIT_COMMIT_SHA/VERCEL_GIT_COMMIT_REF/VERCEL_ENV if present, names only)
 ~~~
 
 ### Scene implementation map
 
 | Scene ID | Component/runtime path | Content/claim IDs | Assets | Beat/hold implementation | Fallback | Checks/evidence |
 |---|---|---|---|---|---|---|
-| S01 | src/<file> | <IDs> | <paths> | <states> | <behavior> | <paths/results> |
+| S01 | assets/visual/S01.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C01 A01 | S01.svg, Noto Sans 500/600 | b0 answer box; b1 arrow then stack (from left); indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S01-b*.png |
+| S02 | assets/visual/S02.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C12 | S02.svg, Noto Sans 500/600 | b0 chain; b1 feedback path + label; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S02-b*.png |
+| S03 | assets/visual/S03.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C02 | S03.svg, Noto Sans 500/600 | b0 workspace; b1 context docs; b2 arrow then draft; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S03-b*.png |
+| S04 | assets/visual/S04.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C04 C08 | S04.svg, Noto Sans 500/600 | b0 model; b1 harness ring r200→r236 + state; b2 tools; b3 app source then event arrow; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S04-b*.png |
+| S05 | assets/visual/S05.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C09 C10 | S05.svg, Noto Sans 500/600 | b0 route 1; b1 route 2 + heading together; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S05-b*.png |
+| S06 | assets/visual/S06.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C05 C06 A02 | S06.svg, Noto Sans 500/600 | b0 heading+unit; b1 Input $2; b2 Output $10; b3 Cached input $0.10 (fade only); indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S06-b*.png |
+| S07 | assets/visual/S07.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | A02 | S07.svg, Noto Sans 500/600 | b0 ingredients → outcome; b1 review/rework slot (fade only); indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S07-b*.png |
+| S08 | assets/visual/S08.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C07 | S08.svg, Noto Sans 500/600 | b0 Read/Draft/Write; b1 gate + Approve then write arrow; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S08-b*.png |
+| S09 | assets/visual/S09.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | A03 | S09.svg, Noto Sans 500/600 | b0 interface; b1 records; b2 gate/criteria then arrow; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S09-b*.png |
+| S10 | assets/visual/S10.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | C11 A02 | S10.svg, Noto Sans 500/600 | b0 task; b1 arrow then accepted outcome + span; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S10-b*.png |
+| S11 | assets/visual/S11.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | A04 | S11.svg, Noto Sans 500/600 | b0 origin; b1 Bounded; b2 Broader; b3 Constrained (arrow then node); indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S11-b*.png |
+| S12 | assets/visual/S12.svg inlined by tools/build/build.mjs; motion in src/driver.js via src/scene-data.js | A01-A04 | S12.svg, Noto Sans 500/600 | b0 frames; b1 work object from 48 px above; Space stays; indefinite hold | vector only; font fallback stack | qa/build/e2e-results.json, qa/build/states/S12-b*.png |
 
 ## BUILD_NOTES.md required contents
 

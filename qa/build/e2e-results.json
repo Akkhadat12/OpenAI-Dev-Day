@@ -1,0 +1,1560 @@
+{
+  "environment": {
+    "browser": "Chromium 141.0.7390.37",
+    "playwright": "1.56.1",
+    "os": "Linux 6.18.44-fc-v50 x64",
+    "cpus": 4,
+    "node": "v22.22.2",
+    "rendering": "headless, software rasterization, localhost server",
+    "testedAt": "2026-09-30T17:21:57.047Z"
+  },
+  "checks": [
+    {
+      "id": "identity.build-id-matches-meta",
+      "pass": true,
+      "detail": {
+        "commit": "84046a5a9b70",
+        "dirty": true,
+        "contentHash": "61e847afe563b4ee"
+      }
+    },
+    {
+      "id": "normal.fonts-bundled",
+      "pass": true
+    },
+    {
+      "id": "normal.all-32-states-match-storyboards",
+      "pass": true,
+      "detail": {
+        "visited": 32,
+        "failing": []
+      }
+    },
+    {
+      "id": "normal.copy-counts-match-plan",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "id": "normal.S12-terminal-hold",
+      "pass": true
+    },
+    {
+      "id": "reduced-motion.fonts-bundled",
+      "pass": true
+    },
+    {
+      "id": "reduced-motion.all-32-states-match-storyboards",
+      "pass": true,
+      "detail": {
+        "visited": 32,
+        "failing": []
+      }
+    },
+    {
+      "id": "reduced-motion.copy-counts-match-plan",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "id": "reduced-motion.S12-terminal-hold",
+      "pass": true
+    },
+    {
+      "id": "keys.rapid-space-deterministic",
+      "pass": true,
+      "detail": {
+        "scene": "S02",
+        "beat": 1,
+        "phase": "reveal",
+        "anims": 3
+      }
+    },
+    {
+      "id": "keys.R-during-motion-returns-cover",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 0,
+        "phase": "hold",
+        "anims": 0
+      }
+    },
+    {
+      "id": "keys.R-shows-only-S01-b0",
+      "pass": true,
+      "detail": [
+        "0"
+      ]
+    },
+    {
+      "id": "keys.no-ghost-after-R",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 0,
+        "phase": "hold",
+        "anims": 0
+      }
+    },
+    {
+      "id": "keys.space-after-R-reveals-S01-b1",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 1,
+        "phase": "hold",
+        "anims": 0
+      }
+    },
+    {
+      "id": "keys.auto-repeat-ignored",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 1,
+        "phase": "reveal",
+        "anims": 5
+      }
+    },
+    {
+      "id": "keys.modifiers-ignored",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 0,
+        "phase": "hold",
+        "anims": 0
+      }
+    },
+    {
+      "id": "keys.editable-target-ignored",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 0,
+        "phase": "hold",
+        "anims": 0
+      }
+    },
+    {
+      "id": "keys.click-does-nothing",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 0,
+        "phase": "hold",
+        "anims": 0
+      }
+    },
+    {
+      "id": "keys.no-scroll",
+      "pass": true
+    },
+    {
+      "id": "keys.left-arrow-previous-final-state",
+      "pass": true,
+      "detail": {
+        "from": {
+          "scene": "S03",
+          "beat": 0,
+          "phase": "hold",
+          "anims": 0
+        },
+        "to": {
+          "scene": "S02",
+          "beat": 1,
+          "phase": "hold",
+          "anims": 0
+        }
+      }
+    },
+    {
+      "id": "keys.left-arrow-at-S01-stays-b0",
+      "pass": true,
+      "detail": {
+        "scene": "S01",
+        "beat": 0,
+        "phase": "hold",
+        "anims": 0
+      }
+    },
+    {
+      "id": "keys.F-keeps-scene-and-adds-no-ui",
+      "pass": true,
+      "detail": {
+        "fullscreenElement": false
+      }
+    },
+    {
+      "id": "canvas.no-controls-or-focusable-elements",
+      "pass": true,
+      "detail": {
+        "controls": 0,
+        "focus": true,
+        "visibleText": [
+          "From answers",
+          "to responsibility"
+        ]
+      }
+    },
+    {
+      "id": "canvas.only-planned-copy-visible-on-cover",
+      "pass": true,
+      "detail": [
+        "From answers",
+        "to responsibility"
+      ]
+    },
+    {
+      "id": "hold.S06-b3.30s-stable",
+      "pass": true,
+      "detail": {
+        "timers0": {
+          "timeout": 348,
+          "interval": 0,
+          "raf": 0
+        },
+        "timers1": {
+          "timeout": 348,
+          "interval": 0,
+          "raf": 0
+        },
+        "anims": 0,
+        "identicalFrames": true
+      }
+    },
+    {
+      "id": "hold.S12-b1.30s-stable",
+      "pass": true,
+      "detail": {
+        "timers0": {
+          "timeout": 811,
+          "interval": 0,
+          "raf": 0
+        },
+        "timers1": {
+          "timeout": 811,
+          "interval": 0,
+          "raf": 0
+        },
+        "anims": 0,
+        "identicalFrames": true
+      }
+    },
+    {
+      "id": "perf.p95-frame-interval-<=33.3ms",
+      "pass": true,
+      "detail": {
+        "frames": 42,
+        "medianMs": 16.7,
+        "p95Ms": 16.7,
+        "maxMs": 16.8,
+        "scope": "S01 b1 reveal, 1920x1080 headless Chromium, software raster",
+        "keyToMotionMs": 0.4
+      }
+    },
+    {
+      "id": "perf.key-response-<100ms",
+      "pass": true,
+      "detail": {
+        "phase": "reveal",
+        "ms": 0.40000000002328306,
+        "anims": 5
+      }
+    },
+    {
+      "id": "viewport.16x9-letterboxed-no-scroll-state-kept",
+      "pass": true,
+      "detail": [
+        {
+          "viewport": "1920x1080",
+          "stage": "1920x1080",
+          "ok": true,
+          "sameState": true
+        },
+        {
+          "viewport": "1280x720",
+          "stage": "1280x720",
+          "ok": true,
+          "sameState": true
+        },
+        {
+          "viewport": "1440x900",
+          "stage": "1440x810",
+          "ok": true,
+          "sameState": true
+        },
+        {
+          "viewport": "800x1000",
+          "stage": "800x450",
+          "ok": true,
+          "sameState": true
+        },
+        {
+          "viewport": "1000x400",
+          "stage": "711x400",
+          "ok": true,
+          "sameState": true
+        }
+      ]
+    },
+    {
+      "id": "fallback.missing-font-still-shows-cover-and-labels-stay",
+      "pass": true,
+      "detail": "fallback"
+    },
+    {
+      "id": "perf.cover-font-ready-<2000ms",
+      "pass": true,
+      "detail": {
+        "firstLoad": {
+          "fontsReadyAt": 29,
+          "coverPaintedAt": 30
+        },
+        "secondLoad": {
+          "fontsReadyAt": 32,
+          "coverPaintedAt": 33
+        },
+        "note": "ms from navigation start; localhost, Cache-Control no-store so both loads refetch"
+      }
+    },
+    {
+      "id": "runtime.no-console-errors-or-failed-requests",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "failures": [],
+  "console": [],
+  "buildId": {
+    "project": "devday-20260930-a7c4",
+    "commit": "84046a5a9b70bcb7558f5999e608f8193e7bddbe",
+    "dirty": true,
+    "ref": "project/devday-agents-20260930-a7c4",
+    "vercelEnv": null,
+    "scenes": 12,
+    "contentHash": "61e847afe563b4ee37b0fec9165f3094811193cdf7a2ed7feb51eb2f944c82d3"
+  },
+  "startup.normal.ms": {
+    "fontsReadyAt": 31,
+    "coverPaintedAt": 32
+  },
+  "copyAudit": [
+    {
+      "scene": "S01",
+      "ordinary": 4,
+      "essential": 0,
+      "total": 4,
+      "budget": [
+        4,
+        0
+      ],
+      "minFont": 96
+    },
+    {
+      "scene": "S02",
+      "ordinary": 3,
+      "essential": 0,
+      "total": 3,
+      "budget": [
+        3,
+        0
+      ],
+      "minFont": 48
+    },
+    {
+      "scene": "S03",
+      "ordinary": 3,
+      "essential": 0,
+      "total": 3,
+      "budget": [
+        3,
+        0
+      ],
+      "minFont": 48
+    },
+    {
+      "scene": "S04",
+      "ordinary": 4,
+      "essential": 0,
+      "total": 4,
+      "budget": [
+        4,
+        0
+      ],
+      "minFont": 48
+    },
+    {
+      "scene": "S05",
+      "ordinary": 4,
+      "essential": 0,
+      "total": 4,
+      "budget": [
+        4,
+        0
+      ],
+      "minFont": 88
+    },
+    {
+      "scene": "S06",
+      "ordinary": 2,
+      "essential": 11,
+      "total": 13,
+      "budget": [
+        2,
+        11
+      ],
+      "minFont": 48
+    },
+    {
+      "scene": "S07",
+      "ordinary": 4,
+      "essential": 0,
+      "total": 4,
+      "budget": [
+        4,
+        0
+      ],
+      "minFont": 88
+    },
+    {
+      "scene": "S08",
+      "ordinary": 4,
+      "essential": 0,
+      "total": 4,
+      "budget": [
+        4,
+        0
+      ],
+      "minFont": 48
+    },
+    {
+      "scene": "S09",
+      "ordinary": 3,
+      "essential": 0,
+      "total": 3,
+      "budget": [
+        3,
+        0
+      ],
+      "minFont": 48
+    },
+    {
+      "scene": "S10",
+      "ordinary": 3,
+      "essential": 0,
+      "total": 3,
+      "budget": [
+        3,
+        0
+      ],
+      "minFont": 88
+    },
+    {
+      "scene": "S11",
+      "ordinary": 3,
+      "essential": 0,
+      "total": 3,
+      "budget": [
+        3,
+        0
+      ],
+      "minFont": 48
+    },
+    {
+      "scene": "S12",
+      "ordinary": 3,
+      "essential": 0,
+      "total": 3,
+      "budget": [
+        3,
+        0
+      ],
+      "minFont": 88
+    }
+  ],
+  "states.normal": [
+    {
+      "scene": "S01",
+      "beat": 0,
+      "bounds": [
+        144,
+        147,
+        966,
+        830
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 96,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S01",
+      "beat": 1,
+      "bounds": [
+        144,
+        147,
+        1438,
+        830
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 96,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S02",
+      "beat": 0,
+      "bounds": [
+        434,
+        321,
+        1482,
+        623
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S02",
+      "beat": 1,
+      "bounds": [
+        434,
+        321,
+        1482,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S03",
+      "beat": 0,
+      "bounds": [
+        478,
+        156,
+        1442,
+        922
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S03",
+      "beat": 1,
+      "bounds": [
+        478,
+        156,
+        1442,
+        922
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S03",
+      "beat": 2,
+      "bounds": [
+        478,
+        156,
+        1442,
+        922
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 0,
+      "bounds": [
+        833,
+        453,
+        1087,
+        707
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 1,
+      "bounds": [
+        722,
+        249,
+        1438,
+        818
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 2,
+      "bounds": [
+        482,
+        249,
+        1438,
+        818
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 3,
+      "bounds": [
+        482,
+        234,
+        1610,
+        818
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S05",
+      "beat": 0,
+      "bounds": [
+        494,
+        374,
+        1614,
+        782
+      ],
+      "inSafe": true,
+      "ordinary": 0,
+      "essential": 0,
+      "minFont": 999,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S05",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1614,
+        786
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1202,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 4,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1202,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 6,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 2,
+      "bounds": [
+        144,
+        126,
+        1563,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 8,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 3,
+      "bounds": [
+        144,
+        126,
+        1563,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 11,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S07",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1601,
+        767
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S07",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1601,
+        767
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S08",
+      "beat": 0,
+      "bounds": [
+        398,
+        430,
+        1532,
+        764
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S08",
+      "beat": 1,
+      "bounds": [
+        398,
+        179,
+        1532,
+        914
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S09",
+      "beat": 0,
+      "bounds": [
+        318,
+        338,
+        722,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S09",
+      "beat": 1,
+      "bounds": [
+        318,
+        338,
+        1602,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S09",
+      "beat": 2,
+      "bounds": [
+        318,
+        337,
+        1602,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S10",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1133,
+        686
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S10",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1601,
+        826
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 0,
+      "bounds": [
+        492,
+        532,
+        548,
+        588
+      ],
+      "inSafe": true,
+      "ordinary": 0,
+      "essential": 0,
+      "minFont": 999,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 1,
+      "bounds": [
+        492,
+        248.1,
+        1555.5,
+        588
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 2,
+      "bounds": [
+        492,
+        248.1,
+        1576,
+        618
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 3,
+      "bounds": [
+        492,
+        248.1,
+        1627.5,
+        871.9
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S12",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1363,
+        963
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S12",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1363,
+        963
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    }
+  ],
+  "startup.reduced-motion.ms": {
+    "fontsReadyAt": 35,
+    "coverPaintedAt": 36
+  },
+  "states.reduced-motion": [
+    {
+      "scene": "S01",
+      "beat": 0,
+      "bounds": [
+        144,
+        147,
+        966,
+        830
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 96,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S01",
+      "beat": 1,
+      "bounds": [
+        144,
+        147,
+        1438,
+        830
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 96,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S02",
+      "beat": 0,
+      "bounds": [
+        434,
+        321,
+        1482,
+        623
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S02",
+      "beat": 1,
+      "bounds": [
+        434,
+        321,
+        1482,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S03",
+      "beat": 0,
+      "bounds": [
+        478,
+        156,
+        1442,
+        922
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S03",
+      "beat": 1,
+      "bounds": [
+        478,
+        156,
+        1442,
+        922
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S03",
+      "beat": 2,
+      "bounds": [
+        478,
+        156,
+        1442,
+        922
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 0,
+      "bounds": [
+        833,
+        453,
+        1087,
+        707
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 1,
+      "bounds": [
+        722,
+        249,
+        1438,
+        818
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 2,
+      "bounds": [
+        482,
+        249,
+        1438,
+        818
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beat": 3,
+      "bounds": [
+        482,
+        234,
+        1610,
+        818
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S05",
+      "beat": 0,
+      "bounds": [
+        494,
+        374,
+        1614,
+        782
+      ],
+      "inSafe": true,
+      "ordinary": 0,
+      "essential": 0,
+      "minFont": 999,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S05",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1614,
+        786
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1202,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 4,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1202,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 6,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 2,
+      "bounds": [
+        144,
+        126,
+        1563,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 8,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beat": 3,
+      "bounds": [
+        144,
+        126,
+        1563,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 11,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S07",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1601,
+        767
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S07",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1601,
+        767
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S08",
+      "beat": 0,
+      "bounds": [
+        398,
+        430,
+        1532,
+        764
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S08",
+      "beat": 1,
+      "bounds": [
+        398,
+        179,
+        1532,
+        914
+      ],
+      "inSafe": true,
+      "ordinary": 4,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S09",
+      "beat": 0,
+      "bounds": [
+        318,
+        338,
+        722,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S09",
+      "beat": 1,
+      "bounds": [
+        318,
+        338,
+        1602,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S09",
+      "beat": 2,
+      "bounds": [
+        318,
+        337,
+        1602,
+        894
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S10",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1133,
+        686
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S10",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1601,
+        826
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 0,
+      "bounds": [
+        492,
+        532,
+        548,
+        588
+      ],
+      "inSafe": true,
+      "ordinary": 0,
+      "essential": 0,
+      "minFont": 999,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 1,
+      "bounds": [
+        492,
+        248.1,
+        1555.5,
+        588
+      ],
+      "inSafe": true,
+      "ordinary": 1,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 2,
+      "bounds": [
+        492,
+        248.1,
+        1576,
+        618
+      ],
+      "inSafe": true,
+      "ordinary": 2,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beat": 3,
+      "bounds": [
+        492,
+        248.1,
+        1627.5,
+        871.9
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 48,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S12",
+      "beat": 0,
+      "bounds": [
+        144,
+        126,
+        1363,
+        963
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    },
+    {
+      "scene": "S12",
+      "beat": 1,
+      "bounds": [
+        144,
+        126,
+        1363,
+        963
+      ],
+      "inSafe": true,
+      "ordinary": 3,
+      "essential": 0,
+      "minFont": 88,
+      "pixelsDiffering": 0,
+      "pass": true
+    }
+  ],
+  "performance": {
+    "frames": 42,
+    "medianMs": 16.7,
+    "p95Ms": 16.7,
+    "maxMs": 16.8,
+    "scope": "S01 b1 reveal, 1920x1080 headless Chromium, software raster",
+    "keyToMotionMs": 0.4
+  },
+  "viewports": [
+    {
+      "viewport": "1920x1080",
+      "stage": "1920x1080",
+      "ok": true,
+      "sameState": true
+    },
+    {
+      "viewport": "1280x720",
+      "stage": "1280x720",
+      "ok": true,
+      "sameState": true
+    },
+    {
+      "viewport": "1440x900",
+      "stage": "1440x810",
+      "ok": true,
+      "sameState": true
+    },
+    {
+      "viewport": "800x1000",
+      "stage": "800x450",
+      "ok": true,
+      "sameState": true
+    },
+    {
+      "viewport": "1000x400",
+      "stage": "711x400",
+      "ok": true,
+      "sameState": true
+    }
+  ],
+  "startup": {
+    "firstLoad": {
+      "fontsReadyAt": 29,
+      "coverPaintedAt": 30
+    },
+    "secondLoad": {
+      "fontsReadyAt": 32,
+      "coverPaintedAt": 33
+    },
+    "note": "ms from navigation start; localhost, Cache-Control no-store so both loads refetch"
+  }
+}
