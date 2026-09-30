@@ -1,0 +1,1104 @@
+{
+  "generatedAt": "2026-09-30T16:26:02.627Z",
+  "browser": "chromium (playwright 1.56.1)",
+  "logicalCanvas": "1920x1080",
+  "safeArea": {
+    "x0": 96,
+    "y0": 54,
+    "x1": 1824,
+    "y1": 1026
+  },
+  "scope": "Authored storyboard SVG endpoints only; not the runtime presentation, motion, keyboard or production QA",
+  "allPass": true,
+  "scenes": [
+    {
+      "scene": "S01",
+      "beats": 1,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "From answers",
+              "minGapPx": 280
+            },
+            {
+              "text": "to responsibility",
+              "minGapPx": 165
+            }
+          ],
+          "minTextSize": 96,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 147,
+            "x1": 966,
+            "y1": 830
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "From answers",
+              "minGapPx": 280
+            },
+            {
+              "text": "to responsibility",
+              "minGapPx": 165
+            }
+          ],
+          "minTextSize": 96,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 147,
+            "x1": 1438,
+            "y1": 830
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "From answers",
+          "to responsibility"
+        ],
+        "essential": [],
+        "ordinaryCount": 4,
+        "essentialCount": 0,
+        "total": 4,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S02",
+      "beats": 1,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Goal",
+              "minGapPx": 28
+            },
+            {
+              "text": "Action",
+              "minGapPx": 32
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 434,
+            "y0": 321,
+            "x1": 1482,
+            "y1": 623
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Goal",
+              "minGapPx": 28
+            },
+            {
+              "text": "Action",
+              "minGapPx": 32
+            },
+            {
+              "text": "Feedback",
+              "minGapPx": 27
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 434,
+            "y0": 321,
+            "x1": 1482,
+            "y1": 894
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Goal",
+          "Action",
+          "Feedback"
+        ],
+        "essential": [],
+        "ordinaryCount": 3,
+        "essentialCount": 0,
+        "total": 3,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S03",
+      "beats": 2,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Dots",
+              "minGapPx": 42
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 478,
+            "y0": 156,
+            "x1": 1442,
+            "y1": 922
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Dots",
+              "minGapPx": 42
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 478,
+            "y0": 156,
+            "x1": 1442,
+            "y1": 922
+          }
+        },
+        {
+          "k": 2,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Dots",
+              "minGapPx": 42
+            },
+            {
+              "text": "Ongoing work",
+              "minGapPx": 60
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 478,
+            "y0": 156,
+            "x1": 1442,
+            "y1": 922
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Dots",
+          "Ongoing work"
+        ],
+        "essential": [],
+        "ordinaryCount": 3,
+        "essentialCount": 0,
+        "total": 3,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S04",
+      "beats": 3,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Model",
+              "minGapPx": null
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 833,
+            "y0": 453,
+            "x1": 1087,
+            "y1": 707
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Model",
+              "minGapPx": 161
+            },
+            {
+              "text": "Harness",
+              "minGapPx": 28
+            },
+            {
+              "text": "State",
+              "minGapPx": 31
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 722,
+            "y0": 249,
+            "x1": 1438,
+            "y1": 818
+          }
+        },
+        {
+          "k": 2,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Model",
+              "minGapPx": 161
+            },
+            {
+              "text": "Harness",
+              "minGapPx": 28
+            },
+            {
+              "text": "State",
+              "minGapPx": 31
+            },
+            {
+              "text": "Tools",
+              "minGapPx": 31
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 482,
+            "y0": 249,
+            "x1": 1438,
+            "y1": 818
+          }
+        },
+        {
+          "k": 3,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Model",
+              "minGapPx": 137.7
+            },
+            {
+              "text": "Harness",
+              "minGapPx": 28
+            },
+            {
+              "text": "State",
+              "minGapPx": 31
+            },
+            {
+              "text": "Tools",
+              "minGapPx": 31
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 482,
+            "y0": 234,
+            "x1": 1610,
+            "y1": 818
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Model",
+          "Harness",
+          "State",
+          "Tools"
+        ],
+        "essential": [],
+        "ordinaryCount": 4,
+        "essentialCount": 0,
+        "total": 4,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S05",
+      "beats": 1,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [],
+          "minTextSize": null,
+          "contentBounds": {
+            "x0": 494,
+            "y0": 374,
+            "x1": 1614,
+            "y1": 782
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "A wider industry shift",
+              "minGapPx": 128
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1614,
+            "y1": 786
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "A wider industry shift"
+        ],
+        "essential": [],
+        "ordinaryCount": 4,
+        "essentialCount": 0,
+        "total": 4,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S06",
+      "beats": 3,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500",
+          "600"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Token price",
+              "minGapPx": 202.2
+            },
+            {
+              "text": "USD per 1M tokens",
+              "minGapPx": 69.4
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1202,
+            "y1": 894
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Token price",
+              "minGapPx": 202.2
+            },
+            {
+              "text": "USD per 1M tokens",
+              "minGapPx": 69.4
+            },
+            {
+              "text": "Input",
+              "minGapPx": 174.5
+            },
+            {
+              "text": "$2",
+              "minGapPx": 156
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1202,
+            "y1": 894
+          }
+        },
+        {
+          "k": 2,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Token price",
+              "minGapPx": 202.2
+            },
+            {
+              "text": "USD per 1M tokens",
+              "minGapPx": 69.4
+            },
+            {
+              "text": "Input",
+              "minGapPx": 174.5
+            },
+            {
+              "text": "$2",
+              "minGapPx": 156
+            },
+            {
+              "text": "Output",
+              "minGapPx": 154
+            },
+            {
+              "text": "$10",
+              "minGapPx": 115
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1563,
+            "y1": 894
+          }
+        },
+        {
+          "k": 3,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Token price",
+              "minGapPx": 202.2
+            },
+            {
+              "text": "USD per 1M tokens",
+              "minGapPx": 69.4
+            },
+            {
+              "text": "Input",
+              "minGapPx": 174.5
+            },
+            {
+              "text": "$2",
+              "minGapPx": 156
+            },
+            {
+              "text": "Output",
+              "minGapPx": 154
+            },
+            {
+              "text": "$10",
+              "minGapPx": 115
+            },
+            {
+              "text": "Cached input",
+              "minGapPx": 85
+            },
+            {
+              "text": "$0.10",
+              "minGapPx": 54
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1563,
+            "y1": 894
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Token price"
+        ],
+        "essential": [
+          "USD per 1M tokens",
+          "Input",
+          "$2",
+          "Output",
+          "$10",
+          "Cached input",
+          "$0.10"
+        ],
+        "ordinaryCount": 2,
+        "essentialCount": 11,
+        "total": 13,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S07",
+      "beats": 1,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Cost per accepted outcome",
+              "minGapPx": 222
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1601,
+            "y1": 767
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Cost per accepted outcome",
+              "minGapPx": 222
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1601,
+            "y1": 767
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Cost per accepted outcome"
+        ],
+        "essential": [],
+        "ordinaryCount": 4,
+        "essentialCount": 0,
+        "total": 4,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S08",
+      "beats": 1,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Read",
+              "minGapPx": 37
+            },
+            {
+              "text": "Draft",
+              "minGapPx": 24
+            },
+            {
+              "text": "Write",
+              "minGapPx": 29
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 398,
+            "y0": 430,
+            "x1": 1532,
+            "y1": 764
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Read",
+              "minGapPx": 37
+            },
+            {
+              "text": "Draft",
+              "minGapPx": 24
+            },
+            {
+              "text": "Write",
+              "minGapPx": 29
+            },
+            {
+              "text": "Approve",
+              "minGapPx": 26
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 398,
+            "y0": 179,
+            "x1": 1532,
+            "y1": 914
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Read",
+          "Draft",
+          "Write",
+          "Approve"
+        ],
+        "essential": [],
+        "ordinaryCount": 4,
+        "essentialCount": 0,
+        "total": 4,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S09",
+      "beats": 2,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Interface",
+              "minGapPx": 27
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 318,
+            "y0": 338,
+            "x1": 722,
+            "y1": 894
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Interface",
+              "minGapPx": 27
+            },
+            {
+              "text": "Records",
+              "minGapPx": 27
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 318,
+            "y0": 338,
+            "x1": 1602,
+            "y1": 894
+          }
+        },
+        {
+          "k": 2,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Interface",
+              "minGapPx": 27
+            },
+            {
+              "text": "Records",
+              "minGapPx": 27
+            },
+            {
+              "text": "Rules",
+              "minGapPx": 26
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 318,
+            "y0": 337,
+            "x1": 1602,
+            "y1": 894
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Interface",
+          "Records",
+          "Rules"
+        ],
+        "essential": [],
+        "ordinaryCount": 3,
+        "essentialCount": 0,
+        "total": 3,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S10",
+      "beats": 1,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Measure real outcomes",
+              "minGapPx": 192
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1133,
+            "y1": 686
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Measure real outcomes",
+              "minGapPx": 192
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1601,
+            "y1": 826
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Measure real outcomes"
+        ],
+        "essential": [],
+        "ordinaryCount": 3,
+        "essentialCount": 0,
+        "total": 3,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S11",
+      "beats": 3,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [],
+          "minTextSize": null,
+          "contentBounds": {
+            "x0": 492,
+            "y0": 532,
+            "x1": 548,
+            "y1": 588
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Bounded",
+              "minGapPx": 30
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 492,
+            "y0": 248,
+            "x1": 1556,
+            "y1": 588
+          }
+        },
+        {
+          "k": 2,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Bounded",
+              "minGapPx": 30
+            },
+            {
+              "text": "Broader",
+              "minGapPx": 30
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 492,
+            "y0": 248,
+            "x1": 1576,
+            "y1": 618
+          }
+        },
+        {
+          "k": 3,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Bounded",
+              "minGapPx": 30
+            },
+            {
+              "text": "Broader",
+              "minGapPx": 30
+            },
+            {
+              "text": "Constrained",
+              "minGapPx": 30
+            }
+          ],
+          "minTextSize": 48,
+          "contentBounds": {
+            "x0": 492,
+            "y0": 248,
+            "x1": 1628,
+            "y1": 872
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Bounded",
+          "Broader",
+          "Constrained"
+        ],
+        "essential": [],
+        "ordinaryCount": 3,
+        "essentialCount": 0,
+        "total": 3,
+        "matchesBudget": true
+      },
+      "pass": true
+    },
+    {
+      "scene": "S12",
+      "beats": 1,
+      "fonts": {
+        "faces": [
+          "Noto Sans 400 loaded",
+          "Noto Sans 500 loaded",
+          "Noto Sans 600 loaded"
+        ],
+        "usedWeights": [
+          "500"
+        ],
+        "ok": true
+      },
+      "states": [
+        {
+          "k": 0,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Delegate with boundaries",
+              "minGapPx": 71
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1363,
+            "y1": 963
+          }
+        },
+        {
+          "k": 1,
+          "outside": [],
+          "overlaps": [],
+          "clearance": [
+            {
+              "text": "Delegate with boundaries",
+              "minGapPx": 71
+            }
+          ],
+          "minTextSize": 88,
+          "contentBounds": {
+            "x0": 144,
+            "y0": 126,
+            "x1": 1363,
+            "y1": 963
+          }
+        }
+      ],
+      "copy": {
+        "ordinary": [
+          "Delegate with boundaries"
+        ],
+        "essential": [],
+        "ordinaryCount": 3,
+        "essentialCount": 0,
+        "total": 3,
+        "matchesBudget": true
+      },
+      "pass": true
+    }
+  ]
+}
