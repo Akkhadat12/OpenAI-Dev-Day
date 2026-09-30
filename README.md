@@ -9,7 +9,7 @@ BRANCH_URL: https://github.com/Akkhadat12/OpenAI-Dev-Day/tree/project/devday-age
 PROPOSED_BRANCH: project/devday-agents-20260930-a7c4
 WORKFLOW_STATE: WORKFLOW_STATUS.md
 
-Open WORKFLOW_STATUS.md immediately after this README. Content and this separately owner-authorized Design stage are complete. Current stage: READY_FOR_VISUAL; next actor: Agent 3 — Visual Director via an owner-dispatched continuation.
+Open WORKFLOW_STATUS.md immediately after this README. Content, Design and Visual stages are complete. Current stage: READY_FOR_BUILD; next actor: Agent 4 — Builder via an owner-dispatched continuation.
 
 WORKFLOW_FOLDER: https://drive.google.com/drive/folders/1WcszSRTyebajZj1FuLE-wCuKehyInE8n
 WORKFLOW_FOLDER_ID: 1WcszSRTyebajZj1FuLE-wCuKehyInE8n
@@ -25,7 +25,7 @@ Current owner PDF/Google Doc editions are verified in the recorded owner folder.
 - 02_RESEARCH_AND_ANALYSIS.md
 - 03A_NARRATION_SCRIPT.md
 
-02_DESIGN_SYSTEM.md contains the current filled Design 1.0 specification. 03_VISUAL_PLAN.md and 04_BUILD.md remain stage templates; 05_QA.md holds acceptance criteria. No runnable presentation or production URL is claimed. Design evidence is in qa/design-review.md and qa/design-checks.json.
+02_DESIGN_SYSTEM.md contains Design 1.0. 03_VISUAL_PLAN.md contains Visual 1.0 with per-beat storyboards in assets/visual/, bundled OFL fonts in assets/fonts/ and the asset manifest at assets/manifest.md. 04_BUILD.md remains the Build template; 05_QA.md holds acceptance criteria. No runnable presentation or production URL is claimed. Design evidence: qa/design-review.md, qa/design-checks.json. Visual evidence: qa/visual-review.md, qa/visual/.
 
 This is the same run. Local access was rechecked; the owner explicitly authorized the one-time main foundation commit. All further project work stays on the recorded assignment branch. Never create another PROJECT_ID or owner folder.
 

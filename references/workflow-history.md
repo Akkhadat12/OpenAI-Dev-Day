@@ -29,3 +29,11 @@ The owner requested Design on the existing assignment branch in a separate chat.
 Artifact commit: ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4. Evidence: qa/design-review.md, qa/design-checks.json, qa/design-owner-input-check.json. The exact remote 02_DESIGN_SYSTEM.md Git blob matched the committed local blob before handoff. Inventory covers 12 scenes, all ordinary copy counts remain 2–4, S06 keeps 11 essential data items, and 10 opaque contrast pairings meet their specified targets. Read-only Drive checks found all 12 narrations aligned, with one native date-chip formatting equivalence and no semantic owner edit. This is a Design specification review, not runtime testing or independent QA.
 
 Next: Agent 3 — Visual Director via the owner. Fill 03_VISUAL_PLAN.md with scene compositions, assets/rights, exact cue-linked beats, stable holds, arrow meanings, copy counts and factual boundaries. Verify fonts/fallbacks. Do not build yet. No Visual plan/assets, implementation, Drive writes, Vercel project/deployment or QA_PASS was produced in this Design chat.
+
+### 2026-09-30T23:31:14+07:00 Owner-dispatched Visual continuation — READY_FOR_BUILD
+
+Read the READY_FOR_VISUAL handoff 4e06948 and all required inputs; retained the same PROJECT_ID, branch, owner folder and upstream identities. The narration Doc metadata was unchanged (modified 2026-09-30T15:50:42.626Z), so there was nothing to reconcile.
+
+Artifact commit: 8334b9c4d5f49de861c893de9adba7905599ffd8. Filled 03_VISUAL_PLAN.md Visual 1.0. Authored 12 storyboard SVGs (20 reveal beats), bundled Noto Sans 2.015 / Noto Sans Thai 2.002 WOFF2 with OFL from notofonts.github.io@0259702, and wrote assets/manifest.md. Chromium checks passed for all 32 settled states: safe area, overlap, ≥24 px clearance, ≥48 px labels, exact copy inventory (S06 2/11/13) and font loading. Evidence: qa/visual-review.md.
+
+Next: Agent 4 — Builder. No runtime, Drive write, Vercel project/deployment or QA_PASS was produced in this Visual chat.
