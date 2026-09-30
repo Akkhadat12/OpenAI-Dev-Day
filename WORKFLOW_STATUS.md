@@ -27,18 +27,18 @@ DRIVE_FOLDER_VERIFIED_AT: 2026-09-30T22:49:48+07:00
 
 ## Current workflow
 ```yaml
-STAGE: READY_FOR_BUILD
+STAGE: BUILDING
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Agent 3 — Visual Director; completed this chat scope
-UPDATED_AT: 2026-09-30T23:31:14+07:00
+ACTIVE_ACTOR: Agent 4 — Builder
+UPDATED_AT: 2026-09-30T23:38:38+07:00
 ARTIFACT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
 LAST_VERIFIED_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
 LAST_VERIFIED_SCOPE: Visual 1.0 plan, 12 storyboard SVGs (32 settled states) rendered in Chromium for safe area, overlap, clearance, label size, copy counts and bundled-font loading; font versions/license/coverage via fontTools; owner narration Doc metadata unchanged. Runtime, motion, keyboard and production QA NOT_RUN.
-CURRENT_CHAT_SCOPE: VISUAL_ONLY
+CURRENT_CHAT_SCOPE: BUILD_ONLY
 CONTENT_ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
 DESIGN_ARTIFACT_COMMIT: ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4
 VISUAL_ARTIFACT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
-NEXT_ACTOR: Agent 4 — Builder; owner-dispatched continuation
+NEXT_ACTOR: Agent 4 — Builder; active owner-dispatched continuation
 NEXT_ACTION: Read 01–05 and the asset manifest. Fill 04_BUILD.md's implementation choices, build the planned web presentation, record BUILD_NOTES.md and verified Vercel metadata, and create 06_SCENE_RATIONALE in the exact recorded topic folder. Prepare the same Vercel project's production deployment for QA, verify PRODUCTION_URL against BUILD_COMMIT, and record any deployment blocker. Use assets/visual/S01–S12.svg beat groups as the geometry of record and the bundled assets/fonts.
 REQUIRED_INPUTS: [README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, references/content-draft.md, references/scenes.json, references/source-and-claim-register.md, references/owner-artifacts.json, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, assets/manifest.md, assets/visual/, assets/fonts/, 04_BUILD.md, 05_QA.md, qa/visual-review.md]
 OPEN_FINDINGS: []
@@ -49,7 +49,7 @@ OWNER_DECISIONS:
   SCOPE: Owner confirmed Thai general audience and target 6–8 minutes. Content, Design and Visual were each run as separately owner-dispatched continuations on 2026-09-30.
   THESIS: APPROVED_A_BY_OWNER_IN_LOCAL_CONTINUATION
   FINAL_REVIEW: PENDING
-  PUBLICATION: Future Build workflow only; Visual continuation does not authorize or perform deployment.
+  PUBLICATION: Owner dispatched Build via the exact branch continuation; production deployment is required by 04_BUILD.md and remains subject to service access.
 ```
 
 ## Repository deliverables
