@@ -37,3 +37,7 @@ Research accessed 2026-09-30 Asia/Bangkok. Primary sources only for material cla
 | A03 | Systems of record และ domain knowledge อาจยังมีคุณค่าเมื่อ AI เปลี่ยน interface | INFERENCE | C07,C09 and workflow mechanics | Conditional industry impact | ไม่มีข้อมูลรายได้หรือ SAP displacement; SaaS rents may change | record stays inside boundary; example explicitly hypothetical |
 | A04 | ระยะใกล้น่าจะเติบโตจากงานจำกัดขอบเขต ตรวจผลได้ และย้อนกลับได้ก่อน autonomous high-stakes work | SCENARIO | C07,C11,C12 | Directional base case; no assigned probability | better reliability/low overhead could accelerate broader autonomy | three conditional branches, no forecast date/percent |
 
+
+## Continuation verification
+
+2026-09-30T22:53:08+07:00 — limited primary-source readback confirmed SRC03 Dots cloud computer/rollout/permission scope, SRC04 public-beta launch on September 10, and SRC05 standard input/cache/output rates plus token-price comparison. Existing other dated source findings preserved; no complete research restart. No current productivity estimate inferred.

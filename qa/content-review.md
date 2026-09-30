@@ -23,3 +23,10 @@ Required correction before READY_FOR_DESIGN: resolve bootstrap access/base, revi
 - Canonical 12 scenes and claim coverage checked; 430 seconds remains editorial planning, not measured speech.
 - Two PDFs rendered and all seven pages inspected: Thai glyphs readable, no overlap or clipping, 11 live source links present. This is a Content check, not production QA.
 - Final Drive readback and handoff remain pending.
+
+## Verified Content exit
+
+- Both uploaded PDFs read back via Drive: correct names, MIME, folder, source commit and full readable text.
+- Native narration Doc read back: 12 scene headings, 3 native date chips, 11 live hyperlinks, all spoken paragraphs/cues and matching canonical source commit. Editable Google Docs MIME and same owner parent verified.
+- Latest PDF first pages re-rendered after source metadata refresh; remaining six-page layouts unchanged from the reviewed seven-page set.
+- Content requirements met. Full timed rehearsal is still NOT_RUN. Production QA is NOT_RUN.

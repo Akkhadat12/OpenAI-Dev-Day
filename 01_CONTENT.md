@@ -405,3 +405,13 @@ Allowed artifact states: PENDING, TEMPLATE_READY, CRITERIA_READY, IN_PROGRESS, R
 
 The project-specific Content specification is maintained in references/content-draft.md; the source/claim register is references/source-and-claim-register.md. Both must be read together. The fillable examples above are reusable template examples, not completed current metadata. Current state is BLOCKED/PLANNING, never READY_FOR_DESIGN. No owner approval or cloud publication is claimed.
 
+
+## Current project — completed Content specification
+
+PROJECT_ID: devday-20260930-a7c4
+CONTENT_INPUT_COMMIT: 2df014d1e780a3c975c71165c11fcf5d0180241b
+THESIS_DECISION: Owner confirmed angle A, Thai general audience and target 6–8 minutes during Local continuation.
+
+The full filled specification, all 12 scene narrations, exact cues, visible-copy inventory, claim boundaries and transition reasons are canonical in references/content-draft.md. Structured scene export: references/scenes.json. Primary sources and allowed claims: references/source-and-claim-register.md. Owner editions: references/owner-artifacts.json. Content evidence: qa/content-review.md.
+
+Actual timed spoken rehearsal remains NOT_RUN; 430 seconds is an editorial allocation. All three required Content owner editions were read back from the same verified owner folder. 06_SCENE_RATIONALE remains PENDING_BUILD.

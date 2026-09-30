@@ -73,4 +73,4 @@ Anthropic เสนอความแตกต่างระหว่าง wor
 
 ## แหล่งอ้างอิง
 
-อ่าน full register ใน references/source-and-claim-register.md และบทเล่า 12 ฉากใน 03A_NARRATION_SCRIPT.md ข้อเท็จจริงอ้าง C01–C12; การวิเคราะห์ A01–A04 Source commit: NOT_VERIFIED ยังไม่ใช่ owner edition ที่ผ่าน Content gate
+อ่าน full register ใน references/source-and-claim-register.md และบทเล่า 12 ฉากใน 03A_NARRATION_SCRIPT.md ข้อเท็จจริงอ้าง C01–C12; การวิเคราะห์ A01–A04 Source commit: 2df014d1e780a3c975c71165c11fcf5d0180241b | Current PDF edition and identity: references/owner-artifacts.json

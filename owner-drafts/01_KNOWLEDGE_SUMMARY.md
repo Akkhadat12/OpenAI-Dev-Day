@@ -44,4 +44,4 @@
 
 เอกสารนี้ใช้ IDs จาก references/source-and-claim-register.md ทุก source มี direct URL และข้อจำกัด เพื่อเปิดตรวจที่ต้นทางได้ บทเล่าเต็มอยู่ใน 03A_NARRATION_SCRIPT.md
 
-Source commit: NOT_VERIFIED เพราะยังบันทึกบน remote ไม่ได้ ไม่ใช่ owner edition ที่ผ่าน Content gate
+Source commit: 2df014d1e780a3c975c71165c11fcf5d0180241b | Current PDF edition and identity: references/owner-artifacts.json

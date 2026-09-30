@@ -20,7 +20,7 @@ OWNER_DRIVE_FOLDER_ID: 1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h
 
 Read 01_CONTENT.md and references/content-draft.md together. Primary-source and claim metadata are in references/source-and-claim-register.md.
 
-Owner reading drafts are in owner-drafts/. They are Markdown drafts for review, not the required PDF and native Google Doc deliverables. They have not been uploaded to Drive.
+Current owner PDF/Google Doc editions are verified in the recorded owner folder. See references/owner-artifacts.json for observed URLs, file IDs and source commits. Markdown authoring equivalents remain in owner-drafts/.
 - 01_KNOWLEDGE_SUMMARY.md
 - 02_RESEARCH_AND_ANALYSIS.md
 - 03A_NARRATION_SCRIPT.md
