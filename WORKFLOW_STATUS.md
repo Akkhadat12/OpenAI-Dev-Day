@@ -27,16 +27,16 @@ DRIVE_FOLDER_VERIFIED_AT: 2026-09-30T22:49:48+07:00
 
 ## Current workflow
 ```yaml
-STAGE: READY_FOR_DESIGN
+STAGE: READY_FOR_VISUAL
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Design
-UPDATED_AT: 2026-09-30T22:53:44+07:00
-ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
-LAST_VERIFIED_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
-LAST_VERIFIED_SCOPE: qa/content-review.md; references/owner-artifacts.json
-NEXT_ACTOR: Design
-NEXT_ACTION: Fill 02_DESIGN_SYSTEM.md using confirmed Content, preserving 16:9 clean canvas, copy budget and hidden controls. Do not build yet.
-REQUIRED_INPUTS: [README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, references/content-draft.md, references/scenes.json, 02_DESIGN_SYSTEM.md, 05_QA.md]
+ACTIVE_ACTOR: Visual
+UPDATED_AT: 2026-09-30T22:55:55+07:00
+ARTIFACT_COMMIT: 4ff4448c7bf450f8d4c79b1c1c79f5a7394c5867
+LAST_VERIFIED_COMMIT: 4ff4448c7bf450f8d4c79b1c1c79f5a7394c5867
+LAST_VERIFIED_SCOPE: qa/design-review.md
+NEXT_ACTOR: Visual
+NEXT_ACTION: Fill 03_VISUAL_PLAN.md scene by scene from confirmed Content and Design; verify all reveal states, labels and provenance. Do not build yet.
+REQUIRED_INPUTS: [01_CONTENT.md, references/content-draft.md, references/scenes.json, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
 BLOCKERS: []
@@ -110,8 +110,8 @@ QA_FINDING_STATES: {}
 
 ## Current handoff
 ```yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
-LAST_HANDOFF_EVIDENCE: qa/content-review.md; references/owner-artifacts.json
+LAST_HANDOFF_ARTIFACT_COMMIT: 4ff4448c7bf450f8d4c79b1c1c79f5a7394c5867
+LAST_HANDOFF_EVIDENCE: qa/design-review.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 REMOTE_HANDOFF: VERIFIED
