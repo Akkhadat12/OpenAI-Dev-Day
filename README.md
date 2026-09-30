@@ -9,7 +9,7 @@ BRANCH_URL: https://github.com/Akkhadat12/OpenAI-Dev-Day/tree/project/devday-age
 PROPOSED_BRANCH: project/devday-agents-20260930-a7c4
 WORKFLOW_STATE: WORKFLOW_STATUS.md
 
-Open WORKFLOW_STATUS.md immediately after this README. Content-only continuation completed. Open WORKFLOW_STATUS.md immediately. Current stage: READY_FOR_DESIGN; the next owner-authorized agent handles Design.
+Open WORKFLOW_STATUS.md immediately after this README. Content and this separately owner-authorized Design stage are complete. Current stage: READY_FOR_VISUAL; next actor: Agent 3 — Visual Director via an owner-dispatched continuation.
 
 WORKFLOW_FOLDER: https://drive.google.com/drive/folders/1WcszSRTyebajZj1FuLE-wCuKehyInE8n
 WORKFLOW_FOLDER_ID: 1WcszSRTyebajZj1FuLE-wCuKehyInE8n
@@ -25,7 +25,7 @@ Current owner PDF/Google Doc editions are verified in the recorded owner folder.
 - 02_RESEARCH_AND_ANALYSIS.md
 - 03A_NARRATION_SCRIPT.md
 
-Design/Visual/Build/QA files are current workflow template copies, not completed topic stages. No runnable presentation or production URL is claimed.
+02_DESIGN_SYSTEM.md contains the current filled Design 1.0 specification. 03_VISUAL_PLAN.md and 04_BUILD.md remain stage templates; 05_QA.md holds acceptance criteria. No runnable presentation or production URL is claimed. Design evidence is in qa/design-review.md and qa/design-checks.json.
 
 This is the same run. Local access was rechecked; the owner explicitly authorized the one-time main foundation commit. All further project work stays on the recorded assignment branch. Never create another PROJECT_ID or owner folder.
 
@@ -33,4 +33,8 @@ This is the same run. Local access was rechecked; the owner explicitly authorize
 
 ## Scope of this continuation
 
-The owner clarified this chat is Content only. Content and its three verified owner editions are the accepted handoff. Design work from this chat was withdrawn with a history-preserving revert; 02_DESIGN_SYSTEM.md is a template again. Visual drafts were never pushed and are not current inputs. No Build, deployment or production QA occurred. The five workflow specifications remain available for the next owner-dispatched stage.
+The owner explicitly requested Design in this chat on 2026-09-30. Design 1.0 defines the narration-led 16:9 visual language, typography, truthful data treatment, purposeful motion, stable holds, reduced motion and hidden Spacebar/R controls for the accepted 12 scenes. It preserves Content and its existing Drive editions.
+
+Design artifact commit: ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4. Review: qa/design-review.md. Next action: fill 03_VISUAL_PLAN.md on this same branch with actual scene compositions, assets/provenance, exact cue maps and copy inventories. This chat ends at the Design handoff; Visual, Build and production QA require their later owner-dispatched stages.
+
+The previous Content-only correction remains in references/workflow-history.md and Git history. Withdrawn Design/Visual drafts are historical and are not current inputs. No new PROJECT_ID, branch or owner folder is created.
