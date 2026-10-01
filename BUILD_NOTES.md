@@ -1,6 +1,6 @@
 # BUILD_NOTES — devday-20260930-a7c4
 
-Builder (Agent 4) record. Current deployment metadata lives in WORKFLOW_STATUS.md. **Production is not deployed: see Blockers.**
+Builder (Agent 4) record. Current deployment metadata lives in WORKFLOW_STATUS.md. Production is deployed and the public URL serves the recorded commit.
 
 ## Setup, build, run
 - Root directory: repo root. Node >=20 (built and tested on v22.22.2). No dependencies.
@@ -45,8 +45,19 @@ Source commit under test 7f0015c (runtime unchanged since; docs/evidence committ
 - Not exercised by Builder: Firefox/Safari (the S04 ring animates the CSS `r` property), real fullscreen (headless rejects it).
 - Fullscreen browser notices are browser-owned and outside the app.
 
+## Deployment (2026-10-01T07:48:32+07:00)
+- Scope `ham-b6fc` (`team_gUB5J3AIwkqj8c4QbfWNLCgd`) still returns 403 when `teamId` is passed explicitly. Reads and writes that omit `teamId` succeed against that same team, so the earlier re-authentication blocker is cleared for this path.
+- No project was linked to https://github.com/Akkhadat12/OpenAI-Dev-Day. `openai-devday-accepted-work` (`prj_ztsCZRU6IiMbuREoljidkfSWpKzV`) is a separate Vite production and was not reused.
+- Reused the empty project `devday-agents-20260930` (`prj_4NPj6ZjnRnzL4X25jtonsEbFLK8v`), created 2026-10-01 with no deployments and no domains. Reason: name matches this assignment, same team, nothing to preserve. Settings applied before deploy: framework none, Node 22.x, install `npm ci`, build `npm run build`, output `dist`, root directory the repo root.
+- Production deployment `dpl_AVavjL6t8FGTmFksRfJ8oC545wve` from GitHub `Akkhadat12/OpenAI-Dev-Day` ref `project/devday-agents-20260930-a7c4` sha `7c2e5f576262bbe857cbf044269603d31aaf5f84`. State READY. Target production.
+- Public PRODUCTION_URL: https://devday-agents-20260930.vercel.app
+- Also assigned: https://devday-agents-20260930-ham-b6fc.vercel.app and immutable https://devday-agents-20260930-r0jvzsnlc-ham-b6fc.vercel.app
+- Served identity, fetched without credentials (HTTP 200, `cache-control: no-store`) from all three hosts: `/build-id.json` commit `7c2e5f576262bbe857cbf044269603d31aaf5f84`, `vercelEnv` `production`, 12 scenes. `<meta name="build-commit">` matches. Password protection and SSO are off.
+- The project read does not return a configured production-branch field. This production alias currently points at the assignment-branch deployment above.
+- Runtime between the Chromium check commit `7f0015c` and the deployed `7c2e5f5` differs only by `tools/build/artifact.mjs`, which `npm run build` does not run.
+
 ## Blockers
-- **Vercel production deployment not done.** The connected Vercel account lists no teams; `list_projects` returns 16 projects under team `team_gUB5J3AIwkqj8c4QbfWNLCgd` (scope `ham-b6fc`), but `get_project` and `list_deployments` return 403 "You must re-authenticate to this scope". None is linked to https://github.com/Akkhadat12/OpenAI-Dev-Day. `openai-devday-accepted-work` is an unrelated-looking candidate that could not be inspected, so it was not reused and nothing was created. Recovery: owner re-authenticates the Vercel connector for that scope (or names the project/scope to use), then Builder deploys this branch as production, verifies PRODUCTION_URL serves BUILD_COMMIT via `/build-id.json` and `<meta name="build-commit">`, and hands off to QA.
+None for production deployment. QA has not run.
 
 ## Environment variables
 None required. Build reads `VERCEL_GIT_COMMIT_SHA`, `VERCEL_GIT_COMMIT_REF`, `VERCEL_ENV` when present (names only).

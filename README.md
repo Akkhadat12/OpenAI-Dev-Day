@@ -9,7 +9,7 @@ BRANCH_URL: https://github.com/Akkhadat12/OpenAI-Dev-Day/tree/project/devday-age
 PROPOSED_BRANCH: project/devday-agents-20260930-a7c4
 WORKFLOW_STATE: WORKFLOW_STATUS.md
 
-Open WORKFLOW_STATUS.md immediately after this README. Content, Design and Visual stages are complete. Content, Design, Visual and Build implementation are done. Current stage: BLOCKED (from BUILDING) only on Vercel production access; see BUILD_NOTES.md and WORKFLOW_STATUS.md.
+Open WORKFLOW_STATUS.md immediately after this README. Content, Design, Visual and Build are complete, including production deployment. Current stage: READY_FOR_QA. Production: https://devday-agents-20260930.vercel.app
 
 WORKFLOW_FOLDER: https://drive.google.com/drive/folders/1WcszSRTyebajZj1FuLE-wCuKehyInE8n
 WORKFLOW_FOLDER_ID: 1WcszSRTyebajZj1FuLE-wCuKehyInE8n
@@ -25,7 +25,7 @@ Current owner PDF/Google Doc editions are verified in the recorded owner folder.
 - 02_RESEARCH_AND_ANALYSIS.md
 - 03A_NARRATION_SCRIPT.md
 
-02_DESIGN_SYSTEM.md contains Design 1.0. 03_VISUAL_PLAN.md contains Visual 1.0 with per-beat storyboards in assets/visual/, bundled OFL fonts in assets/fonts/ and the asset manifest at assets/manifest.md. 04_BUILD.md remains the Build template; 05_QA.md holds acceptance criteria. No runnable presentation or production URL is claimed. Design evidence: qa/design-review.md, qa/design-checks.json. Visual evidence: qa/visual-review.md, qa/visual/.
+02_DESIGN_SYSTEM.md contains Design 1.0. 03_VISUAL_PLAN.md contains Visual 1.0 with per-beat storyboards in assets/visual/, bundled OFL fonts in assets/fonts/ and the asset manifest at assets/manifest.md. 04_BUILD.md records the implementation. 05_QA.md holds acceptance criteria; QA has not run. Production URL: https://devday-agents-20260930.vercel.app (commit 7c2e5f576262bbe857cbf044269603d31aaf5f84). Design evidence: qa/design-review.md, qa/design-checks.json. Visual evidence: qa/visual-review.md, qa/visual/. Build evidence: BUILD_NOTES.md, qa/build/e2e-results.json.
 
 This is the same run. Local access was rechecked; the owner explicitly authorized the one-time main foundation commit. All further project work stays on the recorded assignment branch. Never create another PROJECT_ID or owner folder.
 

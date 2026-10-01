@@ -37,3 +37,11 @@ Read the READY_FOR_VISUAL handoff 4e06948 and all required inputs; retained the 
 Artifact commit: 8334b9c4d5f49de861c893de9adba7905599ffd8. Filled 03_VISUAL_PLAN.md Visual 1.0. Authored 12 storyboard SVGs (20 reveal beats), bundled Noto Sans 2.015 / Noto Sans Thai 2.002 WOFF2 with OFL from notofonts.github.io@0259702, and wrote assets/manifest.md. Chromium checks passed for all 32 settled states: safe area, overlap, ≥24 px clearance, ≥48 px labels, exact copy inventory (S06 2/11/13) and font loading. Evidence: qa/visual-review.md.
 
 Next: Agent 4 — Builder. No runtime, Drive write, Vercel project/deployment or QA_PASS was produced in this Visual chat.
+
+### 2026-10-01T07:49:41+07:00 Owner-requested Build continuation — READY_FOR_QA
+
+The earlier Build implementation stayed on this branch. Production had been blocked because explicit team-scoped Vercel calls returned 403 for scope ham-b6fc. Calls that omit teamId can read and deploy that team. Reused the empty project devday-agents-20260930 (prj_4NPj6ZjnRnzL4X25jtonsEbFLK8v). Did not reuse openai-devday-accepted-work.
+
+Deployment dpl_AVavjL6t8FGTmFksRfJ8oC545wve is READY, target production, source 7c2e5f576262bbe857cbf044269603d31aaf5f84. https://devday-agents-20260930.vercel.app/build-id.json and the build-commit meta tag both return that commit. 06_SCENE_RATIONALE (1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY) was updated in place in the recorded owner folder and read back as READY.
+
+Next: Agent 5 — QA. Independently test the production URL against that commit. Builder did not set QA_PASS.

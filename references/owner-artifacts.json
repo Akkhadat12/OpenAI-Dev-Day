@@ -31,5 +31,15 @@
     "verified_at": "2026-09-30T22:53:08+07:00",
     "parent_id": "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
     "state": "READY"
+  },
+  {
+    "name": "06_SCENE_RATIONALE",
+    "id": "1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY",
+    "url": "https://docs.google.com/document/d/1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY/edit?usp=drivesdk",
+    "mime": "application/vnd.google-apps.document",
+    "source_commit": "7c2e5f576262bbe857cbf044269603d31aaf5f84",
+    "verified_at": "2026-10-01T07:49:41+07:00",
+    "parent_id": "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "state": "READY"
   }
 ]
