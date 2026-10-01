@@ -27,25 +27,23 @@ DRIVE_FOLDER_VERIFIED_AT: 2026-09-30T22:49:48+07:00
 
 ## Current workflow
 ```yaml
-STAGE: BLOCKED
-BLOCKED_FROM_STAGE: BUILDING
+STAGE: READY_FOR_QA
 ACTIVE_ACTOR: Agent 4 — Builder
-UPDATED_AT: 2026-09-30T23:38:38+07:00
-ARTIFACT_COMMIT: 96d3348d946006a06da34cf35707e64fc6fd8f4e
-LAST_VERIFIED_COMMIT: 96d3348d946006a06da34cf35707e64fc6fd8f4e
-LAST_VERIFIED_SCOPE: Build runtime 7f0015c (runtime unchanged in later commits). Chromium 141 via Playwright, 32/32 checks in qa/build/e2e-results.json - all 32 states pixel-match storyboards (normal and reduced motion), key contract, 30 s holds with 0 animations/timers, viewports, font-failure fallback; 10 unit tests; build copy/beat audit. NOT verified - Vercel production deployment, other browsers, speech rehearsal, QA.
+UPDATED_AT: 2026-10-01T08:05:08+07:00
+ARTIFACT_COMMIT: 7c2e5f576262bbe857cbf044269603d31aaf5f84
+LAST_VERIFIED_COMMIT: 7c2e5f576262bbe857cbf044269603d31aaf5f84
+LAST_VERIFIED_SCOPE: Production deployment of runtime 7f0015c (unchanged through 7c2e5f5). Public PRODUCTION_URL serves that commit via /build-id.json and meta build-commit. Earlier local evidence remains qa/build/e2e-results.json (Chromium 141, 32/32) and 10 unit tests. Not verified by Builder in this handoff - other browsers, speech rehearsal, independent QA.
 CURRENT_CHAT_SCOPE: BUILD_ONLY
 CONTENT_ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
 DESIGN_ARTIFACT_COMMIT: ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4
 VISUAL_ARTIFACT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
-NEXT_ACTOR: Owner (Vercel access), then Agent 4 - Builder
-NEXT_ACTION: Owner re-authenticates the Vercel connector for scope ham-b6fc (team_gUB5J3AIwkqj8c4QbfWNLCgd) or names the project/scope to use. Then Builder deploys this branch as production with vercel.json settings, verifies PRODUCTION_URL serves BUILD_COMMIT via /build-id.json and meta build-commit, records Vercel identity here, refreshes 06_SCENE_RATIONALE with the URL and commit, and publishes READY_FOR_QA.
+NEXT_ACTOR: QA (Agent 5)
+NEXT_ACTION: Read 01–05, BUILD_NOTES.md, OPEN_FINDINGS and the Thai Drive rationale. Enter QA. Independently test PRODUCTION_URL against BUILD_COMMIT 7c2e5f576262bbe857cbf044269603d31aaf5f84 and deployment dpl_AVavjL6t8FGTmFksRfJ8oC545wve. OPEN_FINDINGS is empty, so there are no prior finding IDs to retest; run the 05_QA.md acceptance checks and relevant regressions. Record qa/ evidence plus QA_PASS or QA_FAIL. If /build-id.json is no longer this commit, stop and record the mismatch instead of inheriting this verification.
 REQUIRED_INPUTS: [README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, references/content-draft.md, references/scenes.json, references/source-and-claim-register.md, references/owner-artifacts.json, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, assets/manifest.md, assets/visual/, assets/fonts/, 04_BUILD.md, 05_QA.md, qa/visual-review.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
-BLOCKERS:
-  - "Vercel production deployment blocked: connector lists no teams; list_projects shows 16 projects in team_gUB5J3AIwkqj8c4QbfWNLCgd but get_project/list_deployments return 403 (re-authenticate to scope ham-b6fc). No project is linked to this repo; openai-devday-accepted-work could not be inspected so was not reused. Nothing created. Details: BUILD_NOTES.md"
-OWNER_ACTION_REQUIRED: Re-authenticate Vercel for scope ham-b6fc, or say which Vercel project/scope to deploy to
+BLOCKERS: []
+OWNER_ACTION_REQUIRED: none
 OWNER_DECISIONS:
   SCOPE: Owner confirmed Thai general audience and target 6–8 minutes. Content, Design and Visual were each run as separately owner-dispatched continuations on 2026-09-30.
   THESIS: APPROVED_A_BY_OWNER_IN_LOCAL_CONTINUATION
@@ -61,8 +59,8 @@ OWNER_DECISIONS:
 | 02_DESIGN_SYSTEM.md | Design | READY | ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4 | qa/design-review.md; qa/design-checks.json |
 | 03_VISUAL_PLAN.md + assets/manifest.md + assets/visual/ + assets/fonts/ | Visual | READY | 8334b9c4d5f49de861c893de9adba7905599ffd8 | qa/visual-review.md; qa/visual/storyboard-checks.json |
 | 04_BUILD.md | Build | FILLED | 96d3348d946006a06da34cf35707e64fc6fd8f4e | implementation choices and scene map |
-| 05_QA.md | QA | CRITERIA_READY locally | NOT_VERIFIED | no production QA |
-| BUILD_NOTES.md / src / tools / tests / vercel.json | Build | BUILT_NOT_DEPLOYED | 7f0015c2bfcb53084abf1d93b542a32d1adc6423 (runtime) | qa/build/e2e-results.json; npm test |
+| 05_QA.md | QA | CRITERIA_READY locally | NOT_VERIFIED | no production QA yet |
+| BUILD_NOTES.md / src / tools / tests / vercel.json | Build | DEPLOYED | 7c2e5f576262bbe857cbf044269603d31aaf5f84 | public /build-id.json and meta build-commit; qa/build/e2e-results.json; npm test |
 
 ## Owner-facing Drive deliverables
 | Name | Type | Actor | State | File ID | Observed URL | Source commit | Verified at |
@@ -70,42 +68,42 @@ OWNER_DECISIONS:
 | 01_KNOWLEDGE_SUMMARY.pdf | PDF | Content | READY | 1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo | https://drive.google.com/file/d/1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo/view?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
 | 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Content | READY | 11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ | https://drive.google.com/file/d/11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ/view?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
 | 03A_NARRATION_SCRIPT | Google Doc | Content | READY | 17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8 | https://docs.google.com/document/d/17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8/edit?usp=drivesdk | 2df014d1e780a3c975c71165c11fcf5d0180241b | 2026-09-30T22:53:08+07:00 |
-| 06_SCENE_RATIONALE | Google Doc | Build | DRAFT_PENDING_PRODUCTION (not READY) | 1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY | https://docs.google.com/document/d/1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY/edit?usp=drivesdk | 7f0015c2bfcb53084abf1d93b542a32d1adc6423 | 2026-09-30 (content read back) |
+| 06_SCENE_RATIONALE | Google Doc | Build | READY | 1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY | https://docs.google.com/document/d/1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY/edit?usp=drivesdk | 7c2e5f576262bbe857cbf044269603d31aaf5f84 | 2026-10-01T08:05:08+07:00 |
 
-The verified PDF/native Google Doc editions above fulfill Content delivery. Markdown authoring equivalents remain in owner-drafts/. 06_SCENE_RATIONALE exists in the recorded folder as a draft; it becomes READY after the production URL and deployed commit are added.
+The verified PDF/native Google Doc editions above fulfill Content delivery. Markdown authoring equivalents remain in owner-drafts/. 06_SCENE_RATIONALE was read back in the same folder: title, Thai per-scene rationale, BUILD_COMMIT 7c2e5f576262bbe857cbf044269603d31aaf5f84, and https://devday-agents-20260930.vercel.app.
 
 ## Vercel and build identity
 ```yaml
-VERCEL_PROJECT: UNSET
-VERCEL_PROJECT_ID: UNSET
-VERCEL_TEAM_OR_SCOPE: UNSET
-VERCEL_ORG_ID: UNSET
-VERCEL_PRODUCTION_BRANCH: UNSET
-VERCEL_ROOT_DIRECTORY: UNSET
-FRAMEWORK: UNSET
-INSTALL_COMMAND: UNSET
-BUILD_COMMAND: UNSET
-OUTPUT_DIRECTORY: UNSET
-BUILD_COMMIT: NOT_VERIFIED   # candidate source 7f0015c2bfcb53084abf1d93b542a32d1adc6423, not deployed
+VERCEL_PROJECT: devday-agents-20260930
+VERCEL_PROJECT_ID: prj_4NPj6ZjnRnzL4X25jtonsEbFLK8v
+VERCEL_TEAM_OR_SCOPE: ham-b6fc
+VERCEL_ORG_ID: team_gUB5J3AIwkqj8c4QbfWNLCgd
+VERCEL_PRODUCTION_BRANCH: project/devday-agents-20260930-a7c4
+VERCEL_ROOT_DIRECTORY: .
+FRAMEWORK: null
+INSTALL_COMMAND: npm ci
+BUILD_COMMAND: npm run build
+OUTPUT_DIRECTORY: dist
+BUILD_COMMIT: 7c2e5f576262bbe857cbf044269603d31aaf5f84
 FIX_COMMITS_BY_FINDING: {}
-SERVED_BUILD_IDENTITY_EVIDENCE: UNSET
-DEPLOYMENT_ID: UNSET
-DEPLOYMENT_ENVIRONMENT: UNSET
-DEPLOYMENT_URL: NOT_DEPLOYED_YET
-DEPLOYMENT_COMMIT: NOT_VERIFIED
-DEPLOYMENT_STATE: NOT_DEPLOYED_YET
-PREVIEW_URL: NOT_DEPLOYED_YET
-PRODUCTION_URL: NOT_DEPLOYED_YET
-URL_ACCESS_MODE: NOT_VERIFIED
-LAST_DEPLOYMENT_VERIFIED_AT: UNSET
-PRODUCTION_DEPLOYMENT_AUTHORIZATION: Build stage performs production deployment per the recorded workflow and applicable owner authorization. No deployment was performed in the Visual chat.
+SERVED_BUILD_IDENTITY_EVIDENCE: "Anonymous GET https://devday-agents-20260930.vercel.app/build-id.json on 2026-10-01T08:05:08+07:00 returned commit 7c2e5f576262bbe857cbf044269603d31aaf5f84, dirty false, ref project/devday-agents-20260930-a7c4, vercelEnv production, scenes 12, contentHash 7b55957eb7e23be7b422607cd7af9acc13094917e15ab703acfcee8ac46ff12b, Cache-Control no-store. HTML meta name=build-commit matches. Title is OpenAI DevDay 2026 and the future of agents. Provider deployment meta.githubCommitSha matches. SSO and password protection are off."
+DEPLOYMENT_ID: dpl_AVavjL6t8FGTmFksRfJ8oC545wve
+DEPLOYMENT_ENVIRONMENT: production
+DEPLOYMENT_URL: https://devday-agents-20260930-r0jvzsnlc-ham-b6fc.vercel.app
+DEPLOYMENT_COMMIT: 7c2e5f576262bbe857cbf044269603d31aaf5f84
+DEPLOYMENT_STATE: READY
+PREVIEW_URL: NOT_USED_FOR_QA
+PRODUCTION_URL: https://devday-agents-20260930.vercel.app
+URL_ACCESS_MODE: public
+LAST_DEPLOYMENT_VERIFIED_AT: 2026-10-01T08:05:08+07:00
+PRODUCTION_DEPLOYMENT_AUTHORIZATION: Build stage verified this assignment's production deployment. openai-devday-accepted-work was not reused. See BUILD_NOTES.md.
 REQUIRED_ENVIRONMENT_VARIABLES: []
 ```
 
 ## QA identity
 ```yaml
-QA_TARGET_URL: NOT_DEPLOYED_YET
-QA_DEPLOYMENT_ID: UNSET
+QA_TARGET_URL: https://devday-agents-20260930.vercel.app
+QA_DEPLOYMENT_ID: dpl_AVavjL6t8FGTmFksRfJ8oC545wve
 QA_TESTED_COMMIT: NOT_VERIFIED
 QA_REPORT_PATH: UNSET
 QA_RESULT: NOT_RUN
@@ -115,11 +113,11 @@ QA_FINDING_STATES: {}
 
 ## Current handoff
 ```yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
-LAST_HANDOFF_EVIDENCE: qa/visual-review.md; qa/visual/storyboard-checks.json; qa/visual/all-beats-contact-sheet.png; references/workflow-history.md
+LAST_HANDOFF_ARTIFACT_COMMIT: 7c2e5f576262bbe857cbf044269603d31aaf5f84
+LAST_HANDOFF_EVIDENCE: public /build-id.json; meta build-commit; deployment dpl_AVavjL6t8FGTmFksRfJ8oC545wve; 06_SCENE_RATIONALE read-back; references/workflow-history.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 REMOTE_HANDOFF: VERIFIED
 ```
 
-Preview only (not production, not QA evidence): private Claude Artifact https://claude.ai/artifact/VXFThztMRDHRmidxdp5uJb built from source 9ce7065 via tools/build/artifact.mjs. Next agent: once Vercel is re-authenticated, run `npm ci && npm run build`, deploy this branch as production, verify /build-id.json commit, then update this file.
+Also on the production alias https://devday-agents-20260930-ham-b6fc.vercel.app. Preview only (not QA evidence): private Claude Artifact https://claude.ai/artifact/VXFThztMRDHRmidxdp5uJb from source 9ce7065. This status commit does not change the served runtime. QA must test the recorded PRODUCTION_URL, not a later unverified deploy.

@@ -1,6 +1,6 @@
 # BUILD_NOTES — devday-20260930-a7c4
 
-Builder (Agent 4) record. Current deployment metadata lives in WORKFLOW_STATUS.md. **Production is not deployed: see Blockers.**
+Builder (Agent 4) record. Current deployment metadata lives in WORKFLOW_STATUS.md. Production is https://devday-agents-20260930.vercel.app serving commit 7c2e5f576262bbe857cbf044269603d31aaf5f84.
 
 ## Setup, build, run
 - Root directory: repo root. Node >=20 (built and tested on v22.22.2). No dependencies.
@@ -45,8 +45,14 @@ Source commit under test 7f0015c (runtime unchanged since; docs/evidence committ
 - Not exercised by Builder: Firefox/Safari (the S04 ring animates the CSS `r` property), real fullscreen (headless rejects it).
 - Fullscreen browser notices are browser-owned and outside the app.
 
+## Deployment
+- New project `devday-agents-20260930` (`prj_4NPj6ZjnRnzL4X25jtonsEbFLK8v`) on team `team_gUB5J3AIwkqj8c4QbfWNLCgd` (scope `ham-b6fc`). Created because no project was linked to this repository. `openai-devday-accepted-work` (`prj_ztsCZRU6IiMbuREoljidkfSWpKzV`) is a different Vite app titled "DevDay 2026: Accepted Work" and was left untouched.
+- Production deployment `dpl_AVavjL6t8FGTmFksRfJ8oC545wve` is READY. Immutable URL: https://devday-agents-20260930-r0jvzsnlc-ham-b6fc.vercel.app. Public alias: https://devday-agents-20260930.vercel.app. Also https://devday-agents-20260930-ham-b6fc.vercel.app.
+- Verified 2026-10-01T08:05:08+07:00 without signing in. `/build-id.json` commit, ref, dirty=false, vercelEnv=production, scenes=12. `<meta name="build-commit">` matches. Page title is the project title. Password and SSO protection are off. Cache-Control on `/build-id.json` is no-store.
+- Served source is 7c2e5f576262bbe857cbf044269603d31aaf5f84 (runtime unchanged since 7f0015c). A later docs-only commit does not replace that evidence until production is deployed again and `/build-id.json` is re-read.
+
 ## Blockers
-- **Vercel production deployment not done.** The connected Vercel account lists no teams; `list_projects` returns 16 projects under team `team_gUB5J3AIwkqj8c4QbfWNLCgd` (scope `ham-b6fc`), but `get_project` and `list_deployments` return 403 "You must re-authenticate to this scope". None is linked to https://github.com/Akkhadat12/OpenAI-Dev-Day. `openai-devday-accepted-work` is an unrelated-looking candidate that could not be inspected, so it was not reused and nothing was created. Recovery: owner re-authenticates the Vercel connector for that scope (or names the project/scope to use), then Builder deploys this branch as production, verifies PRODUCTION_URL serves BUILD_COMMIT via `/build-id.json` and `<meta name="build-commit">`, and hands off to QA.
+None for production identity. Independent QA has not run.
 
 ## Environment variables
 None required. Build reads `VERCEL_GIT_COMMIT_SHA`, `VERCEL_GIT_COMMIT_REF`, `VERCEL_ENV` when present (names only).
