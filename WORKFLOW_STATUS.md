@@ -27,14 +27,14 @@ DRIVE_FOLDER_VERIFIED_AT: 2026-09-30T22:49:48+07:00
 
 ## Current workflow
 ```yaml
-STAGE: READY_FOR_QA
+STAGE: QA
 BLOCKED_FROM_STAGE: UNSET
-ACTIVE_ACTOR: Agent 4 — Builder
-UPDATED_AT: 2026-10-01T07:50:00+07:00
+ACTIVE_ACTOR: Agent 5 — QA
+UPDATED_AT: 2026-10-01T01:28:34.621Z
 ARTIFACT_COMMIT: 2fe8893dc0d0ce1f4d7619d0d780e946b130abe0
 LAST_VERIFIED_COMMIT: 2fe8893dc0d0ce1f4d7619d0d780e946b130abe0
 LAST_VERIFIED_SCOPE: Production deployment of 7c2e5f576262bbe857cbf044269603d31aaf5f84. Public URL /build-id.json and meta build-commit match that SHA; deployment dpl_AVavjL6t8FGTmFksRfJ8oC545wve is READY. Runtime checks remain the Chromium 141 / Playwright run at 7f0015c (32/32 in qa/build/e2e-results.json); the only later source change is tools/build/artifact.mjs, which the production build does not run. NOT verified by Builder - independent QA, other browsers, speech rehearsal.
-CURRENT_CHAT_SCOPE: BUILD_ONLY
+CURRENT_CHAT_SCOPE: QA_ONLY
 CONTENT_ARTIFACT_COMMIT: 5c99905c18d77fdaa8bc7d8353ec6c3f1b301f57
 DESIGN_ARTIFACT_COMMIT: ab676e6cb1ee7b459ada0a4a64834526cb4f9ca4
 VISUAL_ARTIFACT_COMMIT: 8334b9c4d5f49de861c893de9adba7905599ffd8
