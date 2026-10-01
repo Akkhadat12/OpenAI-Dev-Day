@@ -121,3 +121,5 @@ BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 REMOTE_HANDOFF: VERIFIED
 ```
+
+Preview only (not production, not QA evidence): private Claude Artifact https://claude.ai/artifact/VXFThztMRDHRmidxdp5uJb built from source 9ce7065 via tools/build/artifact.mjs. Next agent: once Vercel is re-authenticated, run `npm ci && npm run build`, deploy this branch as production, verify /build-id.json commit, then update this file.

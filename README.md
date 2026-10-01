@@ -9,7 +9,7 @@ BRANCH_URL: https://github.com/Akkhadat12/OpenAI-Dev-Day/tree/project/devday-age
 PROPOSED_BRANCH: project/devday-agents-20260930-a7c4
 WORKFLOW_STATE: WORKFLOW_STATUS.md
 
-Open WORKFLOW_STATUS.md immediately after this README. Content, Design and Visual stages are complete. Current stage: READY_FOR_BUILD; next actor: Agent 4 — Builder via an owner-dispatched continuation.
+Open WORKFLOW_STATUS.md immediately after this README. Content, Design and Visual stages are complete. Content, Design, Visual and Build implementation are done. Current stage: BLOCKED (from BUILDING) only on Vercel production access; see BUILD_NOTES.md and WORKFLOW_STATUS.md.
 
 WORKFLOW_FOLDER: https://drive.google.com/drive/folders/1WcszSRTyebajZj1FuLE-wCuKehyInE8n
 WORKFLOW_FOLDER_ID: 1WcszSRTyebajZj1FuLE-wCuKehyInE8n
