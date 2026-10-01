@@ -1,0 +1,145 @@
+{
+  "verified_at": "2026-09-30T23:12:23+07:00",
+  "narration": {
+    "file_id": "17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8",
+    "parent_ids": [
+      "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h"
+    ],
+    "modified_time": "2026-09-30T15:50:42.626Z",
+    "scene_narration_matches": [
+      {
+        "id": "S01",
+        "matched": true
+      },
+      {
+        "id": "S02",
+        "matched": true
+      },
+      {
+        "id": "S03",
+        "matched": true
+      },
+      {
+        "id": "S04",
+        "matched": true
+      },
+      {
+        "id": "S05",
+        "matched": true
+      },
+      {
+        "id": "S06",
+        "matched": true
+      },
+      {
+        "id": "S07",
+        "matched": true
+      },
+      {
+        "id": "S08",
+        "matched": true
+      },
+      {
+        "id": "S09",
+        "matched": true
+      },
+      {
+        "id": "S10",
+        "matched": true
+      },
+      {
+        "id": "S11",
+        "matched": true
+      },
+      {
+        "id": "S12",
+        "matched": true
+      }
+    ],
+    "all_match": true,
+    "normalization": "Whitespace/NFC; native Google Docs date-chip export ก.ย. 10, 2569 equals canonical 10 กันยายน (2026). No semantic change."
+  },
+  "narration_metadata": {
+    "id": "17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8",
+    "title": "03A_NARRATION_SCRIPT",
+    "mime_type": "application/vnd.google-apps.document",
+    "size": null,
+    "url": "https://docs.google.com/document/d/17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8/edit?usp=drivesdk",
+    "display_url": "https://docs.google.com/document/d/17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8/edit?usp=drivesdk",
+    "file_or_folder": "file",
+    "created_time": null,
+    "modified_time": "2026-09-30T15:50:42.626Z",
+    "parent_ids": [
+      "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h"
+    ],
+    "drive_id": null,
+    "current_user_can_share": null,
+    "has_augmented_permissions": null,
+    "shared": null,
+    "permissions": null,
+    "source_visibility_status": "access_not_verified"
+  },
+  "folder_metadata": {
+    "id": "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "title": "OpenAI DevDay 2026 and the future of agents - devday-20260930-a7c4",
+    "mime_type": "application/vnd.google-apps.folder",
+    "size": null,
+    "url": "https://drive.google.com/drive/folders/1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "display_url": "https://drive.google.com/drive/folders/1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "file_or_folder": "folder",
+    "created_time": null,
+    "modified_time": null,
+    "parent_ids": [
+      "153uw4BMBT78VS6TQgGelanIzXPomkzZt"
+    ],
+    "drive_id": null,
+    "current_user_can_share": null,
+    "has_augmented_permissions": null,
+    "shared": null,
+    "permissions": null,
+    "source_visibility_status": "access_not_verified"
+  },
+  "pdfs": [
+    {
+      "id": "1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo",
+      "title": "01_KNOWLEDGE_SUMMARY.pdf",
+      "mime_type": "application/pdf",
+      "size": null,
+      "url": "https://drive.google.com/file/d/1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo/view?usp=drivesdk",
+      "display_url": "https://drive.google.com/file/d/1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo/view?usp=drivesdk",
+      "file_or_folder": "file",
+      "created_time": null,
+      "modified_time": "2026-09-30T15:51:11.557Z",
+      "parent_ids": [
+        "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h"
+      ],
+      "drive_id": null,
+      "current_user_can_share": null,
+      "has_augmented_permissions": null,
+      "shared": null,
+      "permissions": null,
+      "source_visibility_status": "access_not_verified"
+    },
+    {
+      "id": "11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ",
+      "title": "02_RESEARCH_AND_ANALYSIS.pdf",
+      "mime_type": "application/pdf",
+      "size": null,
+      "url": "https://drive.google.com/file/d/11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ/view?usp=drivesdk",
+      "display_url": "https://drive.google.com/file/d/11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ/view?usp=drivesdk",
+      "file_or_folder": "file",
+      "created_time": null,
+      "modified_time": "2026-09-30T15:51:21.914Z",
+      "parent_ids": [
+        "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h"
+      ],
+      "drive_id": null,
+      "current_user_can_share": null,
+      "has_augmented_permissions": null,
+      "shared": null,
+      "permissions": null,
+      "source_visibility_status": "access_not_verified"
+    }
+  ],
+  "scope": "Read-only input alignment and identity; no Drive writes or public-sharing audit"
+}

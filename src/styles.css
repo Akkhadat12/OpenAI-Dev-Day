@@ -1,0 +1,29 @@
+@font-face{font-family:"Noto Sans";font-weight:400;font-display:block;src:url(fonts/NotoSans-Regular.woff2) format("woff2")}
+@font-face{font-family:"Noto Sans";font-weight:500;font-display:block;src:url(fonts/NotoSans-Medium.woff2) format("woff2")}
+@font-face{font-family:"Noto Sans";font-weight:600;font-display:block;src:url(fonts/NotoSans-SemiBold.woff2) format("woff2")}
+@font-face{font-family:"Noto Sans Thai";font-weight:400;font-display:block;src:url(fonts/NotoSansThai-Regular.woff2) format("woff2")}
+@font-face{font-family:"Noto Sans Thai";font-weight:500;font-display:block;src:url(fonts/NotoSansThai-Medium.woff2) format("woff2")}
+@font-face{font-family:"Noto Sans Thai";font-weight:600;font-display:block;src:url(fonts/NotoSansThai-SemiBold.woff2) format("woff2")}
+
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071923}
+
+#viewport{position:fixed;inset:0;background:#071923;overflow:hidden}
+
+/* 1920x1080 logical stage, centered and scaled by --fit; letterbox is the same neutral field. */
+#stage{
+  position:absolute;left:50%;top:50%;width:1920px;height:1080px;margin:-540px 0 0 -960px;
+  transform:scale(var(--fit,1));transform-origin:50% 50%;
+  background:#071923;visibility:hidden;cursor:none;user-select:none;-webkit-user-select:none;
+}
+
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.scene[hidden]{display:none}
+.scene > svg{display:block;width:1920px;height:1080px}
+
+svg text{
+  font-family:"Noto Sans","Noto Sans Thai","Segoe UI",Tahoma,sans-serif;
+  font-kerning:normal;font-variant-numeric:tabular-nums;
+}
+
+/* Out of sight for everyone, never focusable: one scene description per scene change. */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}

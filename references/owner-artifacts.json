@@ -1,0 +1,45 @@
+[
+  {
+    "name": "01_KNOWLEDGE_SUMMARY.pdf",
+    "id": "1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo",
+    "url": "https://drive.google.com/file/d/1JfX1ClXB1KB_y_JEDqgolxroT7dFahuo/view?usp=drivesdk",
+    "mime": "application/pdf",
+    "pages": 3,
+    "source_commit": "2df014d1e780a3c975c71165c11fcf5d0180241b",
+    "verified_at": "2026-09-30T22:53:08+07:00",
+    "parent_id": "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "state": "READY"
+  },
+  {
+    "name": "02_RESEARCH_AND_ANALYSIS.pdf",
+    "id": "11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ",
+    "url": "https://drive.google.com/file/d/11a_d85OuGBwKL52kzorBtLxXtzhR-2mZ/view?usp=drivesdk",
+    "mime": "application/pdf",
+    "pages": 4,
+    "source_commit": "2df014d1e780a3c975c71165c11fcf5d0180241b",
+    "verified_at": "2026-09-30T22:53:08+07:00",
+    "parent_id": "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "state": "READY"
+  },
+  {
+    "name": "03A_NARRATION_SCRIPT",
+    "id": "17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8",
+    "url": "https://docs.google.com/document/d/17h2Nhd84ai12v5ccetdkq7IzOFYCMlSTLG_P6ScfYs8/edit?usp=drivesdk",
+    "mime": "application/vnd.google-apps.document",
+    "scenes": 12,
+    "source_commit": "2df014d1e780a3c975c71165c11fcf5d0180241b",
+    "verified_at": "2026-09-30T22:53:08+07:00",
+    "parent_id": "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "state": "READY"
+  },
+  {
+    "name": "06_SCENE_RATIONALE",
+    "id": "1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY",
+    "url": "https://docs.google.com/document/d/1Ykmj20z9vclVocf4UwaJ66cc4XibS4PIbuG1yGESTRY/edit?usp=drivesdk",
+    "mime": "application/vnd.google-apps.document",
+    "source_commit": "7c2e5f576262bbe857cbf044269603d31aaf5f84",
+    "verified_at": "2026-10-01T07:49:41+07:00",
+    "parent_id": "1Vu13YYkeMe28iEmiGmBwY5dgL1fxED-h",
+    "state": "READY"
+  }
+]
