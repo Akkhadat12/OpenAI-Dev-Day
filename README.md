@@ -27,7 +27,7 @@ DELIVERY_MODE: LOCAL_ZIP
 TARGET_OS: Windows
 PUBLIC_DEPLOYMENT_REQUIRED: false
 OFFLINE_AFTER_SETUP: true
-LOCAL_ZIP: Prebuilt Windows ZIP is the delivery. No public deployment is required. After one-time runtime setup the presentation runs offline. The webapp is not built in this bootstrap; package state stays NOT_BUILT until Builder.
+LOCAL_ZIP: Prebuilt Windows ZIP is the delivery. No public deployment is required. After one-time runtime setup the presentation runs offline. Package identity, the Drive file, and setup commands are in WORKFLOW_STATUS.md, BUILD_NOTES.md, and delivery/.
 
 Open this README.md first, then WORKFLOW_STATUS.md immediately after.
 Infer your role from NEXT_ACTOR and NEXT_ACTION before doing any work.

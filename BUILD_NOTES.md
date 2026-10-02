@@ -172,3 +172,16 @@ All of the following were taken from the clean extract of `20261003-b4fb-1.0.0-l
 - Thai rationale Google Doc was created in the same folder and read back: file id `1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY`, URL `https://docs.google.com/document/d/1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY/edit`. The read showed the scene notes, the package hash, and the statement that the Drive ZIP is not confirmed. Spelling fixes after that read changed 7 occurrences. The Doc does not replace a verified ZIP download.
 - No performance budget numbers beyond the checks above. No claim of a 30-second hold on every scene.
 - Puppeteer and Chrome were used only to measure. They are not required to run the package.
+
+## Drive delivery update
+
+Recorded 2026-10-03T03:23:42+07:00 after a metadata read of the coordinator upload. This replaces the “PACKAGE_FILE_ID stays unset” sentence above.
+
+- PACKAGE_FILE_ID: `1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-`
+- PACKAGE_DOWNLOAD_URL: https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk
+- Parent folder: `1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy`
+- Observed Drive fileSize: 71064
+- mimeType: application/zip
+- Title: 20261003-b4fb-1.0.0-local.zip
+- PACKAGE_SHA256 remains `a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1` for the local archive of that size. This note does not claim a second hash of the downloaded Drive bytes.
+- Trashed file `1GUkcvPagsFtHBPBnPlLCqeuSo9kUyAyz` is not the package.
