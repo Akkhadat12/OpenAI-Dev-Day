@@ -175,52 +175,67 @@ Do not solve the ordinary-copy target by making labels tiny or moving readable t
 
 ## Fillable topic design specification
 
+Concrete tokens for PROJECT_ID 20261003-b4fb. Shared contract and non-negotiable rules above stay in force. Narration in `references/scenes.md` is unchanged; this section tells Visual how to show it.
+
 ~~~yaml
-PROJECT_ID: <from status>
-CONTENT_INPUT_COMMIT: <verified SHA>
-DESIGN_VERSION: <version>
+PROJECT_ID: 20261003-b4fb
+CONTENT_INPUT_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
+DESIGN_VERSION: "1.0.0"
 WEB_LANGUAGE: English
 DOCUMENT_LANG_ATTRIBUTE: en
-DESIGN_INTENT: <how the visual language serves the thesis>
+DESIGN_INTENT: "Dark-mode builder canvas that visualizes OpenAI’s platform shift (Apps + AgentKit first, then Codex/models as fuel). Visual language borrows code-vernacular cues (indentation, brackets-as-frames, status chips) without arcade mascots or decorative chrome. Status maturity (Preview / Beta / GA / Limited beta) must be visually unmistakable — that is the thesis method (C20)."
 CANVAS: 1920x1080
 ASPECT_RATIO: "16:9"
-SAFE_AREA: "5% per edge by default; essential text/objects stay inside"
-BACKGROUND: <hex token and meaning>
-FOREGROUND: <hex token and use>
-ACCENT_PRIMARY: <hex token and semantic meaning>
-ACCENT_SECONDARY: <hex token and semantic meaning>
-MUTED: <hex token>
-FONT_PRIMARY: <font family with Latin coverage for English canvas, license/source; Thai coverage only if explicitly overridden>
-FONT_FALLBACK: <offline-safe fallback>
-TYPE_SCALE: <sizes on reference canvas; use as tokens>
-MIN_LABEL_SIZE: <default 32 logical px; justify topic exception>
-LINE_HEIGHT: <token>
-MAX_TEXT_WIDTH: <canvas fraction>
-SPACING_SCALE: <consistent values>
-OBJECT_STYLE: <geometry/material/light/edge treatment>
-DATA_ENCODING: <scale, units, categorical distinction>
-COMPOSITION_GRID: <anchors and alignments>
-MOTION_EASING: <curve and why>
-ENTRY_DURATION_MS: <default 400–700, tune for meaning>
-REVEAL_DURATION_MS: <default 500–900, tune for meaning>
-SETTLE_DURATION_MS: <default 150–300, tune for meaning>
-EXIT_DURATION_MS: <default 300–500, tune for meaning>
+SAFE_AREA: "5% per edge; essential objects/text inside"
+BACKGROUND: "#0B0B0F — near-black stage; DevDay dark-mode / code theme"
+FOREGROUND: "#F5F5F7 — primary English canvas copy and icons"
+ACCENT_PRIMARY: "#10A37F — live/platform/GA emphasis (semantic, not a logo redraw)"
+ACCENT_SECONDARY: "#F59E0B — Preview/Beta/caution status"
+MUTED: "#6B7280 — secondary structure, footnotes, limited-rollout"
+STATUS_LIMITED: "#A78BFA — Limited beta / partial rollout chip"
+FONT_PRIMARY: "Inter (Latin); package woff2 offline; license OFL"
+FONT_FALLBACK: "system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif"
+TYPE_SCALE: "Display 72 / Title 48 / Label 32 / Caption 24 (logical px on 1920×1080)"
+MIN_LABEL_SIZE: 32
+LINE_HEIGHT: "1.25 display/title; 1.35 labels"
+MAX_TEXT_WIDTH: "0.42 canvas width for ordinary copy blocks"
+SPACING_SCALE: "8 / 16 / 24 / 40 / 64"
+OBJECT_STYLE: "Flat 2D; soft 1px edge #2A2A32; rounded 12–16px cards; no skeuomorphism; thin square-bracket frames optional as structure not decoration"
+DATA_ENCODING: "Status chips use fill+label text (never color alone): GA=#10A37F, Beta/Preview=#F59E0B, Limited beta=#A78BFA, Neutral=#6B7280. Chip label ink is #0B0B0F on GA, Preview/Beta, and Limited beta fills, and #F5F5F7 on Neutral — white ink fails contrast on amber and violet."
+COMPOSITION_GRID: "12-column optical; focal left-of-center or center; partner tiles in 3-up; AgentKit components 5-up or 2×3 with one spacer"
+MOTION_EASING: "cubic-bezier(0.22, 1, 0.36, 1) — snappy settle like UI, not bounce"
+ENTRY_DURATION_MS: 500
+REVEAL_DURATION_MS: 700
+SETTLE_DURATION_MS: 200
+EXIT_DURATION_MS: 400
 HOLD: indefinite_until_presenter_input
-REDUCED_MOTION: <immediate or brief fade to same semantic endpoint>
-AUDIO_POLICY: <live narration default; no unsolicited soundtrack>
+REDUCED_MOTION: "Crossfade ≤150ms to same semantic endpoint; no slide/scale loops"
+AUDIO_POLICY: "Live Thai narration only; no soundtrack/SFX"
 POINTER_MODE: theme_adaptive_presenter_dot
-POINTER_COLOR: <theme-appropriate high-contrast color; red is not mandatory>
+POINTER_COLOR: "#22D3EE fill; #0B0B0F 1.5px outline/halo — high contrast on dark stage and cover"
 POINTER_DIAMETER_CSS_PX: 14
-POINTER_EDGE_OR_HALO: <subtle contrasting outline/halo for varied image backgrounds>
+POINTER_EDGE_OR_HALO: "1.5px near-black outline + soft 0 0 6px rgba(34,211,238,0.45)"
 COVER_ASSET_STYLE: authentic_original_image_required
-COVER_IMAGE_PLACEMENT: <dominant authentic asset, safe area, crop and hierarchy>
+COVER_IMAGE_PLACEMENT: "Centered authentic OpenAI wordmark SVG (white/mono treatment on #0B0B0F) from assets/cover/openai-wordmark-2025.svg; generous clear space; English overlay ‘OpenAI DevDay 2025’ below mark within safe area; fallback assets/cover/openai-blossom-2025.svg alone if wordmark fails — never combine blossom+wordmark; never AI-generate logo"
 ~~~
 
-Defaults are starting points, not performance claims or requirements to animate every element. Adjust based on rehearsal and document decisions.
+Chip ink is a contrast completion of the fill tokens, required by AC-014. Fills stay the semantic colors above. Approximate WCAG contrast of `#F5F5F7` on `#F59E0B` and on `#A78BFA` is below 4.5:1; `#0B0B0F` on those fills clears it. Neutral `#6B7280` takes light ink.
+
+Caption 24 is for non-claim structure only (bracket ticks, hairline rules). Every word that carries a name, status, number, or footnote is a label at ≥32 logical px. Do not shrink copy to satisfy the 0–8 word target.
 
 ### Hierarchy and composition
 
-Describe dominant focal size, supporting object limits, placement, contrast, safe-area boundaries, and how an eye should move through a reveal. Make English labels, numerals and symbols legible. Thai glyph/diacritic checks apply to owner editions or an explicitly recorded canvas-language exception. Avoid brand-like decorative chrome.
+The stage is 1920×1080, letterboxed with a neutral band (`#0B0B0F` or the same near-black) when the viewport is not 16:9. Do not stretch or crop essential objects.
+
+Safe area is 5% per edge: 96 px left/right, 54 px top/bottom. All essential objects and text stay inside that rectangle. Optical grid is 12 columns inside the safe area, gutter 24. Ordinary copy blocks stay within 0.42 of canvas width (about 806 px). A chip row or 3-up tile row may be wider than that because it is the diagram; each chip’s own text stays a short label, not a paragraph.
+
+Dominant focal object is about 40–55% of canvas height (about 432–594 px). At most three supporting objects are visible in a single beat. Leave large negative space. The eye moves focal object → one relationship (chip or the single stack arrow) → supporting labels. One focal motion at a time.
+
+Placement is center for S01 and for symmetrical maps (S03, S07, S09). Other scenes may sit the focal card left-of-center, with support to the right or below, still inside the safe area.
+
+Cards are flat, 12–16 px radius, 1 px edge `#2A2A32`. Optional square-bracket frames are structure (a runtime boundary, an indentation cue), drawn in `#6B7280` or `#2A2A32`, never mascots, glow, or chrome. No visible navigation, scene numbers, progress, hints, or watermarks.
+
+English only on the canvas and in semantic/alt text. Set the presentation root to `lang="en"`. Proper names stay in their authentic Latin form (OpenAI, ChatGPT, Apps SDK, MCP, AgentKit, ChatKit, Codex, Coursera, Canva, Zillow, GPT-5 Pro, Sora 2). Thai stays in narration and owner documents.
 
 ### Medium decision rules
 
@@ -231,6 +246,8 @@ Describe dominant focal size, supporting object limits, placement, contrast, saf
 | Real image/video | Authentic evidence/context matters | Crop or generation creates a false factual implication |
 | 3D/WebGL | Spatial structure, scale, or physical mechanism needs depth | A flat visual communicates equally well |
 | Hybrid | Each layer has a distinct explanatory role | Layers compete for attention |
+
+Topic application: every scene S02–S10 is a flat 2D diagram plus status chips where maturity is the point. No 3D or WebGL. No chart for the company-reported 10× figure — a chart would imply an audited series. Partner tiles use authentic wordmarks only if Visual later has rights-clear asset files; otherwise the essential text labels from `references/scenes.md`. S01 is the authentic wordmark, not an illustration.
 
 ### Motion grammar
 
@@ -244,7 +261,21 @@ HOLD: remain stable, silent, and inspectable for as long as needed.
 EXIT: transition only after deliberate presenter advance.
 ~~~
 
-Static scenes may enter directly into HOLD. If several reveal beats exist, each reaches its own stable hold before the next beat.
+Topic timings, all on `cubic-bezier(0.22, 1, 0.36, 1)`:
+
+| Phase | Duration | Job on this topic |
+|---|---|---|
+| ENTRY | 500 ms | Focal card, pillar, or cover title arrives. S01 wordmark is already visible at t=0. |
+| REVEAL | 700 ms | One relationship: next pillar, next partner tile, next status chip, Preview→GA chip, or the MCP stack arrow. |
+| SETTLE | 200 ms | Motion ends on the semantic endpoint. Chips show final fill and label. |
+| HOLD | indefinite | No drift, pulse, particle, or auto-advance. Presenter may pause narration here. |
+| EXIT | 400 ms | After deliberate advance only. |
+
+Spacebar during active motion completes/settles that beat and does not skip the scene. Spacebar in hold reveals the next beat, or advances at the final beat. Repeated keys must not skip beats. R cancels timers and returns to the S01 initial state with the authentic wordmark (or the blossom fallback if the wordmark failed) already visible.
+
+Reduced motion (AC-012): crossfade ≤150 ms to the same endpoint. No slide, no scale loop. Status words, the MCP label, and the cover mark are present at the endpoint. Holds stay presenter-controlled.
+
+Static scenes may enter directly into HOLD. Multi-beat scenes (S03, S04, S05, S07, S08, S10) reach a stable hold after each beat before the next reveal.
 
 ### Hidden keyboard contract
 
@@ -258,6 +289,64 @@ Use this shared default unless a recorded owner preference requires a consistent
 | F — optional | Request/exit browser fullscreen from a deliberate user gesture, if implemented |
 
 Spacebar and R are the only mandatory controls. Left Arrow and F are optional conveniences; their absence is not a defect. No other keys are required by the default contract. Spacebar alone must support the complete forward narration flow. Clicking visual objects is optional. No shortcut glyphs or instructions appear on the canvas. Browser-owned fullscreen messages cannot be removed by the app; wait for them to clear before recording. Ignore text-entry targets and modifier combinations; do not intercept browser shortcuts. Repeated keys must not skip scenes unpredictably. Reduced motion uses the same input semantics.
+
+Optional `P` may show or hide the presenter dot. Document `P` only in README.md / BUILD_NOTES.md, off the canvas. `P` is not required for forward flow. Absence of `P` is not a defect.
+
+### Ordinary copy lock
+
+Use these ordinary strings from `references/scenes.md`. Do not paraphrase them on the canvas and do not add Thai.
+
+| Scene | Ordinary copy | Ordinary words | Essential labels (excluded) |
+|---|---|---|---|
+| S01 | OpenAI DevDay 2025 | 3 | NONE |
+| S02 | Software runs in chat | 4 | NONE |
+| S03 | Four pillars | 2 | Apps \| Agents \| Codex \| Models/API |
+| S04 | Apps SDK · Preview | 3 | MCP |
+| S05 | Partner demos | 2 | Coursera · Canva · Zillow |
+| S06 | AgentKit | 1 | NONE |
+| S07 | Status matters | 2 | Builder Beta \| ChatKit GA \| Evals GA \| Guardrails \| Connectors Limited beta |
+| S08 | Codex is GA | 3 | Slack · SDK · Admin |
+| S09 | API fuel | 2 | GPT-5 Pro \| Sora 2 \| mini −70%/−80% |
+| S10 | Platform first | 2 | Apps · Agents · Codex |
+
+S07’s total is higher because the chips are the evidence. Those strings stay essential labels, not a second paragraph. Inventory every reveal state in `03_VISUAL_PLAN.md` (AC-006), including the brief S08 “Preview” chip before it settles to “GA”.
+
+### Scene guidance (S01–S10)
+
+Word proposals match `references/scenes.md`. This table guides Visual; it does not rewrite narration.
+
+| Scene | Medium | Status chips | Essential labels | Design note | Pointer |
+|---|---|---|---|---|---|
+| S01 | Authentic wordmark on `#0B0B0F` | None | NONE | Non-negotiable cover. Wordmark visible at t=0 and on every R reset. Overlay “OpenAI DevDay 2025” below the mark, Title 48, inside the safe area. Alt (English): “Official OpenAI wordmark for OpenAI DevDay 2025 cover.” | Cyan dot plus 1.5 px `#0B0B0F` outline on both the white mark and the near-black field. |
+| S02 | 2D chat surface inside a bracket frame | None. Do not mark this metaphor GA. | NONE | Focal frame ~40–55% height. The frame means “software runs in chat,” not a computer-science OS. | Outline separates the dot from `#F5F5F7` edges. |
+| S03 | 2D four-column map | None on the map | Apps, Agents, Codex, Models/API at ≥32 px | Reveal one pillar per beat (Apps → Agents → Codex → Models/API). Columns are a story spine, not a stepper. No arrows between pillars. | Dot sits in the dark gaps; outline keeps it visible on light type. |
+| S04 | 2D stack | Preview chip mandatory on the Apps SDK hold: fill `#F59E0B`, label `#0B0B0F`, text “Preview” | MCP | The word “Preview” is the chip inside the ordinary phrase, not a second caption. One subordinate content arrow, Apps SDK → MCP, stroke `#6B7280` or `#F5F5F7`, 2 px, arrowhead only. No “Built on” words. Do not use GA green. Directory is not day-one GA (C05). | Dark outline required when the dot crosses the amber chip. |
+| S05 | 2D 3-up tiles | None | Coursera · Canva · Zillow | Sequential tiles. Inline vs fullscreen is two frame sizes, not extra words. Text names unless an authentic partner asset is later provenanced. Illustrative, not exclusive. | Recheck outline contrast if a real wordmark is introduced. |
+| S06 | 2D umbrella over five empty slots | None yet | NONE | Focal word “AgentKit”. Empty slots are geometry only so S07 can name them. Do not imply the kit solves every agent problem. | Dark stage; cyan fill is enough, outline still on. |
+| S07 | 2D component grid | Non-negotiable. Builder = Beta `#F59E0B`. ChatKit = GA `#10A37F`. Evals = GA `#10A37F`. Connectors = Limited beta `#A78BFA`. Guardrails = name only on Neutral `#6B7280` — no Preview, Beta, GA, or Limited beta word. | Exact strings in the copy lock | Prefer 2×3 with one spacer so “Limited beta” stays ≥32 px inside the safe area. 5-up only if nothing overflows or shrinks. One component per beat, then a hold that shows the contrast. Do not upgrade any beta item to GA. | Outline is required on green, amber, and violet fills. |
+| S08 | 2D chip transition plus three marks | Settled chip is GA. Reveal may morph Preview (amber) → GA (green). No arrow. | Slack · SDK · Admin | “GA” is the chip inside “Codex is GA”, one instance in the settled hold. If the 10× mark is shown, it is a ≥32 px muted essential footnote reading `10×` and `OpenAI-reported`, not a chart and not a second title. Plan-tier gates stay in narration. | Outline on the green chip. |
+| S09 | 2D three cards | None. Do not invent a GA chip for model cards. | GPT-5 Pro \| Sora 2 \| mini −70%/−80% | Cards under the ordinary line “API fuel”. Percentages stay on the mini card only, as the vendor comparison already in the label. No dollar prices. Narration carries the “OpenAI claim” qualifier; do not add that phrase on canvas. | Dark cards; standard cyan dot. |
+| S10 | 2D three paths | Apps path keeps Preview. Codex path keeps GA. Agents path has no single maturity chip (ChatKit/Evals are GA; other parts are not). | Apps · Agents · Codex | Ordinary line is only “Platform first”. The closing sentence stays spoken. No revenue or monetization dates. | Same chip-outline rule as S04 and S08. |
+
+### Cover asset
+
+Primary file: `assets/cover/openai-wordmark-2025.svg` (see `assets/cover/PROVENANCE.md` and `references/cover-asset.md`). The file is the official wordmark lockup, including the symbol that is part of that SVG. Use the file whole. Do not trace, redraw, or generate a substitute.
+
+Mono treatment: inline the SVG and set `fill: #F5F5F7` in CSS so path geometry stays the downloaded file. A build-time `fill="#F5F5F7"` on the existing paths is allowed only if inline CSS cannot reach them. Do not change path data.
+
+Composition: group optically centered, wordmark about 36% of canvas width, at least 64 px clear space, overlay one line below with a 40 px gap, all inside the safe area. The wordmark is fully opaque in the S01 initial state and immediately after R, including reduced motion. The title may enter over 500 ms (or crossfade ≤150 ms under reduced motion).
+
+Fallback: `assets/cover/openai-blossom-2025.svg` alone, same white treatment and the same overlay, if the wordmark file fails to load. Never show both files. If both fail, stop and report an asset blocker. Do not draw stand-in lettering shaped like the logo.
+
+### Presenter pointer tokens
+
+Behavior rules in the next section stay mandatory. Topic paint:
+
+- Fill `#22D3EE`, diameter 14 CSS px, hotspot-centered.
+- 1.5 px outline `#0B0B0F` plus shadow `0 0 6px rgba(34,211,238,0.45)`.
+- The outline is what keeps the dot readable on the white wordmark (S01) and on GA, Preview, and Limited beta chips (S04, S07, S08, S10).
+- `pointer-events: none`, `aria-hidden="true"`, no lag, trail, or pulse.
+- Visible only while the mouse is inside the stage; native cursor hidden only where the dot is working.
 
 ## Presenter pointer and authentic first cover
 
@@ -277,17 +366,38 @@ The owner selected LOCAL_ZIP, a presenter pointer whose color suits the theme, a
 
 | Decision ID | Requirement | Topic choice | Reason tied to narration | Verified constraint |
 |---|---|---|---|---|
-| DS01 | <rule> | <token/pattern> | <why> | <check> |
+| DS01 | Stage theme | Background `#0B0B0F`, foreground `#F5F5F7`, card edge `#2A2A32` | The spoken story is a builder briefing; a code-dark stage keeps the voice primary and gives the white wordmark a field | AC-005; `references/cover-asset.md` allows white/mono on dark |
+| DS02 | Latin UI type | Inter, OFL, Latin woff2 packaged offline at `assets/fonts/` (not vendored in this commit); fallback `system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif` | Canvas copy is English. Thai narration does not require a Thai webfont on the stage | AC-021, AC-024 |
+| DS03 | Minimum label size | 32 logical px for every claim-bearing string; Caption 24 is non-claim structure only | Status words are the point of S07 and must stay readable | AC-006; do not shrink labels to hit 0–8 |
+| DS04 | Status chip encoding | Fill plus English status word. GA `#10A37F`, Preview/Beta `#F59E0B`, Limited beta `#A78BFA`, Neutral `#6B7280`. Ink `#0B0B0F` on the three status fills; `#F5F5F7` on Neutral | C20: do not sell beta as GA. Color alone fails AC-014, and white ink fails contrast on amber and violet | AC-006, AC-014; scenes.md S07 |
+| DS05 | S04 Preview chip | Amber “Preview” chip is present in the Apps SDK settled hold | Narration states preview on the day, and the public directory is later (C05) | scenes.md S04; C02, C05, C20 |
+| DS06 | S07 Guardrails | Name only on a Neutral chip. No Preview, Beta, GA, or Limited beta word | Essential labels give Guardrails no maturity token. C20’s GA list is ChatKit, Evals, Codex, and shipped APIs | scenes.md S07; C09, C20 |
+| DS07 | S07 Connectors | Violet chip, label “Limited beta” | Connector Registry rollout is partial, not universal | C10 |
+| DS08 | Pointer | `#22D3EE` 14 CSS px, 1.5 px `#0B0B0F` outline, halo `0 0 6px rgba(34,211,238,0.45)` | Presenter dot must read on the dark stage, the white wordmark, and the status fills | AC-022 |
+| DS09 | Cover path | `assets/cover/openai-wordmark-2025.svg`, CSS fill `#F5F5F7`, centered, overlay “OpenAI DevDay 2025” | S01 and R need one authentic OpenAI mark. Overlay is the 3-word ordinary line already in scenes.md | AC-023; `assets/cover/PROVENANCE.md` |
+| DS10 | Cover fallback | `assets/cover/openai-blossom-2025.svg` alone if the wordmark fails | Brand note forbids stacking blossom and wordmark | `references/cover-asset.md` |
+| DS11 | No generated logo | Do not redraw, trace, or AI-generate the mark. Do not edit path geometry | Cover authenticity is the reset target | AC-023 |
+| DS12 | No Thai on canvas | `lang=en`. Alt and accessible names are English. Thai remains narration and owner editions | Spoken script is Thai; the stage is English | AC-024 |
+| DS13 | Copy lock | Ordinary strings are the scenes.md proposals only | Narration carries explanation. Extra canvas sentences would break 0–8 and compete with the voice | AC-006 |
+| DS14 | Content arrow | One arrow only: S04 Apps SDK → MCP. No arrows on other scenes. S08 Preview→GA is a chip fill/label change | The arrow’s job is the stack dependency. A chevron between pillars or statuses would look like navigation | AC-007 |
+| DS15 | Partner marks | Text labels Coursera, Canva, Zillow unless Visual later adds a provenanced authentic asset | Named demos are the evidence. Invented logos are not | C04; scenes.md S05 |
+| DS16 | Codex metric | Optional footnote `10×` + `OpenAI-reported` at ≥32 px in `#6B7280`. Not a chart | The figure is company-reported (C13). Narration already asks for a footnote | scenes.md S08 factual boundary |
+| DS17 | Model cards | No dollar prices. Mini percentages only as the existing essential label | Prices were excluded pending re-verification. Percents are vendor claims; narration qualifies them | C15, C17; scenes.md S09 |
+| DS18 | Motion | 500 / 700 / 200 / 400 ms, `cubic-bezier(0.22, 1, 0.36, 1)`, hold until input | Timing follows the presenter, not an autoplay keynote | AC-009, AC-010 |
+| DS19 | Reduced motion | Crossfade ≤150 ms to the same endpoint, including the same chip text and a visible cover mark | Meaning must survive without slide or scale | AC-012 |
+| DS20 | Keys | Spacebar and R mandatory. Left Arrow and F optional. P optional and off-canvas only | Forward narration is Spacebar. R returns to the wordmark | AC-008, AC-023 |
+| DS21 | Medium | Flat 2D diagrams and chips. No 3D/WebGL, no soundtrack, no SFX | A flat stack and chips carry Apps, AgentKit, and status. Audio is the live Thai voice | AC-009, AC-013 |
+| DS22 | S10 paths | Apps keeps Preview, Codex keeps GA, Agents gets no single status chip | Closing line says platform first and every maturity must stay labeled. Agents are mixed | C19, C20; scenes.md S10 |
+| DS23 | S01 visibility | Wordmark fully opaque in the initial state and on R, before any title animation | The authentic asset has to be the first thing shown, not a fade-in from empty | AC-023 |
+| DS24 | Font file timing | Inter woff2 is specified here and packaged later by Visual/Builder. Missing font file does not block READY_FOR_VISUAL | Design records the offline face; the ZIP is a build deliverable | AC-021 later |
 
-The non-negotiable rules stay in force. If an owner explicitly changes a rule, record the instruction, consequence, and affected files in status; do not silently add exceptions.
+The non-negotiable rules stay in force. If an owner explicitly changes a rule, record the instruction, consequence, and affected files in status; do not silently add exceptions. No owner exception is recorded for canvas language, copy budget, clean canvas, or the authentic cover. Chip label ink (DS04) is a contrast completion, not a new semantic color.
 
 ## Exit criteria and handoff
 
-- Tokens, hierarchy, canvas behavior, font coverage, motion grammar, medium rules, hidden keys, theme-adaptive pointer and authentic cover composition are specified concretely.
-- Ordinary scene copy targets 0–8 words; essential chart/data label exclusions are minimal, justified, and truth-preserving.
-- All hold states are stable; reduced motion preserves meaning.
-- Forbidden UI/navigation arrows remain absent; any explanatory content arrows have a minimal documented semantic role and cannot resemble controls.
+- Tokens, hierarchy, canvas behavior, Inter Latin coverage, motion grammar, medium rules, hidden keys, cyan pointer, and authentic S01 wordmark composition are specified for this topic.
+- Ordinary copy stays on the scenes.md strings (0–8 words). S07 chip text and the other essential labels are the justified exclusion. S07 status chips and the S01 authentic cover are non-negotiable.
+- Holds are stable until presenter input. Reduced motion crossfades ≤150 ms to the same endpoint.
+- UI and navigation arrows stay absent. The only explanatory content arrow is S04 Apps SDK → MCP.
 - Publish artifacts then status: STAGE=READY_FOR_VISUAL; NEXT_ACTOR=Agent 3 — Visual Director.
 - NEXT_ACTION: “Read 01_CONTENT.md, 02_DESIGN_SYSTEM.md, 04_BUILD.md and 05_QA.md. Fill 03_VISUAL_PLAN.md scene by scene, including assets, reveal/settle/hold states, word counts, and factual boundaries. Do not build yet.”
-
-
