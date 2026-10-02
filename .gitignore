@@ -5,3 +5,6 @@ dist/
 .env.*
 !.env.example
 __pycache__/
+.run/
+dist/
+delivery/staging/

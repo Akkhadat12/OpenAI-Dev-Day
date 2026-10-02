@@ -177,49 +177,58 @@ Do not create another folder, change a factual claim without Content review or r
 ## Fillable implementation choices
 
 ~~~yaml
-PROJECT_ID: <from status>
-CONTENT_INPUT_COMMIT: <verified SHA>
-DESIGN_INPUT_COMMIT: <verified SHA>
-VISUAL_INPUT_COMMIT: <verified SHA>
-FRAMEWORK: <chosen>
-RUNTIME_VERSION: <Builder environment>
-PACKAGE_MANAGER: <name/version>
-LOCKFILE_PATH: <repo-relative path>
-INSTALL_COMMAND: <Builder setup only>
-DEV_COMMAND: <actual>
-BUILD_COMMAND: <Builder command>
-OUTPUT_DIRECTORY: <actual static output>
-APP_ENTRY_PATH: <path>
-SCENE_DATA_PATH: <path>
+PROJECT_ID: 20261003-b4fb
+CONTENT_INPUT_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
+DESIGN_INPUT_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
+VISUAL_INPUT_COMMIT: 48939cfea75498c5d1948045bd0b1a8c38a1078c
+FRAMEWORK: static HTML, CSS, and JavaScript with no runtime framework
+RUNTIME_VERSION: Python 3.12.3 on the Linux build host for serve.py; presentation itself has no server runtime
+PACKAGE_MANAGER: none
+LOCKFILE_PATH: NOT_APPLICABLE
+INSTALL_COMMAND: none for the presentation; Windows owners install Python 3 once from https://www.python.org/downloads/
+DEV_COMMAND: python3 delivery/serve.py --serve --app <staged app dir> --state <state.json> --project 20261003-b4fb --version 1.0.0 --host 127.0.0.1
+BUILD_COMMAND: python3 delivery/assemble.py --commit <BUILD_COMMIT> --repo . --output delivery/packages/20261003-b4fb-1.0.0-local.zip
+OUTPUT_DIRECTORY: delivery/packages/20261003-b4fb-1.0.0-local.zip
+APP_ENTRY_PATH: src/index.html
+SCENE_DATA_PATH: src/scenes.js
 ASSET_MANIFEST_PATH: assets/manifest.md
-CANVAS_STRATEGY: <fit/letterbox>
-STATE_MODEL: <scene/beat/phase/cancellation>
-ANIMATION_ENGINE: <chosen and reason>
-REDUCED_MOTION_STRATEGY: <same endpoints>
-WEBGL_FALLBACK: <behavior or NOT_APPLICABLE>
-TARGET_BROWSERS: <actual planned versions/platforms>
+CANVAS_STRATEGY: 1920x1080 stage scaled with transform to fit the viewport; letterbox bands use #0B0B0F; the stage is not stretched
+STATE_MODEL: scene index, beat index, phase hold or motion; a generation token cancels timers on R, Left, and settle
+ANIMATION_ENGINE: CSS transitions; entry 500ms plus 200ms settle (700ms total), reveal 700ms plus 200ms settle (900ms total), exit 400ms; easing cubic-bezier(0.22, 1, 0.36, 1)
+REDUCED_MOTION_STRATEGY: the same beats and endpoints; CSS variables collapse entry, reveal, and exit to 150ms and transforms are removed
+WEBGL_FALLBACK: NOT_APPLICABLE
+TARGET_BROWSERS: current Chromium, Firefox, and Edge on Windows for the owner; the build host verifies Chromium or Firefox only when that browser is installed
 WEB_LANGUAGE: English
 DOCUMENT_LANG_ATTRIBUTE: en
 OWNER_DOCUMENT_LANGUAGE: Thai
 QUICK_START_LANGUAGE: Thai
-PERFORMANCE_TARGETS: <targets and measurement conditions>
-LOCAL_RUNTIME: <Python 3 default or documented Node.js alternative>
-LOCAL_RUNTIME_TESTED_VERSION: <actual>
-WINDOWS_RUNTIME_PREREQUISITE: <one-time installation and official setup instructions>
+PERFORMANCE_TARGETS: no continuous animation loop during hold; pointer tracking is a pointermove handler with no trail; scene changes cancel the previous timer. Measured values belong in BUILD_NOTES.md and are not estimated here.
+LOCAL_RUNTIME: Python 3 standard library http.server via delivery/serve.py
+LOCAL_RUNTIME_TESTED_VERSION: Python 3.12.3
+WINDOWS_RUNTIME_PREREQUISITE: Install Python 3 once from https://www.python.org/downloads/ and enable Add python.exe to PATH. START.bat accepts the py -3 launcher or python on PATH.
 SERVER_BIND: 127.0.0.1
 OFFLINE_AFTER_SETUP: true
-POINTER_IMPLEMENTATION_PATH: <path>
-COVER_ASSET_ID: <verified authentic ID>
+POINTER_IMPLEMENTATION_PATH: src/app.js and src/styles.css (#pointer)
+COVER_ASSET_ID: assets/cover/openai-wordmark-2025.svg
 PACKAGE_ASSEMBLY_PATH: delivery/
 PACKAGE_MANIFEST_PATH: delivery/manifest.json
-PACKAGE_VERSION: <unique version>
+PACKAGE_VERSION: 1.0.0
 ~~~
 
 ### Scene implementation map
 
 | Scene ID | Component/runtime path | Content/claim IDs | Assets | Beat/hold implementation | Pointer/cover check | Fallback | Evidence |
-|---|---|---|---|---|---|---|---|
-| S01 | <path> | <IDs> | <authentic cover asset> | <states> | <initial/reset cover and contrast> | <authentic available fallback> | <paths> |
+|---|---|---|---|---|---|---|---|---|
+| S01 | src/index.html #scene-S01 | C01 | assets/cover/openai-wordmark-2025.svg inlined; blossom file packaged | Beat 0 wordmark already opaque. Beat 1 title. Instant entry. R returns to beat 0. | Cyan dot, 1.5px #0B0B0F outline, on the light mark and the dark field | Blossom alone if the wordmark has no path data. No drawn substitute if both fail. | delivery/check_canvas.py |
+| S02 | src/index.html #scene-S02 | C02, C18, C19 | none | Beat 0 bracket frame and mute bars. Beat 1 line. | Outline on #F5F5F7 type and #6B7280 brackets | Code-drawn. Font stack falls back to system-ui. | delivery/check_canvas.py |
+| S03 | src/index.html #scene-S03 | C01, C18 | none | Title, then Apps, Agents, Codex, Models/API. No arrows. | Dot in the dark gaps | Code-drawn | delivery/check_canvas.py |
+| S04 | src/index.html #scene-S04 | C02, C03, C05, C20 | none | Empty card, then Apps SDK plus amber Preview, then MCP and one downward arrow | Outline required on the amber chip | Code-drawn. Arrow stays on the reduced-motion hold. | delivery/check_canvas.py |
+| S05 | src/index.html #scene-S05 | C04, C05 | none | Title, Coursera, Canva, Zillow, then the Zillow inner frame becomes the large one | Standard cyan dot on dark cards | Text names. No partner logos are fetched. | delivery/check_canvas.py |
+| S06 | src/index.html #scene-S06 | C06, C19 | none | AgentKit, then the arc and five empty slots | Cyan dot on the dark stage, outline on | Code-drawn | delivery/check_canvas.py |
+| S07 | src/index.html #scene-S07 | C07, C08, C09, C10, C20 | none | Title, then Builder Beta, ChatKit GA, Evals GA, Guardrails name only, Connectors Limited beta | Outline on green, amber, violet, and neutral | Code-drawn. Words travel with the fills. | delivery/check_canvas.py |
+| S08 | src/index.html #scene-S08 | C11, C12, C13, C20 | none | Empty card, Preview, then GA replaces Preview, then Slack, SDK, Admin, then the 10× footnote | Outline on both chips | Code-drawn. Preview is removed before GA is shown. No chart. | delivery/check_canvas.py |
+| S09 | src/index.html #scene-S09 | C15, C16, C17, C19 | none | API fuel, GPT-5 Pro, Sora 2, mini with −70% and −80% | Standard cyan dot | Code-drawn. No prices and no GA chips. | delivery/check_canvas.py |
+| S10 | src/index.html #scene-S10 | C19, C20, C05, C07, C08, C11 | none | Platform first, Apps Preview, Agents with no chip, Codex GA. Spacebar on the final hold does nothing. | Outline on Preview and GA | Code-drawn | delivery/check_canvas.py |
 
 ## Required local ZIP contents and launch behavior
 

@@ -38,8 +38,8 @@ Use the five specifications on this branch and repo-relative paths.
 GitHub is the canonical agent workspace. Drive contains owner-facing editions.
 Only Agent 1 creates this run's topic folder; later agents reuse its exact recorded ID.
 BOOTSTRAP_MODE=FRESH records this assignment's origin. A branch-URL continuation never creates a new run or restarts this one.
-Setup/build/run instructions: NOT_CREATED_YET (added by Builder)
-Presentation keyboard guide: NOT_CREATED_YET (added by Builder)
+Setup/build/run instructions: see BUILD_NOTES.md and delivery/README_TH.md. The owner quick-start in the ZIP is Thai. Ordinary launch uses START.bat after one-time Python 3 setup. No npm install and no public deploy.
+Presentation keyboard guide: Spacebar advances (settles the active beat first). R returns to the S01 cover initial state. Left Arrow shows the previous scene's final hold. F requests or exits fullscreen. P shows or hides the presenter dot. None of these controls are drawn on the canvas.
 
 ## Continuation prompt
 

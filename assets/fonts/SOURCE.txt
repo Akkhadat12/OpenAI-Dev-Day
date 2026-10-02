@@ -1,0 +1,14 @@
+Inter Latin subset, packaged for offline use.
+
+Files:
+- inter-latin-400-normal.woff2 (weight 400, regular)
+- inter-latin-500-normal.woff2 (weight 500, medium)
+
+Distribution downloaded on 2026-10-03:
+- https://cdn.jsdelivr.net/fontsource/fonts/inter@5.2.8/latin-400-normal.woff2
+- https://cdn.jsdelivr.net/fontsource/fonts/inter@5.2.8/latin-500-normal.woff2
+
+Upstream project: The Inter Project Authors, https://github.com/rsms/inter
+License: SIL Open Font License, Version 1.1. Full text is OFL.txt in this directory.
+The license notice ships with the font files. It is not drawn on the audience canvas.
+The presentation does not fetch fonts at runtime.
