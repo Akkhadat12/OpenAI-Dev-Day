@@ -29,15 +29,15 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: READY_FOR_BUILD
+STAGE: BUILDING
 BLOCKED_FROM_STAGE: null
 ACTIVE_ACTOR: Agent 4 — Builder
-UPDATED_AT: 2026-10-03T02:27:32+07:00
+UPDATED_AT: 2026-10-03T02:29:12+07:00
 ARTIFACT_COMMIT: 48939cfea75498c5d1948045bd0b1a8c38a1078c
 LAST_VERIFIED_COMMIT: 48939cfea75498c5d1948045bd0b1a8c38a1078c
 LAST_VERIFIED_SCOPE: Visual plan complete — S01–S10 scene specs, cue maps, word counts, status chips, authentic cover wordmark, asset manifest. Webapp not built.
 NEXT_ACTOR: Agent 4 — Builder
-NEXT_ACTION: "Read 01–05 and the asset manifest. Fill 04_BUILD.md's implementation choices, build the planned web presentation, record BUILD_NOTES.md and verified package metadata, and create 06_SCENE_RATIONALE in the exact recorded topic folder. Assemble the prebuilt LOCAL_ZIP with launchers, authentic cover and theme-adaptive pointer. Record BUILD_COMMIT, manifest, PACKAGE_SHA256 and observed package download identity. Prepare independent clean-extraction/offline QA and record any real packaging/delivery blocker."
+NEXT_ACTION: "Build the S01–S10 static presentation from 01–05 and assets/manifest.md. Fill 04_BUILD.md implementation choices and the scene map. Assemble the prebuilt LOCAL_ZIP with launchers, authentic cover, vendored Inter, and theme-adaptive pointer. Record BUILD_NOTES.md, BUILD_COMMIT, manifest, and PACKAGE_SHA256. Create 06_SCENE_RATIONALE in OWNER_DRIVE_FOLDER_ID and upload the ZIP only when Drive write is verified. Do not set READY_FOR_QA without PACKAGE_FILE_ID."
 REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md, assets/manifest.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
