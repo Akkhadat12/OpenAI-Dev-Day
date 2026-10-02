@@ -29,18 +29,18 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: READY_FOR_QA
+STAGE: QA_PASS
 BLOCKED_FROM_STAGE: null
 ACTIVE_ACTOR: Agent 5 — QA Acceptance
-UPDATED_AT: 2026-10-03T03:23:42+07:00
-ARTIFACT_COMMIT: 645dfc0ed8171c704318fb3e3e67e361f04af95f
+UPDATED_AT: 2026-10-03T03:41:00+07:00
+ARTIFACT_COMMIT: 222c812848695bd769241f020538f6bbe8d6193d
 LAST_VERIFIED_COMMIT: 55f8a78dbdb21b349a224968bfffa247e15d5e41
-LAST_VERIFIED_SCOPE: Extracted local ZIP smoke on Linux loopback, plus Drive metadata for 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- (application/zip, 71064 bytes, parent 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy). Windows launchers NOT_RUN.
-NEXT_ACTOR: Agent 5 — QA Acceptance
-NEXT_ACTION: "Read 01–05, BUILD_NOTES, OPEN_FINDINGS, package manifest and Thai rationale. Independently download/extract the exact PACKAGE_SHA256 archive, verify source identity, run its loopback payload offline, retest findings and regressions, and record actual environment/Windows verification limits. Return QA_PASS or QA_FAIL with evidence."
+LAST_VERIFIED_SCOPE: Independent QA of the extracted ZIP on Linux loopback (package SHA-256 a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1). Windows launchers NOT_RUN. Report qa/20261003-b4fb-qa-001/report.md.
+NEXT_ACTOR: Owner — Final review/rehearsal and Windows smoke
+NEXT_ACTION: "Owner downloads PACKAGE from Drive, runs START.bat/STOP.bat on Windows, rehearses S01–S10, then confirm FINAL_REVIEW."
 REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md, assets/manifest.md]
 OPEN_FINDINGS: []
-QA_FINDINGS_REPORT_PATH: UNSET
+QA_FINDINGS_REPORT_PATH: qa/20261003-b4fb-qa-001/report.md
 BLOCKERS:
   - "NOTE: openai.com returned 403 from the research host. Claims were cross-checked via OpenAI Community and API docs. Empty stub Doc 1xsmeViTMBTINUoeoQig_ow2zbImdPi1KaQjbAdBoOx0 was left in the owner Drive folder (optional cleanup). This does not block READY_FOR_DESIGN."
 OWNER_ACTION_REQUIRED: null
@@ -56,10 +56,10 @@ OWNER_DECISIONS:
 ~~~yaml
 EXECUTION_MODE: CLOUD
 EXECUTION_OS: linux
-EXECUTION_RUNTIME: Python 3.12.3
+EXECUTION_RUNTIME: Python 3.13.5 (attached QA session); Python 3.12.3 (supplemental probe on this VM)
 EXECUTION_BROWSER: Google Chrome 148.0.7778.96 headless
-EXECUTION_VERIFIED_AT: 2026-10-03T03:20:34+07:00
-EXECUTION_EVIDENCE: BUILD_NOTES.md
+EXECUTION_VERIFIED_AT: 2026-10-03T03:39:54+07:00
+EXECUTION_EVIDENCE: qa/20261003-b4fb-qa-001/report.md
 REQUIRED_SERVICES_FOR_NEXT_ACTION: []
 SERVICE_CAPABILITIES:
   github:
@@ -91,7 +91,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 | BUILD_NOTES.md | Agent 4 | READY | 645dfc0ed8171c704318fb3e3e67e361f04af95f | BUILD_NOTES.md Drive delivery update | null |
 | assets/cover | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | assets/cover/PROVENANCE.md | null |
 | src/ | Agent 4 | READY | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | BUILD_NOTES.md extracted-package walk | null |
-| qa/ | Agent 5 | PENDING | NOT_VERIFIED | UNSET | null |
+| qa/ | Agent 5 | READY | 222c812848695bd769241f020538f6bbe8d6193d | qa/20261003-b4fb-qa-001/report.md | null |
 | delivery/ launchers, helper and manifest | Agent 4 | READY | 7fc074178dd157bcfc7e3e4ebbe806586c9dab15 | delivery/manifest.json matches the ZIP entry; Linux serve.py checks in BUILD_NOTES.md | null |
 
 ## Owner-facing Drive deliverables
@@ -124,9 +124,9 @@ PACKAGE_MANIFEST_PATH: delivery/manifest.json
 PACKAGE_FILE_ID: 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-
 PACKAGE_DOWNLOAD_URL: https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk
 PACKAGE_SHA256: a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1
-PACKAGE_STATE: READY_FOR_QA
-PACKAGE_IDENTITY_EVIDENCE: BUILD_NOTES.md, references/drive-deliverables.json
-LAST_PACKAGE_VERIFIED_AT: 2026-10-03T03:23:42+07:00
+PACKAGE_STATE: QA_PASS
+PACKAGE_IDENTITY_EVIDENCE: qa/20261003-b4fb-qa-001/evidence/package-sha256.txt, BUILD_NOTES.md, references/drive-deliverables.json
+LAST_PACKAGE_VERIFIED_AT: 2026-10-03T03:39:54+07:00
 POINTER_MODE: theme_adaptive_presenter_dot
 POINTER_SPEC_PATH: 02_DESIGN_SYSTEM.md
 COVER_SCENE_ID: S01
@@ -135,28 +135,28 @@ COVER_ASSET_ID: assets/cover/openai-wordmark-2025.svg
 
 ## QA identity and owner verification
 ~~~yaml
-QA_TESTED_COMMIT: NOT_VERIFIED
-QA_TESTED_PACKAGE_SHA256: NOT_VERIFIED
-QA_PACKAGE_VERSION: UNSET
-QA_ENVIRONMENT: UNSET
+QA_TESTED_COMMIT: 55f8a78dbdb21b349a224968bfffa247e15d5e41
+QA_TESTED_PACKAGE_SHA256: a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1
+QA_PACKAGE_VERSION: 1.0.0
+QA_ENVIRONMENT: Linux cloud; Python 3.13.5 (attached QA session) and Python 3.12.3 (this VM probe); Google Chrome 148.0.7778.96 headless
 QA_TARGET: extracted_package_on_loopback
-QA_TARGET_URL: UNSET
-QA_REPORT_PATH: UNSET
-QA_RESULT: NOT_RUN
-QA_VERIFIED_AT: UNSET
+QA_TARGET_URL: http://127.0.0.1:8971/ (evidence only; not an owner download)
+QA_REPORT_PATH: qa/20261003-b4fb-qa-001/report.md
+QA_RESULT: QA_PASS
+QA_VERIFIED_AT: 2026-10-03T03:39:54+07:00
 QA_FINDING_STATES: {}
 WINDOWS_LAUNCHER_TEST_RESULT: NOT_RUN
-WINDOWS_LAUNCHER_TEST_EVIDENCE: UNSET
+WINDOWS_LAUNCHER_TEST_EVIDENCE: Linux cloud run did not execute START.bat or STOP.bat
 OWNER_WINDOWS_SMOKE_RESULT: NOT_RUN
 OWNER_WINDOWS_SMOKE_EVIDENCE: UNSET
 ~~~
 
 ## Current handoff
 ~~~yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: 645dfc0ed8171c704318fb3e3e67e361f04af95f
-LAST_HANDOFF_EVIDENCE: BUILD_NOTES.md, references/drive-deliverables.json, references/workflow-history.md
+LAST_HANDOFF_ARTIFACT_COMMIT: 222c812848695bd769241f020538f6bbe8d6193d
+LAST_HANDOFF_EVIDENCE: qa/20261003-b4fb-qa-001/report.md, references/workflow-history.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-STAGE=READY_FOR_QA; NEXT_ACTOR=Agent 5 — QA Acceptance.
+STAGE=QA_PASS; NEXT_ACTOR=Owner — Final review/rehearsal and Windows smoke. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. FINAL_REVIEW remains PENDING.

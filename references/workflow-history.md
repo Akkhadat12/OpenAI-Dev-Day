@@ -19,3 +19,7 @@ Builder implemented S01–S10 and assembled `20261003-b4fb-1.0.0-local.zip` from
 ## 2026-10-03 — Drive ZIP verified, ready for QA
 
 A later metadata read of file `1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-` in folder `1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy` showed `20261003-b4fb-1.0.0-local.zip`, mime `application/zip`, size 71064. That matches the local archive. The download URL is https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk. SHA-256 `a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1` is the local archive hash for that package. Trashed file `1GUkcvPagsFtHBPBnPlLCqeuSo9kUyAyz` is not used. Rationale Doc `1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY` stays the owner rationale. Stage handoff is READY_FOR_QA to Agent 5 — QA Acceptance. Windows launchers remain NOT_RUN.
+
+## 2026-10-03 — QA pass on the Linux loopback package
+
+Agent 5 recorded `qa/20261003-b4fb-qa-001` for package SHA-256 `a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1`, version 1.0.0, BUILD_COMMIT `55f8a78dbdb21b349a224968bfffa247e15d5e41`. The report commit is `222c812848695bd769241f020538f6bbe8d6193d`. QA_RESULT=QA_PASS for the extracted Linux loopback payload. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. OPEN_FINDINGS is empty. Stage handoff is QA_PASS to the owner for final review, Windows START.bat/STOP.bat smoke, and S01–S10 rehearsal. STAGE is not COMPLETE.
