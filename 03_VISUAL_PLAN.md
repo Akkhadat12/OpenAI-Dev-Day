@@ -169,104 +169,859 @@ Output: filled 03_VISUAL_PLAN.md plus asset specifications/provenance in the rep
 ## Fillable scene index
 
 ~~~yaml
-PROJECT_ID: <from status>
-CONTENT_INPUT_COMMIT: <verified SHA>
-DESIGN_INPUT_COMMIT: <verified SHA>
-VISUAL_PLAN_VERSION: <version>
-COVER_ASSET_ID: <verified authentic asset ID>
+PROJECT_ID: 20261003-b4fb
+CONTENT_INPUT_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
+DESIGN_INPUT_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
+VISUAL_PLAN_VERSION: "1.0.0"
+COVER_ASSET_ID: assets/cover/openai-wordmark-2025.svg
+COVER_FALLBACK_ASSET_ID: assets/cover/openai-blossom-2025.svg
 POINTER_SPEC_REFERENCE: 02_DESIGN_SYSTEM.md#presenter-pointer-and-authentic-first-cover
-SCENE_COUNT: <actual>
+SCENE_COUNT: 10
+SCENE_IDS: [S01, S02, S03, S04, S05, S06, S07, S08, S09, S10]
 ASSET_MANIFEST_PATH: assets/manifest.md
+WEB_LANGUAGE: English
+NARRATION_LANGUAGE: Thai
+CANVAS: 1920x1080
+MEDIUM_SUMMARY: "S01 authentic wordmark. S02–S10 flat 2D diagrams and status chips. No 3D, no WebGL, no statistical chart."
+ORDINARY_COPY_LOCK: "Exact strings from references/scenes.md and 02_DESIGN_SYSTEM.md. Do not paraphrase."
+BLOCKERS_FOR_VISUAL: []
+FONT_FILE: "Inter Latin woff2 is specified by DS02/DS24 and is not in the repo. Builder packages it. This does not block READY_FOR_BUILD."
 ~~~
+
+Settled-hold counts use the count method in the next section. Ordinary words are the locked phrase only. Essential labels are excluded from that 0–8 target. A few totals differ from the shorthand in `references/scenes.md` because this plan counts every readable word and the status chips Design required; the visible strings are not new claims.
 
 | Scene ID | Narration takeaway | Medium | Focal subject | Ordinary words / excluded data labels / total | Duration estimate | Claim IDs | Asset status |
 |---|---|---|---|---|---|---|---|
-| S01 | <one idea> | <medium> | <subject> | <ordinary 0–8 / excluded / total> | <seconds> | <IDs> | READY/PENDING |
+| S01 | This is OpenAI DevDay 2025, and R returns here. | Authentic wordmark | Official OpenAI wordmark | 3 / 0 / 3 | 25 s spoken | C01 | READY |
+| S02 | ChatGPT is being positioned as a place software runs. | 2D diagram | Bracket frame around a chat surface | 4 / 0 / 4 | 28 s spoken | C02, C18, C19 | READY (code-drawn) |
+| S03 | The keynote has four pillars. | 2D diagram | Four-column story spine | 2 / 5 / 7 | 32 s spoken | C01, C18 | READY (code-drawn) |
+| S04 | Apps SDK is a preview stack on MCP. | 2D diagram | Apps SDK card with Preview chip | 3 / 1 / 4 | 40 s spoken | C02, C03, C05, C20 | READY (code-drawn) |
+| S05 | Partner demos made the SDK concrete. | 2D diagram | Three named demo tiles | 2 / 3 / 5 | 38 s spoken | C04, C05 | READY (text labels; no partner logos) |
+| S06 | AgentKit is the umbrella, not a finished promise. | 2D diagram | The word AgentKit over five empty slots | 1 / 0 / 1 | 35 s spoken | C06, C19 | READY (code-drawn) |
+| S07 | Beta, GA, and limited rollout are different. | 2D diagram | Five component cards with status chips | 2 / 10 / 12 | 45 s spoken | C07, C08, C09, C10, C20 | READY (code-drawn) |
+| S08 | Codex left preview and is GA, with a company-reported footnote. | 2D diagram | Codex card whose chip settles on GA | 3 / 5 / 8 | 40 s spoken | C11, C12, C13, C20 | READY (code-drawn) |
+| S09 | New API models are fuel, with vendor cost labels only. | 2D diagram | Three model cards | 2 / 7 / 9 | 42 s spoken | C15, C16, C17, C19 | READY (code-drawn) |
+| S10 | Build next on the platform, and keep maturity labeled. | 2D diagram | Three paths under “Platform first” | 2 / 5 / 7 | 48 s spoken | C19, C20, C05, C07, C08, C11 | READY (code-drawn) |
 
-## Scene specification — repeat for every scene
+Spoken seconds are narration estimates from `references/scenes.md`. They are not timers. Every hold lasts until the next deliberate key.
+
+## Shared visual contract
+
+These rules apply to every scene. A scene YAML overrides one of them only when it says so.
+
+~~~yaml
+COUNT_METHOD: >
+  Count whitespace-separated English words painted on the canvas.
+  A hyphenated token counts as one word (GPT-5, OpenAI-reported).
+  A standalone numeral, percent, or 10× token counts as one essential token.
+  Middle dots and pipes are separators, not words.
+  The ordinary phrase is the locked string for that scene and is counted once.
+  When a status word is the chip inside that ordinary phrase (S04 Preview, S08 settled GA),
+  count it in the ordinary total only, not again as a label.
+  Status words that are not part of the ordinary phrase are essential labels.
+  Replaced text is not still visible: S08 Preview disappears when the chip becomes GA.
+  Accessible names and alt text are English and are not painted, so they are outside the visible count.
+  The S01 wordmark paths depict the official name as logo geometry. That geometry is the authentic mark,
+  not a second sentence, and is not added on top of the overlay “OpenAI DevDay 2025”.
+  Report ordinary, excluded essential tokens, and total for the settled hold.
+  Also inventory every earlier state. Ordinary words in every simultaneous state stay within 0–8.
+  No Thai-canvas exception is recorded, so Thai segmentation does not apply.
+TOKENS:
+  BACKGROUND: "#0B0B0F"
+  FOREGROUND: "#F5F5F7"
+  CARD_EDGE: "#2A2A32"
+  GA_FILL: "#10A37F"
+  PREVIEW_BETA_FILL: "#F59E0B"
+  LIMITED_FILL: "#A78BFA"
+  NEUTRAL_FILL: "#6B7280"
+  CHIP_INK_ON_STATUS: "#0B0B0F"
+  CHIP_INK_ON_NEUTRAL: "#F5F5F7"
+  POINTER_FILL: "#22D3EE"
+  POINTER_OUTLINE: "#0B0B0F"
+  EASING: "cubic-bezier(0.22, 1, 0.36, 1)"
+  ENTRY_MS: 500
+  REVEAL_MS: 700
+  SETTLE_MS: 200
+  EXIT_MS: 400
+  REDUCED_MOTION_MS: 150
+FONT: "Inter Latin, packaged later by Builder at assets/fonts/. Until the file exists, fallback is system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif. Do not shrink type below 32 px to fit. Caption 24 is for non-claim structure only."
+SAFE_AREA: "96 px left/right, 54 px top/bottom. Normalized origin top-left: x 0.05–0.95, y 0.05–0.95."
+CHROME: "No page numbers, progress dots, nav arrows, buttons, hints, watermarks, or source panels. The presenter dot is the only overlay."
+ARROW_RULE: "One content arrow in the whole story: S04, Apps SDK down to MCP. No other scene has an arrow."
+KEYBOARD:
+  SPACE_DURING_MOTION: "Finish the active beat at its semantic endpoint and enter that beat's hold. Do not start the next beat and do not skip the scene."
+  SPACE_DURING_HOLD: "If another reveal remains, start it. If the scene is on its final hold and a later scene exists, play the 400 ms exit into the next scene's entry. On S10 final hold, Spacebar does nothing."
+  RAPID_SPACE: "Repeats never skip a beat. A key pressed during motion only settles that beat."
+  R: "Cancel every timer and tween. Show S01 initial state immediately: wordmark (or blossom fallback) fully opaque, overlay title not yet entered. Then the title entry may run. From inside S01, R restarts that same initial state."
+  LEFT_ARROW: "Optional. Absence is not a defect. If implemented, show the previous scene's final settled hold with no replay. On S01, Left Arrow does nothing. Not painted on the canvas."
+  F: "Optional fullscreen request. Absence is not a defect. No fullscreen control is drawn. Browser fullscreen UI is outside this canvas."
+  P: "Optional pointer visibility toggle, documented only in README or BUILD_NOTES. Absence is not a defect. Not painted."
+  CLICK: "Never required to advance."
+REDUCED_MOTION: "Same beat graph and the same endpoints. Crossfade at most 150 ms. No slide, no scale loop. Chips still show their final fill and their English word. S01 wordmark is already opaque at the first frame."
+HOLD: "After settle, geometry, type, and chip fill are static. No pulse, drift, particle, or auto-advance. A 30-second QA hold must show zero change."
+POINTER: "14 CSS px dot, fill #22D3EE, 1.5 px outline #0B0B0F, shadow 0 0 6px rgba(34,211,238,0.45). Hotspot-centered, no lag, trail, or pulse. pointer-events none, aria-hidden true. Visible only while the mouse is inside the stage. Native cursor hidden only while the dot is working."
+LANGUAGE: "Canvas, labels, alt text, and fallback text are English. lang=en. Thai is narration and the owner-rationale notes in this file only."
+~~~
+
+Coordinates below are normalized to the 1920×1080 stage, origin at the top-left. Builder maps them to the fitted stage. Do not stretch the stage when the viewport is not 16:9; letterbox with `#0B0B0F`.
+
+## Scene specification — S01
 
 ~~~yaml
 SCENE_ID: S01
-CONTENT_REFERENCE: "01_CONTENT.md#<section>"
-CLAIM_IDS: [<IDs>]
-AUDIENCE_TAKEAWAY: <one sentence>
-VISUAL_JOB: <why a visual is needed>
-MEDIUM: <2D/chart/real/3D/hybrid>
-MEDIUM_REASON: <narration-specific reason>
-FOCAL_SUBJECT: <object/evidence>
-EXPLANATORY_ARROWS: <NONE or minimal arrows with exact relationship/direction, endpoints, semantic job, hierarchy, reveal/hold behavior; never navigation/control styling>
+CONTENT_REFERENCE: "references/scenes.md#S01"
+CLAIM_IDS: [C01]
+AUDIENCE_TAKEAWAY: "The story is OpenAI DevDay 2025, and this frame is where R returns."
+VISUAL_JOB: "Show one authentic OpenAI wordmark so the cover is a real mark, not a title card."
+MEDIUM: real
+MEDIUM_REASON: "The cover has to be the official wordmark. A diagram or a generated mark would fail the cover rule."
+FOCAL_SUBJECT: "assets/cover/openai-wordmark-2025.svg, used whole"
+EXPLANATORY_ARROWS: NONE
 COMPOSITION:
-  ANCHOR: <x/y as normalized canvas coordinates>
-  BOUNDS: <width/height relative to 16:9 canvas>
-  SUPPORTING_OBJECTS: <count, hierarchy, anchors>
-  NEGATIVE_SPACE: <where and why>
-  SAFE_AREA_CHECK: <no essential clipping>
-VISIBLE_COPY: <exact English ordinary copy or empty>
-VISIBLE_WORD_COUNT: <ordinary count targeting 0–8 across the entire scene>
-ESSENTIAL_DATA_LABELS: <exact English indispensable labels/values/units/legend or NONE>
-ESSENTIAL_LABEL_REASON: <why each excluded item is required for truthful reading>
-TOTAL_VISIBLE_WORD_COUNT: <ordinary plus excluded items>
-COUNT_METHOD: <ordinary versus essential-data distinction; Thai segmentation if needed>
-DATA_SPEC: <verified values/encoding, or NOT_APPLICABLE>
-ASSETS: [<manifest IDs and repo-relative paths>]
-LIGHTING_CAMERA: <3D-only details, or NOT_APPLICABLE>
-NARRATION_CUE: <exact phrase that cues entry/reveal>
-ENTRY_STATE: <geometry/opacities and what is immediately understandable>
-REVEAL_BEATS: <ordered list; expand in timing table>
-SETTLE_STATE: <precise endpoint after each reveal>
-HOLD_STATE: <stable composition; no decorative continuous motion>
-EXIT_STATE: <transition and semantic link to next scene>
-REDUCED_MOTION: <same meaning with stable endpoints>
-BACK_NAVIGATION: <previous settled scene if optional Left Arrow is implemented; otherwise NOT_APPLICABLE>
-RETURN_TO_COVER: <R cancels current motion and selects first scene initial state>
-FALLBACK: <asset/WebGL/network failure plan preserving meaning>
-FACTUAL_BOUNDARIES: <what this picture must not imply>
-IMPLEMENTATION_NOTES: <required behavior, not speculative claims>
-LANGUAGE_AUDIT: <English canvas/semantic text and embedded media checked; explicit source-inscription exceptions if any>
-POINTER_CONTRAST_CHECK: <dot/outline remains visible over this scene without obstructing the focal subject>
-COVER_AUTHENTICITY: <S01 source/asset verification and initial/reset visibility; otherwise NOT_APPLICABLE>
-QA_ASSERTIONS: <scene-specific checks and evidence to capture>
+  ANCHOR: "Wordmark center at x=0.500, y=0.454. Group (mark + 40 px gap + title) optically centered."
+  BOUNDS: "Wordmark width 0.360 of canvas (691 px) and height 186 px, from x=0.320, y=0.367 to x=0.680, y=0.540. Title baseline block from y=0.577, height 60 px, centered. All inside the safe area."
+  SUPPORTING_OBJECTS: "One overlay line. No second symbol, no blossom, no chips."
+  NEGATIVE_SPACE: "The rest of the near-black field. At least 64 px of clear stage around the wordmark except the specified 40 px gap to the title."
+  SAFE_AREA_CHECK: "Wordmark and title sit inside x 0.05–0.95 and y 0.05–0.95. Do not crop the viewBox."
+VISIBLE_COPY: "OpenAI DevDay 2025"
+VISIBLE_WORD_COUNT: 3
+ESSENTIAL_DATA_LABELS: NONE
+ESSENTIAL_LABEL_REASON: "No chart or status label. The date 2025 is inside the ordinary line."
+TOTAL_VISIBLE_WORD_COUNT: 3
+COUNT_METHOD: "Shared count method. Initial frame paints 0 overlay words. Settled hold paints 3. Logo paths are not a second sentence."
+STATE_WORD_INVENTORY:
+  - {state: S01-initial, ordinary: "", essential: NONE, ordinary_count: 0, essential_count: 0, total: 0}
+  - {state: S01-hold, ordinary: "OpenAI DevDay 2025", essential: NONE, ordinary_count: 3, essential_count: 0, total: 3}
+DATA_SPEC: NOT_APPLICABLE
+ASSETS: ["A-COVER-WORDMARK assets/cover/openai-wordmark-2025.svg", "A-COVER-BLOSSOM assets/cover/openai-blossom-2025.svg fallback only"]
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "สวัสดีครับ วันนี้เราจะสรุป OpenAI DevDay ปี 2025 — hold after the title settles, then advance on the next breath."
+ENTRY_STATE: "At t=0 the wordmark is fully opaque on #0B0B0F. The title opacity is 0. Nothing else is on stage."
+REVEAL_BEATS: ["Title 'OpenAI DevDay 2025' enters under the mark."]
+SETTLE_STATE: "Wordmark unchanged. Title at full opacity, Title size 48, color #F5F5F7, centered, 40 px below the mark."
+HOLD_STATE: "Mark and title static. No shimmer on the logo."
+EXIT_STATE: "On Spacebar from this hold, 400 ms fade of the whole group into S02 entry. The wordmark does not persist into S02."
+REDUCED_MOTION: "Wordmark stays fully opaque from the first frame. Title crossfades in at most 150 ms. Same hold."
+BACK_NAVIGATION: "Optional Left Arrow does nothing on S01. If Left Arrow is not implemented, NOT_APPLICABLE."
+RETURN_TO_COVER: "R from any scene, including S01, cancels motion and shows this initial state: wordmark opaque, title not yet entered."
+FALLBACK: "If the wordmark file fails to load, hide it and show assets/cover/openai-blossom-2025.svg alone, same #F5F5F7 treatment, about 200 px square, bottom aligned to the wordmark bottom so the title gap stays 40 px. Never show both files. If both fail, paint no fake lettering shaped like a logo; keep the dark field and the ordinary title only, and treat the package as an asset failure for QA. Do not generate a replacement."
+FACTUAL_BOUNDARIES: "Do not add attendee counts, anniversary years, 'world's largest', or a Fort Mason line. C01's date and city stay in narration. Do not imply OpenAI produced this presentation."
+IMPLEMENTATION_NOTES: "Inline the SVG. Set path fill to #F5F5F7 in CSS. Do not edit path data. viewBox 0 0 269.6592 72.5157. Alt text: Official OpenAI wordmark for OpenAI DevDay 2025 cover. Fallback alt: Official OpenAI blossom symbol for OpenAI DevDay 2025 cover. This scene is first on load, before any other scene."
+LANGUAGE_AUDIT: "Overlay English. SVG files contain path geometry only, no text nodes and no Thai. No owner exception."
+POINTER_CONTRAST_CHECK: "Cyan fill plus 1.5 px #0B0B0F outline stays readable on the light wordmark and on #0B0B0F. The 14 px dot does not cover the mark unless the presenter places it there. It does not capture clicks."
+COVER_AUTHENTICITY: "Verified this stage against assets/cover/PROVENANCE.md and references/cover-asset.md. Primary file is the Commons wordmark whose upstream citation is https://openai.com/brand/. Not generated. Visible at the initial frame and immediately after R."
+QA_ASSERTIONS:
+  - "AC-023: first frame and R reset show the packaged wordmark, not a generated mark."
+  - "AC-023: blossom appears only when the wordmark fails, and never beside it."
+  - "AC-006: settled overlay is exactly OpenAI DevDay 2025 (3/0/3)."
+  - "AC-005: mark and title inside the safe area at 1920×1080 and when letterboxed."
+  - "AC-008 / AC-010 / AC-011: Spacebar settles the title before leaving; R during the title entry returns to the initial frame; hold is static."
+  - "AC-012: reduced motion still shows the mark at the first frame."
+  - "AC-022: dot contrast on the white mark and the dark field."
+  - "AC-007 / AC-024: no chrome, no Thai, lang=en, English alt."
 ~~~
 
-### Timing / cue map — repeat per scene
+### Timing / cue map — S01
 
 | Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
 |---|---|---|---|---|---|---|
-| Entry | <cue> | <Space/entry> | <change> | <timing> | <endpoint> | <indefinite hold> |
-| Reveal 1 | <cue> | Space | <change> | <timing> | <endpoint> | <next deliberate key> |
-| Exit | <cue> | Space at final hold | <change> | <timing> | <next entry> | <condition> |
+| Entry | สวัสดีครับ (opening) | Load or R | Wordmark already visible; title opacity 0 | 0 ms for the mark | Mark opaque, title hidden | Initial state; Spacebar starts the title |
+| Reveal 1 | OpenAI DevDay ปี 2025 | Spacebar | Title fades and settles under the mark | 500 ms entry, then 200 ms settle; easing cubic-bezier(0.22, 1, 0.36, 1) | Title fully visible | Indefinite hold. Presenter may pause 2–3 s |
+| Exit | Next breath into the hook | Spacebar on the hold | Group fades out | 400 ms | S02 entry begins | Only after the title hold |
 
-Normal motion order is Transition → Reveal → Settle → Hold. No timed advance is implied by these estimates. Spacebar is the complete forward route. During a reveal it may first settle the current beat before advancing; R cancels motion and returns to cover. No additional default forward key or object click is required.
+Spacebar during the title entry finishes the title and does not jump to S02. A second Spacebar on the hold exits.
 
-### Chart specification — required for data scenes
+## Scene specification — S02
+
+~~~yaml
+SCENE_ID: S02
+CONTENT_REFERENCE: "references/scenes.md#S02"
+CLAIM_IDS: [C02, C18, C19]
+AUDIENCE_TAKEAWAY: "ChatGPT is being framed as a place where software runs, not only a question box."
+VISUAL_JOB: "A single bracket frame makes the chat surface look like a runtime boundary."
+MEDIUM: 2D
+MEDIUM_REASON: "The idea is a framing metaphor. Depth would look like a literal operating system."
+FOCAL_SUBJECT: "Square-bracket frame around an empty chat surface"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Frame center x=0.40, y=0.46"
+  BOUNDS: "Frame width 0.42 (806 px), height 0.50 (540 px), so the focal object is half the stage height. Left edge x=0.19, inside the safe area."
+  SUPPORTING_OBJECTS: "Three mute horizontal bars inside the frame, heights 16 px, color #2A2A32, no glyphs. They are part of the frame, not separate subjects. Ordinary line sits 40 px below the frame, centered on the frame, max width 0.42."
+  NEGATIVE_SPACE: "Right half of the stage stays empty so the metaphor stays one object."
+  SAFE_AREA_CHECK: "Frame and line inside the safe rectangle. Bracket strokes 2 px in #6B7280, radius 0 on the brackets, inner card radius 16 px."
+VISIBLE_COPY: "Software runs in chat"
+VISIBLE_WORD_COUNT: 4
+ESSENTIAL_DATA_LABELS: NONE
+ESSENTIAL_LABEL_REASON: "n/a"
+TOTAL_VISIBLE_WORD_COUNT: 4
+COUNT_METHOD: "Shared method. Entry paints 0 words. Hold paints 4."
+STATE_WORD_INVENTORY:
+  - {state: S02-entry, ordinary: "", essential: NONE, ordinary_count: 0, essential_count: 0, total: 0}
+  - {state: S02-hold, ordinary: "Software runs in chat", essential: NONE, ordinary_count: 4, essential_count: 0, total: 4}
+DATA_SPEC: NOT_APPLICABLE
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "ถ้าพลาดงานนี้ — then reveal the phrase as the narration says software runs in the conversation."
+ENTRY_STATE: "Bracket frame and inner bars at full opacity. No words. No chip."
+REVEAL_BEATS: ["Ordinary line 'Software runs in chat' appears under the frame."]
+SETTLE_STATE: "Line at Title 48, #F5F5F7, full opacity. Frame unchanged."
+HOLD_STATE: "Static frame and line. Bars do not type on or blink."
+EXIT_STATE: "400 ms fade to S03 entry."
+REDUCED_MOTION: "Frame is present at the entry endpoint. Line crossfades in at most 150 ms."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S01 final hold (wordmark and title). Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Code-drawn. No image to fail. Font fallback is the system stack. Meaning stays the frame plus the English line."
+FACTUAL_BOUNDARIES: "Do not draw a desktop, a dock, a window title bar, or the word OS. Do not add a GA chip. This is product-platform framing (C19), not a computer-science operating system (C02 boundary)."
+IMPLEMENTATION_NOTES: "Inner bars contain no placeholder Latin or Thai. Alt: A bracket frame around a chat surface, with the line Software runs in chat."
+LANGUAGE_AUDIT: "English line only. No embedded media text."
+POINTER_CONTRAST_CHECK: "Outline separates the cyan dot from #F5F5F7 type and from #6B7280 bracket edges on the dark field."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-002: the line appears after the opening sentence, not before the frame exists."
+  - "AC-006: hold is exactly Software runs in chat (4/0/4)."
+  - "AC-001 / factual: no OS chrome and no status chip."
+  - "AC-007: brackets are structure, not buttons."
+  - "AC-008 / AC-010: Spacebar during the line entry only settles the line; hold is static for 30 s."
+  - "AC-005 / AC-012 / AC-022 / AC-024: safe area, reduced-motion endpoint, pointer outline, English only."
+~~~
+
+### Timing / cue map — S02
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | ถ้าพลาดงานนี้ | Spacebar from S01 | Frame and mute bars arrive | 500 ms + 200 ms settle | Frame readable, no words | Indefinite hold |
+| Reveal 1 | ซอฟต์แวร์วิ่งในบทสนทนา | Spacebar | Line Software runs in chat | 700 ms + 200 ms settle | Four words visible | Indefinite hold |
+| Exit | Advance into the event map | Spacebar on the hold | Fade out | 400 ms | S03 entry | After the line is held |
+
+## Scene specification — S03
+
+~~~yaml
+SCENE_ID: S03
+CONTENT_REFERENCE: "references/scenes.md#S03"
+CLAIM_IDS: [C01, C18]
+AUDIENCE_TAKEAWAY: "DevDay 2025's keynote was organized as four pillars: Apps, Agents, Codex, and models/API."
+VISUAL_JOB: "A four-column map is the story spine before any deep dive."
+MEDIUM: 2D
+MEDIUM_REASON: "The audience needs a map. A chart would pretend the pillars are measurements."
+FOCAL_SUBJECT: "Row of four pillar columns"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Row center x=0.50, y=0.52"
+  BOUNDS: "Row width 0.84 inside the safe area (about 1612 px). Four cards, gap 24 px, each about 385 px wide and 420 px tall. Title 'Four pillars' centered above the row at y=0.16, max width 0.42, Title 48."
+  SUPPORTING_OBJECTS: "The row is one diagram. Cards reveal one per beat. No numbers on the cards, no connector, no stepper."
+  NEGATIVE_SPACE: "Gaps between cards stay #0B0B0F so the dot has a dark place to sit."
+  SAFE_AREA_CHECK: "Four labels at Label 32 minimum. Do not shrink Models or API below 32 px. No card crosses y=0.95 or x=0.95."
+VISIBLE_COPY: "Four pillars"
+VISIBLE_WORD_COUNT: 2
+ESSENTIAL_DATA_LABELS: "Apps; Agents; Codex; Models; API"
+ESSENTIAL_LABEL_REASON: "Each pillar name is the map label from C18. Models and API are both read, so each counts. They are names, not a sentence."
+TOTAL_VISIBLE_WORD_COUNT: 7
+COUNT_METHOD: "Shared method. Content's shorthand total of 6 treated Models/API as one token. This plan counts Models and API as two words. Ordinary copy stays Four pillars (2)."
+STATE_WORD_INVENTORY:
+  - {state: S03-entry, ordinary: "Four pillars", essential: NONE, ordinary_count: 2, essential_count: 0, total: 2}
+  - {state: S03-R1, ordinary: "Four pillars", essential: "Apps", ordinary_count: 2, essential_count: 1, total: 3}
+  - {state: S03-R2, ordinary: "Four pillars", essential: "Apps, Agents", ordinary_count: 2, essential_count: 2, total: 4}
+  - {state: S03-R3, ordinary: "Four pillars", essential: "Apps, Agents, Codex", ordinary_count: 2, essential_count: 3, total: 5}
+  - {state: S03-hold, ordinary: "Four pillars", essential: "Apps, Agents, Codex, Models, API", ordinary_count: 2, essential_count: 5, total: 7}
+DATA_SPEC: NOT_APPLICABLE
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "คีย์โนตถูกจัดเป็นสี่เสาหลัก — reveal Apps, then Agents, then Codex, then Models/API as each is named."
+ENTRY_STATE: "Title Four pillars visible. Four card slots are not drawn yet."
+REVEAL_BEATS: ["Apps card", "Agents card", "Codex card", "Models/API card"]
+SETTLE_STATE: "All four cards visible. Models/API is one card with two stacked words, Models and API, both at least 32 px. No status chips."
+HOLD_STATE: "Static row. Cards do not bounce or highlight in a loop."
+EXIT_STATE: "400 ms fade to S04. Do not animate a traveling arrow into S04."
+REDUCED_MOTION: "Each new card crossfades in at most 150 ms at its final position. No horizontal slide."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S02 final hold. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Code-drawn. Font fallback only."
+FACTUAL_BOUNDARIES: "Do not invent session titles, times, or a fifth pillar. Do not place the date 6 October or San Francisco on the canvas; narration carries C01. Columns are not a progress control."
+IMPLEMENTATION_NOTES: "Card fill is transparent or #0B0B0F with 1 px edge #2A2A32 and radius 16. Labels #F5F5F7. Alt: Four pillars labeled Apps, Agents, Codex, and Models API."
+LANGUAGE_AUDIT: "English labels only."
+POINTER_CONTRAST_CHECK: "Dot sits in the dark gaps. Outline keeps it visible if it crosses light type."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-003: four beats match Apps, Agents, Codex, Models/API and claim C18."
+  - "AC-006: ordinary words stay Four pillars; final total 7 with five essential names."
+  - "AC-007: no arrows and no stepper dots."
+  - "AC-005: Models and API remain at least 32 px inside the safe area."
+  - "AC-008 / AC-010 / AC-012: one pillar per Spacebar; each hold is static; reduced motion uses the same four endpoints."
+~~~
+
+### Timing / cue map — S03
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | วันที่หกตุลาคม ที่ซานฟรานซิสโก | Spacebar from S02 | Title Four pillars | 500 ms + 200 ms settle | Title only | Indefinite hold |
+| Reveal 1 | แอปใน ChatGPT | Spacebar | Apps card | 700 ms + 200 ms settle | Apps visible | Indefinite hold |
+| Reveal 2 | การสร้างเอเจนต์ | Spacebar | Agents card | 700 ms + 200 ms settle | Apps and Agents | Indefinite hold |
+| Reveal 3 | Codex | Spacebar | Codex card | 700 ms + 200 ms settle | Three cards | Indefinite hold |
+| Reveal 4 | โมเดลกับเอพีไอ | Spacebar | Models/API card | 700 ms + 200 ms settle | Four cards | Indefinite hold |
+| Exit | เราจะเดินตามเสานี้ | Spacebar on the hold | Fade | 400 ms | S04 entry | After the fourth card is held |
+
+## Scene specification — S04
+
+~~~yaml
+SCENE_ID: S04
+CONTENT_REFERENCE: "references/scenes.md#S04"
+CLAIM_IDS: [C02, C03, C05, C20]
+AUDIENCE_TAKEAWAY: "Developers could start building interactive ChatGPT apps in preview, on an MCP-based SDK."
+VISUAL_JOB: "Show the SDK sitting on MCP, with a Preview chip that cannot be missed."
+MEDIUM: 2D
+MEDIUM_REASON: "The relationship is a stack. A chart or a 3D stack would add no fact."
+FOCAL_SUBJECT: "Apps SDK card with the amber Preview chip"
+EXPLANATORY_ARROWS: "ONE content arrow. It starts at the bottom center of the Apps SDK card and ends at the top center of the MCP label, pointing down. Stroke #F5F5F7, 2 px, small arrowhead at the MCP end only. It means the SDK is built on MCP. It is not a button, not a chevron control, and not clickable. It appears only on the MCP beat and stays still on hold."
+COMPOSITION:
+  ANCHOR: "Stack center x=0.40, y=0.48"
+  BOUNDS: "Apps SDK card about 720 px wide and 220 px tall, top at y=0.28. Arrow about 64 px tall. MCP label block about 120 px tall below the arrow. The whole stack stays inside the safe area and inside the left-center half."
+  SUPPORTING_OBJECTS: "MCP label is the single support. No directory card, no partner logos, no GA chip."
+  NEGATIVE_SPACE: "Right side empty."
+  SAFE_AREA_CHECK: "Preview chip text at least 32 px. Chip padding 16 px horizontal, 8 px vertical. Ink #0B0B0F on fill #F59E0B."
+VISIBLE_COPY: "Apps SDK · Preview"
+VISIBLE_WORD_COUNT: 3
+ESSENTIAL_DATA_LABELS: "MCP"
+ESSENTIAL_LABEL_REASON: "The protocol name is required to read the stack (C03). The arrow has no words."
+TOTAL_VISIBLE_WORD_COUNT: 4
+COUNT_METHOD: "Preview is the chip inside the ordinary phrase, counted once. Do not add a second Preview caption. Do not paint Built on."
+STATE_WORD_INVENTORY:
+  - {state: S04-entry, ordinary: "", essential: NONE, ordinary_count: 0, essential_count: 0, total: 0}
+  - {state: S04-R1, ordinary: "Apps SDK · Preview", essential: NONE, ordinary_count: 3, essential_count: 0, total: 3}
+  - {state: S04-hold, ordinary: "Apps SDK · Preview", essential: "MCP", ordinary_count: 3, essential_count: 1, total: 4}
+DATA_SPEC: NOT_APPLICABLE
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "เสาแรกคือ Apps in ChatGPT และ Apps SDK — reveal the Preview chip on พรีวิว, then MCP when Model Context Protocol is spoken."
+ENTRY_STATE: "Empty card shell, 1 px edge #2A2A32, radius 16. No words, no chip, no arrow."
+REVEAL_BEATS: ["Apps SDK line with amber Preview chip", "MCP label and the downward arrow"]
+SETTLE_STATE: "Chip fill #F59E0B, label Preview in #0B0B0F. MCP in #F5F5F7 at 32 px or larger. Arrow static."
+HOLD_STATE: "Preview chip remains. No color shift toward green."
+EXIT_STATE: "400 ms fade to S05. Arrow fades with the scene. It does not point at the next scene."
+REDUCED_MOTION: "Chip, words, and arrow crossfade to the same endpoints in at most 150 ms. Arrow is already at its final coordinates, not drawn as a traveling line."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S03 final hold. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Code-drawn. If motion is reduced, the arrow is still visible on the hold because it is the relationship, not decoration."
+FACTUAL_BOUNDARIES: "Preview is mandatory. Do not use #10A37F. Do not show a public app directory, a submission button, or the word GA. C05 says the directory and broader submissions were later, not day-one GA."
+IMPLEMENTATION_NOTES: "The middle dot in Apps SDK · Preview is a separator in the ordinary line, painted once, with Preview itself inside the chip. Alt: Apps SDK marked Preview, with an arrow down to MCP."
+LANGUAGE_AUDIT: "English only. No Thai in the chip."
+POINTER_CONTRAST_CHECK: "The #0B0B0F outline is required when the dot crosses the amber chip. Cyan on amber alone is not the contrast plan."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-006: hold reads Apps SDK · Preview plus MCP (3/1/4). The word Built on is absent."
+  - "AC-014: Preview is a word plus amber fill, ink #0B0B0F."
+  - "AC-007: exactly one arrow, pointing Apps SDK to MCP, not styled as a next control."
+  - "AC-001: no GA color and no directory claim (C05, C20)."
+  - "AC-008 / AC-010 / AC-012 / AC-022: settle-before-advance, static Preview hold, reduced-motion arrow present, outline on the amber chip."
+~~~
+
+### Timing / cue map — S04
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | เสาแรก | Spacebar from S03 | Empty card arrives | 500 ms + 200 ms settle | Card shell | Indefinite hold |
+| Reveal 1 | พรีวิว | Spacebar | Apps SDK and Preview chip | 700 ms + 200 ms settle | Amber Preview readable | Indefinite hold on the chip |
+| Reveal 2 | MCP | Spacebar | MCP label and downward arrow | 700 ms + 200 ms settle | Stack complete | Indefinite hold |
+| Exit | Move to the demos | Spacebar on the hold | Fade | 400 ms | S05 entry | After MCP is held |
+
+## Scene specification — S05
+
+~~~yaml
+SCENE_ID: S05
+CONTENT_REFERENCE: "references/scenes.md#S05"
+CLAIM_IDS: [C04, C05]
+AUDIENCE_TAKEAWAY: "Keynote demos such as Coursera, Canva, and Zillow showed apps inside the chat thread."
+VISUAL_JOB: "Three named tiles, then a frame-size change for inline versus fullscreen."
+MEDIUM: 2D
+MEDIUM_REASON: "Named demos are the evidence. Authentic partner logo files are not in the repo and are not cleared here, so text names are the truthful asset."
+FOCAL_SUBJECT: "Three-up row of demo tiles"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Row center x=0.50, y=0.52"
+  BOUNDS: "Title Partner demos at y=0.16, Title 48, centered. Three cards in a row, gap 24 px, each about 520 px wide and 360 px tall, inside the safe area."
+  SUPPORTING_OBJECTS: "Each tile is a name plus a nested frame. The nested frame starts about 40 percent of the card and, on the last beat, one card's nested frame grows to about 80 percent. That size change is the inline-versus-fullscreen cue. No extra words."
+  NEGATIVE_SPACE: "Gaps between cards. No fourth tile."
+  SAFE_AREA_CHECK: "Names at least 32 px. Growing frame stays inside its card, and the card stays inside the safe area."
+VISIBLE_COPY: "Partner demos"
+VISIBLE_WORD_COUNT: 2
+ESSENTIAL_DATA_LABELS: "Coursera; Canva; Zillow"
+ESSENTIAL_LABEL_REASON: "The three names are the factual anchors in C04. They are not a sentence."
+TOTAL_VISIBLE_WORD_COUNT: 5
+COUNT_METHOD: "Shared method. The words inline and fullscreen are not painted."
+STATE_WORD_INVENTORY:
+  - {state: S05-entry, ordinary: "Partner demos", essential: NONE, ordinary_count: 2, essential_count: 0, total: 2}
+  - {state: S05-R1, ordinary: "Partner demos", essential: "Coursera", ordinary_count: 2, essential_count: 1, total: 3}
+  - {state: S05-R2, ordinary: "Partner demos", essential: "Coursera, Canva", ordinary_count: 2, essential_count: 2, total: 4}
+  - {state: S05-R3, ordinary: "Partner demos", essential: "Coursera, Canva, Zillow", ordinary_count: 2, essential_count: 3, total: 5}
+  - {state: S05-hold, ordinary: "Partner demos", essential: "Coursera, Canva, Zillow", ordinary_count: 2, essential_count: 3, total: 5}
+DATA_SPEC: NOT_APPLICABLE
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "เดโมพันธมิตร — reveal Coursera, then Canva, then Zillow, then hold while inline and fullscreen are spoken."
+ENTRY_STATE: "Title only."
+REVEAL_BEATS: ["Coursera tile with a small inner frame", "Canva tile with a small inner frame", "Zillow tile with a small inner frame", "Zillow inner frame enlarges; the other two stay small"]
+SETTLE_STATE: "Three names visible. Zillow's inner frame is the large one. No logos."
+HOLD_STATE: "Static. The large frame does not pulse."
+EXIT_STATE: "400 ms fade to S06."
+REDUCED_MOTION: "Tiles crossfade in. The frame change is a crossfade from the small rectangle to the large rectangle, at most 150 ms, no animated scale loop."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S04 final hold including the Preview chip and MCP arrow. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Text names are the plan, not a fallback from missing logos. Do not fetch partner marks at runtime."
+FACTUAL_BOUNDARIES: "The three names are illustrative demos, not an exclusive or exhaustive partner list, and not a revenue claim. The enlarged inner frame is the inline-versus-fullscreen pattern from C04, shown on the Zillow tile only so one beat has one change. It does not mean only Zillow can go fullscreen. Do not imply the public directory was already GA (C05)."
+IMPLEMENTATION_NOTES: "Do not draw Coursera, Canva, or Zillow logo paths. Alt: Partner demos named Coursera, Canva, and Zillow, with one larger inner frame for fullscreen."
+LANGUAGE_AUDIT: "English names only. No screenshots with foreign-language UI."
+POINTER_CONTRAST_CHECK: "Standard cyan dot and dark outline on the dark cards and light names. No photographic wordmark is introduced, so no extra contrast case."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-006: hold is Partner demos plus three names (2/3/5). No inline/fullscreen words."
+  - "AC-013: no uncleared partner logo files."
+  - "AC-001: no exclusive-partnership or revenue figure."
+  - "AC-009: the last beat changes frame size only."
+  - "AC-005 / AC-008 / AC-010 / AC-012: three tiles then one size change, each held, safe area intact."
+~~~
+
+### Timing / cue map — S05
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | หลักฐานบนเวที | Spacebar from S04 | Title Partner demos | 500 ms + 200 ms settle | Title only | Indefinite hold |
+| Reveal 1 | Coursera | Spacebar | Coursera tile | 700 ms + 200 ms settle | One name | Indefinite hold |
+| Reveal 2 | Canva | Spacebar | Canva tile | 700 ms + 200 ms settle | Two names | Indefinite hold |
+| Reveal 3 | Zillow | Spacebar | Zillow tile, small inner frame | 700 ms + 200 ms settle | Three names | Indefinite hold |
+| Reveal 4 | อินไลน์ หรือขยายเต็มจอ | Spacebar | Zillow inner frame becomes large | 700 ms + 200 ms settle | Size contrast visible, same words | Indefinite hold |
+| Exit | พื้นผิวการจัดจำหน่าย | Spacebar on the hold | Fade | 400 ms | S06 entry | After the size hold |
+
+## Scene specification — S06
+
+~~~yaml
+SCENE_ID: S06
+CONTENT_REFERENCE: "references/scenes.md#S06"
+CLAIM_IDS: [C06, C19]
+AUDIENCE_TAKEAWAY: "AgentKit groups the tools for building, deploying, and tuning agents."
+VISUAL_JOB: "One name under an umbrella shape, with five empty slots reserved for the next scene."
+MEDIUM: 2D
+MEDIUM_REASON: "The scene introduces the kit. Naming the parts here would steal S07's status story."
+FOCAL_SUBJECT: "The word AgentKit"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Word center x=0.50, y=0.32"
+  BOUNDS: "AgentKit at Display 72, #F5F5F7. A shallow arc in #6B7280, 2 px, above five slots. Slots sit in one row at y=0.62, five rectangles about 280 px by 120 px, gap 24 px, radius 16, edge #2A2A32, no fill text."
+  SUPPORTING_OBJECTS: "The five slots are one empty diagram, revealed together. They are geometry only."
+  NEGATIVE_SPACE: "Inside every slot. No icons that depict a product."
+  SAFE_AREA_CHECK: "The row of five stays inside x 0.05–0.95. Empty slots must not clip."
+VISIBLE_COPY: "AgentKit"
+VISIBLE_WORD_COUNT: 1
+ESSENTIAL_DATA_LABELS: NONE
+ESSENTIAL_LABEL_REASON: "n/a. Component names wait for S07."
+TOTAL_VISIBLE_WORD_COUNT: 1
+COUNT_METHOD: "Shared method. Empty slots contribute 0 words in every state."
+STATE_WORD_INVENTORY:
+  - {state: S06-entry, ordinary: "AgentKit", essential: NONE, ordinary_count: 1, essential_count: 0, total: 1}
+  - {state: S06-hold, ordinary: "AgentKit", essential: NONE, ordinary_count: 1, essential_count: 0, total: 1}
+DATA_SPEC: NOT_APPLICABLE
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "เสาที่สองคือ AgentKit — then open the five empty slots before the component list."
+ENTRY_STATE: "AgentKit visible. Arc and slots not yet drawn."
+REVEAL_BEATS: ["Arc and five empty slots together"]
+SETTLE_STATE: "Name plus five blank rounded rectangles."
+HOLD_STATE: "Static. Slots do not shimmer as if loading."
+EXIT_STATE: "400 ms fade to S07. Slots do not fly into the next grid; S07 draws its own cards."
+REDUCED_MOTION: "Slots crossfade in at their final positions, at most 150 ms."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S05 final hold. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Code-drawn."
+FACTUAL_BOUNDARIES: "Do not write complete, all-in-one, or any status word. C06 is a set of tools, not a claim that every agent problem is solved. Do not name Builder, ChatKit, Evals, Guardrails, or Connectors here."
+IMPLEMENTATION_NOTES: "Alt: AgentKit above five empty slots."
+LANGUAGE_AUDIT: "One English word. No Thai."
+POINTER_CONTRAST_CHECK: "Dark stage. Cyan fill is readable; keep the dark outline on."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-006: the only word is AgentKit (1/0/1) on entry and hold."
+  - "AC-001: no absolute 'solves agents' language and no premature status chips."
+  - "AC-003: five slots, unnamed, matching the five S07 components without labeling them."
+  - "AC-008 / AC-010 / AC-012: one reveal, static hold, reduced-motion crossfade."
+~~~
+
+### Timing / cue map — S06
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | AgentKit | Spacebar from S05 | Word AgentKit | 500 ms + 200 ms settle | Word only | Indefinite hold |
+| Reveal 1 | ชุดเครื่องมือ | Spacebar | Arc and five empty slots | 700 ms + 200 ms settle | Five blank slots | Indefinite hold |
+| Exit | แยกสถานะให้ชัด | Spacebar on the hold | Fade | 400 ms | S07 entry | After the slots are held |
+
+## Scene specification — S07
+
+~~~yaml
+SCENE_ID: S07
+CONTENT_REFERENCE: "references/scenes.md#S07"
+CLAIM_IDS: [C07, C08, C09, C10, C20]
+AUDIENCE_TAKEAWAY: "Agent Builder was beta, ChatKit and Evals were GA, Guardrails has no maturity word, and Connectors were a limited beta."
+VISUAL_JOB: "A component grid whose chips are the evidence for C20."
+MEDIUM: 2D
+MEDIUM_REASON: "Maturity is a label, not a measurement series. Chips with words carry it. A chart would invent a scale."
+FOCAL_SUBJECT: "Five status cards in a 2×3 grid with one empty spacer"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Grid center x=0.50, y=0.56"
+  BOUNDS: "Title Status matters at y=0.12, Title 48, centered, max width 0.42. Grid of three columns and two rows inside the safe area. Card gap 24 px. Each card about 520 px wide and 280 px tall."
+  SUPPORTING_OBJECTS: "Order of slots: row one Builder, ChatKit, Evals; row two Guardrails, Connectors, empty spacer. The spacer is bare stage, not a sixth card."
+  NEGATIVE_SPACE: "The spacer cell. It prevents Limited beta from being squeezed into a 5-up row."
+  SAFE_AREA_CHECK: "Every status word at least 32 px. Limited beta must fit on two lines inside the violet chip without dropping below 32 px."
+VISIBLE_COPY: "Status matters"
+VISIBLE_WORD_COUNT: 2
+ESSENTIAL_DATA_LABELS: "Builder; Beta; ChatKit; GA; Evals; GA; Guardrails; Connectors; Limited; beta"
+ESSENTIAL_LABEL_REASON: "These chips are the scene's facts. Guardrails is a name with no maturity word. GA is counted twice because ChatKit and Evals each show it. Limited and beta are two words."
+TOTAL_VISIBLE_WORD_COUNT: 12
+COUNT_METHOD: "Shared method. Ordinary words remain Status matters (2), inside the 0–8 target. The total is 12 because the chips are essential labels, matching references/scenes.md."
+STATE_WORD_INVENTORY:
+  - {state: S07-entry, ordinary: "Status matters", essential: NONE, ordinary_count: 2, essential_count: 0, total: 2}
+  - {state: S07-R1, ordinary: "Status matters", essential: "Builder, Beta", ordinary_count: 2, essential_count: 2, total: 4}
+  - {state: S07-R2, ordinary: "Status matters", essential: "Builder, Beta, ChatKit, GA", ordinary_count: 2, essential_count: 4, total: 6}
+  - {state: S07-R3, ordinary: "Status matters", essential: "Builder, Beta, ChatKit, GA, Evals, GA", ordinary_count: 2, essential_count: 6, total: 8}
+  - {state: S07-R4, ordinary: "Status matters", essential: "Builder, Beta, ChatKit, GA, Evals, GA, Guardrails", ordinary_count: 2, essential_count: 7, total: 9}
+  - {state: S07-hold, ordinary: "Status matters", essential: "Builder, Beta, ChatKit, GA, Evals, GA, Guardrails, Connectors, Limited, beta", ordinary_count: 2, essential_count: 10, total: 12}
+DATA_SPEC: "NOT a chart. Chip encoding is the design lock: Builder chip Beta on #F59E0B with ink #0B0B0F. ChatKit chip GA on #10A37F with ink #0B0B0F. Evals chip GA on #10A37F with ink #0B0B0F. Guardrails is the chip text on #6B7280 with ink #F5F5F7 and no other status word. Connectors name plus chip Limited beta on #A78BFA with ink #0B0B0F."
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "Reveal Builder on เบตา, ChatKit and Evals on พร้อมใช้ทั่วไป, Guardrails on การ์ดเรล, Connectors on เบตาจำกัด."
+ENTRY_STATE: "Title Status matters only."
+REVEAL_BEATS: ["Builder + Beta", "ChatKit + GA", "Evals + GA", "Guardrails name only", "Connectors + Limited beta"]
+SETTLE_STATE: "All five cards and the empty spacer. Contrast between amber, green, neutral, and violet is visible at once."
+HOLD_STATE: "Static chips. No blinking GA."
+EXIT_STATE: "400 ms fade to S08."
+REDUCED_MOTION: "Each card crossfades in at most 150 ms with its final fill and its final words already correct. No color tween that passes through green for a beta card."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S06 final hold. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Code-drawn. Color is never the only encoding; the English status word is present at every endpoint."
+FACTUAL_BOUNDARIES: "Do not relabel Builder or Connectors as GA. Do not add Preview, Beta, GA, or Limited beta to Guardrails. Do not write Agent Builder if it adds words beyond Builder; the locked label is Builder. Do not draw a node graph that looks like a measured architecture. Connector Registry is not universal (C10)."
+IMPLEMENTATION_NOTES: "Narration may say Agent Builder; the canvas name is Builder, as in the content essential labels. Alt: Status grid. Builder beta, ChatKit GA, Evals GA, Guardrails with no maturity word, Connectors limited beta."
+LANGUAGE_AUDIT: "English chip text only."
+POINTER_CONTRAST_CHECK: "Dark outline is required on green, amber, and violet fills. Neutral chip is mid-gray; the outline plus cyan fill keeps the dot visible."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-006: ordinary copy is only Status matters. Final essential count 10, total 12."
+  - "AC-014: each maturity is fill plus the English word specified above. Guardrails has no maturity word."
+  - "AC-001: beta items are not painted GA (C07, C10, C20)."
+  - "AC-005: Limited beta stays at least 32 px inside the safe area in the 2×3 layout."
+  - "AC-008 / AC-010 / AC-012 / AC-022: one card per Spacebar, static contrast hold, reduced motion keeps the words, pointer outline on every status fill."
+~~~
+
+### Timing / cue map — S07
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | แยกสถานะให้ชัด | Spacebar from S06 | Title Status matters | 500 ms + 200 ms settle | Title only | Indefinite hold |
+| Reveal 1 | Agent Builder เบตา | Spacebar | Builder card, amber Beta | 700 ms + 200 ms settle | Beta readable | Indefinite hold |
+| Reveal 2 | ChatKit พร้อมใช้ทั่วไป | Spacebar | ChatKit card, green GA | 700 ms + 200 ms settle | Beta and one GA | Indefinite hold |
+| Reveal 3 | Evals | Spacebar | Evals card, green GA | 700 ms + 200 ms settle | Two GA chips | Indefinite hold |
+| Reveal 4 | Guardrails | Spacebar | Guardrails neutral chip, name only | 700 ms + 200 ms settle | No maturity word on Guardrails | Indefinite hold |
+| Reveal 5 | Connector Registry เบตาจำกัด | Spacebar | Connectors card, violet Limited beta | 700 ms + 200 ms settle | Full contrast | Indefinite hold |
+| Exit | เสาที่สามคือ Codex | Spacebar on the hold | Fade | 400 ms | S08 entry | After the five-card hold |
+
+## Scene specification — S08
+
+~~~yaml
+SCENE_ID: S08
+CONTENT_REFERENCE: "references/scenes.md#S08"
+CLAIM_IDS: [C11, C12, C13, C20]
+AUDIENCE_TAKEAWAY: "Codex moved from research preview to GA, with Slack, an SDK, and admin tools announced, plus a company-reported usage footnote."
+VISUAL_JOB: "Change one chip from Preview to GA, then add three feature names and a muted footnote."
+MEDIUM: 2D
+MEDIUM_REASON: "The change is a status change. A line chart of the 10× figure would imply an audited series that C13 does not provide."
+FOCAL_SUBJECT: "Codex card and its status chip"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Codex card center x=0.36, y=0.40"
+  BOUNDS: "Card about 640 px by 240 px. Three feature names in a row under the card, gap 24 px, each a short label at least 32 px. Footnote at the lower right of the safe area, #6B7280, at least 32 px, right-aligned inside x=0.95."
+  SUPPORTING_OBJECTS: "Slack, SDK, and Admin appear one at a time. The footnote is last and subordinate."
+  NEGATIVE_SPACE: "Around the card so the chip change is the motion the eye follows."
+  SAFE_AREA_CHECK: "Footnote OpenAI-reported must not clip and must not drop below 32 px."
+VISIBLE_COPY: "Codex is GA"
+VISIBLE_WORD_COUNT: 3
+ESSENTIAL_DATA_LABELS: "Slack; SDK; Admin; 10×; OpenAI-reported"
+ESSENTIAL_LABEL_REASON: "Slack, SDK, and Admin are the named launch surfaces (C12). 10× and OpenAI-reported are the minimum truthful footnote for C13. They are not a title."
+TOTAL_VISIBLE_WORD_COUNT: 8
+COUNT_METHOD: "Settled ordinary line is Codex is GA (3). The word GA is the chip, counted once. Preview exists only in S08-R1 and is an essential status token for that state, then it is gone. Content's total of 6 omitted the footnote; DS16 and the scene visual job include it. Ordinary copy stays 3."
+STATE_WORD_INVENTORY:
+  - {state: S08-entry, ordinary: "", essential: NONE, ordinary_count: 0, essential_count: 0, total: 0}
+  - {state: S08-R1, ordinary: "Codex", essential: "Preview", ordinary_count: 1, essential_count: 1, total: 2}
+  - {state: S08-R2, ordinary: "Codex is GA", essential: NONE, ordinary_count: 3, essential_count: 0, total: 3}
+  - {state: S08-R3, ordinary: "Codex is GA", essential: "Slack", ordinary_count: 3, essential_count: 1, total: 4}
+  - {state: S08-R4, ordinary: "Codex is GA", essential: "Slack, SDK", ordinary_count: 3, essential_count: 2, total: 5}
+  - {state: S08-R5, ordinary: "Codex is GA", essential: "Slack, SDK, Admin", ordinary_count: 3, essential_count: 3, total: 6}
+  - {state: S08-hold, ordinary: "Codex is GA", essential: "Slack, SDK, Admin, 10×, OpenAI-reported", ordinary_count: 3, essential_count: 5, total: 8}
+DATA_SPEC: "NOT a chart. The only number is the footnote token 10×. See the chart section. Do not draw an axis, a bar, or a sparkline."
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "ออกจากรีเสิร์ชพรีวิวเข้าสู่การใช้งานทั่วไป — Preview chip, then GA, then Slack, SDK, admin, then the 10× footnote."
+ENTRY_STATE: "Empty card shell."
+REVEAL_BEATS: ["Codex plus amber Preview chip", "Chip becomes green GA and the ordinary line reads Codex is GA", "Slack", "SDK", "Admin", "Footnote 10× and OpenAI-reported"]
+SETTLE_STATE: "One GA chip. Preview is not visible. Three names and the muted footnote are visible."
+HOLD_STATE: "Static. Footnote does not pulse, even though the narration calls it a footnote pulse; the plan uses a single appearance, then a hold, so the canvas has no decorative loop."
+EXIT_STATE: "400 ms fade to S09."
+REDUCED_MOTION: "Preview state crossfades, at most 150 ms, to the GA state. Do not animate a fill sweep. The footnote crossfades in already reading both tokens."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S07 final hold. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Code-drawn. If a beat is skipped by a bug, do not leave Preview and GA on screen together."
+FACTUAL_BOUNDARIES: "10× is OpenAI-reported daily usage since early August, not an independent benchmark (C13). Do not show plan-tier names. Do not show the GPT-5-Codex token-volume figure from C14. Do not draw Slack's logo."
+IMPLEMENTATION_NOTES: "Chip morph replaces the label Preview with GA and the fill #F59E0B with #10A37F. Ink stays #0B0B0F. Alt: Codex marked GA, with Slack, SDK, and Admin, and a footnote 10 times, OpenAI-reported."
+LANGUAGE_AUDIT: "English only. The footnote is English."
+POINTER_CONTRAST_CHECK: "Outline required on the amber Preview chip and on the green GA chip."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-006: inventory includes a Preview state and a settled state whose ordinary line is Codex is GA. Final hold total 8. Preview and GA are never simultaneous."
+  - "AC-001: footnote reads 10× and OpenAI-reported. No chart and no C14 token count."
+  - "AC-007: no arrow on the chip change."
+  - "AC-009 / AC-010: footnote appears once and then holds still."
+  - "AC-008 / AC-012 / AC-014 / AC-022: Spacebar steps one beat; reduced motion still ends on GA; chip text plus fill; pointer outline on the chip."
+~~~
+
+### Timing / cue map — S08
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | เสาที่สาม | Spacebar from S07 | Empty Codex card | 500 ms + 200 ms settle | Card shell | Indefinite hold |
+| Reveal 1 | รีเสิร์ชพรีวิว | Spacebar | Word Codex and amber Preview | 700 ms + 200 ms settle | Preview visible | Indefinite hold |
+| Reveal 2 | การใช้งานทั่วไป | Spacebar | Chip becomes GA; line Codex is GA | 700 ms + 200 ms settle | Preview gone | Indefinite hold |
+| Reveal 3 | Slack | Spacebar | Slack label | 700 ms + 200 ms settle | Slack added | Indefinite hold |
+| Reveal 4 | SDK | Spacebar | SDK label | 700 ms + 200 ms settle | SDK added | Indefinite hold |
+| Reveal 5 | แอดมิน | Spacebar | Admin label | 700 ms + 200 ms settle | Three features | Indefinite hold |
+| Reveal 6 | กว่าสิบเท่า | Spacebar | Footnote 10× OpenAI-reported | 700 ms + 200 ms settle | Footnote static | Indefinite hold |
+| Exit | เสาที่สี่ | Spacebar on the hold | Fade | 400 ms | S09 entry | After the footnote hold |
+
+## Scene specification — S09
+
+~~~yaml
+SCENE_ID: S09
+CONTENT_REFERENCE: "references/scenes.md#S09"
+CLAIM_IDS: [C15, C16, C17, C19]
+AUDIENCE_TAKEAWAY: "API fuel added GPT-5 Pro, Sora 2, and smaller models OpenAI priced as much cheaper."
+VISUAL_JOB: "Three cards under the line API fuel. Percent labels stay on the mini card only."
+MEDIUM: 2D
+MEDIUM_REASON: "Three names are a set, not a price chart. Dollar prices were not cleared for the canvas."
+FOCAL_SUBJECT: "Row of three model cards"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Row center x=0.50, y=0.54"
+  BOUNDS: "Title API fuel at y=0.16, Title 48. Three cards, gap 24 px, each about 520 px wide and 400 px tall, inside the safe area."
+  SUPPORTING_OBJECTS: "One label block per card. No chips, no prices, no icons of video players."
+  NEGATIVE_SPACE: "Inside the GPT-5 Pro and Sora 2 cards, under the name. Do not fill that space with extra facts."
+  SAFE_AREA_CHECK: "The mini card's percent line stays at least 32 px and inside the card."
+VISIBLE_COPY: "API fuel"
+VISIBLE_WORD_COUNT: 2
+ESSENTIAL_DATA_LABELS: "GPT-5; Pro; Sora; 2; mini; −70%; −80%"
+ESSENTIAL_LABEL_REASON: "Model names are the evidence. The two percent tokens are OpenAI's relative-cost claims (C17) and must stay on the mini card only. Narration, not the canvas, says they are OpenAI claims."
+TOTAL_VISIBLE_WORD_COUNT: 9
+COUNT_METHOD: "Ordinary words are API fuel (2). Content's total of 8 counted −70%/−80% as one token. This plan counts −70% and −80% as two visible tokens so neither number disappears. No new words were added."
+STATE_WORD_INVENTORY:
+  - {state: S09-entry, ordinary: "API fuel", essential: NONE, ordinary_count: 2, essential_count: 0, total: 2}
+  - {state: S09-R1, ordinary: "API fuel", essential: "GPT-5, Pro", ordinary_count: 2, essential_count: 2, total: 4}
+  - {state: S09-R2, ordinary: "API fuel", essential: "GPT-5, Pro, Sora, 2", ordinary_count: 2, essential_count: 4, total: 6}
+  - {state: S09-hold, ordinary: "API fuel", essential: "GPT-5, Pro, Sora, 2, mini, −70%, −80%", ordinary_count: 2, essential_count: 7, total: 9}
+DATA_SPEC: "NOT a chart. Percents are labels. See the chart section for units and the misread to prevent."
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "Reveal GPT-5 Pro, then Sora 2, then the mini card as each is spoken."
+ENTRY_STATE: "Title API fuel only."
+REVEAL_BEATS: ["Card GPT-5 Pro", "Card Sora 2", "Card mini with −70% and −80%"]
+SETTLE_STATE: "Three cards. No status chips. Percent glyphs only on the third card."
+HOLD_STATE: "Static cards."
+EXIT_STATE: "400 ms fade to S10."
+REDUCED_MOTION: "Each card crossfades in at most 150 ms."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S08 final hold. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial."
+FALLBACK: "Code-drawn. Do not replace missing prices with estimated prices."
+FACTUAL_BOUNDARIES: "No dollar prices and no snapshot id gpt-5-pro-2025-10-06 on the canvas. Do not add the word Pro to the Sora card; narration names Sora 2 Pro, and the locked label is Sora 2. The card must not be read as a denial that Sora 2 Pro exists. Do not assign −80% to image and −70% to realtime on the canvas; narration carries that split (C17). Do not add an OpenAI claim caption. Do not add GA chips (DS17)."
+IMPLEMENTATION_NOTES: "Paint the minus as − (U+2212) or a hyphen, consistently, at 32 px or larger. Alt: Three API cards labeled GPT-5 Pro, Sora 2, and mini with minus 70 percent and minus 80 percent."
+LANGUAGE_AUDIT: "English and numerals only."
+POINTER_CONTRAST_CHECK: "Dark cards, standard cyan dot and outline."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-006: ordinary line is API fuel. Percents appear only on the mini card. Total on the hold is 9."
+  - "AC-001: no dollar amount and no GA chip (C15, C17)."
+  - "AC-005: percent text at least 32 px inside the safe area."
+  - "AC-008 / AC-010 / AC-012: three reveals, static hold, same endpoints under reduced motion."
+~~~
+
+### Timing / cue map — S09
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | เสาที่สี่ | Spacebar from S08 | Title API fuel | 500 ms + 200 ms settle | Title only | Indefinite hold |
+| Reveal 1 | GPT-5 Pro | Spacebar | GPT-5 Pro card | 700 ms + 200 ms settle | One card | Indefinite hold |
+| Reveal 2 | Sora 2 | Spacebar | Sora 2 card | 700 ms + 200 ms settle | Two cards | Indefinite hold |
+| Reveal 3 | โมเดลมินิ | Spacebar | mini card with −70% and −80% | 700 ms + 200 ms settle | Three cards | Indefinite hold |
+| Exit | บิลเดอร์ควรทำอะไรต่อ | Spacebar on the hold | Fade | 400 ms | S10 entry | After the three-card hold |
+
+### Chart specification — S09 percents are labels, not a chart
 
 | Field | Value |
 |---|---|
-| Claim/source IDs | <verified IDs> |
-| Dataset path and exact values | <repo-relative path; preserve source units> |
-| Unit / period / denominator | <scope> |
-| Encoding and scale | <linear/log, area/length, baseline and justification> |
-| Uncertainty / missing data | <how handled> |
-| Ordinary copy budget | <exact copy, default target 0–8, and count> |
-| Essential data label exclusions | <exact labels/values/units, necessity of each, excluded and total counts> |
-| Narrated detail | <detail moved out of canvas without changing meaning> |
-| Misinterpretation to prevent | <risk and design response> |
+| Claim/source IDs | C17. Sources are the content register, not a new lookup. |
+| Dataset path and exact values | No dataset file. Visible tokens are −70% and −80% on the mini card only. |
+| Unit / period / denominator | OpenAI's announced relative cost versus the named larger models at DevDay. Image mini versus gpt-image-1 and realtime mini versus gpt-realtime are spoken, not printed as extra names. |
+| Encoding and scale | Text labels. No bar length, no axis, no log scale. Card size is layout, not a measurement. |
+| Uncertainty / missing data | Vendor comparison, not an audit. Dollar prices are omitted on purpose. |
+| Ordinary copy budget | API fuel. 2 ordinary words. |
+| Essential data label exclusions | GPT-5, Pro, Sora, 2, mini, −70%, −80%. The percents are required so the mini card is not only the word mini. |
+| Narrated detail | Which percent belongs to image versus realtime, and that these are OpenAI claims. |
+| Misinterpretation to prevent | Do not read the card widths as savings. Do not read the percents as discounts off a printed dollar price. |
+
+## Scene specification — S10
+
+~~~yaml
+SCENE_ID: S10
+CONTENT_REFERENCE: "references/scenes.md#S10"
+CLAIM_IDS: [C19, C20, C05, C07, C08, C11]
+AUDIENCE_TAKEAWAY: "Pick a next build — a ChatGPT app, an embedded agent, or Codex — and keep preview distinct from GA."
+VISUAL_JOB: "Three paths. Apps keeps Preview, Codex keeps GA, Agents has no single chip."
+MEDIUM: 2D
+MEDIUM_REASON: "The close is a decision map. The spoken closing sentence would break the copy lock if it were printed."
+FOCAL_SUBJECT: "Three path cards under Platform first"
+EXPLANATORY_ARROWS: NONE
+COMPOSITION:
+  ANCHOR: "Row center x=0.50, y=0.54"
+  BOUNDS: "Title Platform first at y=0.16, Title 48, max width 0.42. Three cards, gap 32 px, each about 500 px wide and 420 px tall."
+  SUPPORTING_OBJECTS: "Left card Apps with amber Preview chip. Center card Agents with no chip. Right card Codex with green GA chip."
+  NEGATIVE_SPACE: "Inside the Agents card, so the missing chip is visible as a choice, not as an unfinished layout. Do not drop a question mark or an empty chip outline that looks broken."
+  SAFE_AREA_CHECK: "Chips and names at least 32 px, all inside the safe area."
+VISIBLE_COPY: "Platform first"
+VISIBLE_WORD_COUNT: 2
+ESSENTIAL_DATA_LABELS: "Apps; Preview; Agents; Codex; GA"
+ESSENTIAL_LABEL_REASON: "The three path names are the decision map. Preview and GA are required by DS22 so Apps is not mistaken for GA and Codex is not left unlabeled. Agents has no chip because its parts are mixed (C08 versus C07)."
+TOTAL_VISIBLE_WORD_COUNT: 7
+COUNT_METHOD: "Content's total of 5 listed Apps, Agents, and Codex only. This plan adds Preview and GA because Design locked those chips. Ordinary words stay Platform first (2)."
+STATE_WORD_INVENTORY:
+  - {state: S10-entry, ordinary: "Platform first", essential: NONE, ordinary_count: 2, essential_count: 0, total: 2}
+  - {state: S10-R1, ordinary: "Platform first", essential: "Apps, Preview", ordinary_count: 2, essential_count: 2, total: 4}
+  - {state: S10-R2, ordinary: "Platform first", essential: "Apps, Preview, Agents", ordinary_count: 2, essential_count: 3, total: 5}
+  - {state: S10-hold, ordinary: "Platform first", essential: "Apps, Preview, Agents, Codex, GA", ordinary_count: 2, essential_count: 5, total: 7}
+DATA_SPEC: NOT_APPLICABLE
+ASSETS: []
+LIGHTING_CAMERA: NOT_APPLICABLE
+NARRATION_CUE: "แล้วบิลเดอร์ควรทำอะไรต่อ — Apps path, then Agents path, then Codex path. The closing sentence stays spoken."
+ENTRY_STATE: "Title Platform first only."
+REVEAL_BEATS: ["Apps card with Preview chip", "Agents card with no chip", "Codex card with GA chip"]
+SETTLE_STATE: "Three cards. Preview ink #0B0B0F on #F59E0B. GA ink #0B0B0F on #10A37F. Agents has the name only."
+HOLD_STATE: "Static final frame. No second line of takeaway text."
+EXIT_STATE: "No forward exit. Spacebar on this hold does nothing. R is the way back to S01."
+REDUCED_MOTION: "Each card crossfades in at most 150 ms with its chip already in the final color."
+BACK_NAVIGATION: "If Left Arrow is implemented, show S09 final hold. Otherwise NOT_APPLICABLE."
+RETURN_TO_COVER: "R cancels and shows S01 initial, including when this scene is on its final hold."
+FALLBACK: "Code-drawn."
+FACTUAL_BOUNDARIES: "Do not print the closing sentence. Do not add revenue, monetization, or dates. Do not put a single chip on Agents. Do not mark Apps as GA. Do not add ChatKit or Evals as extra words; narration carries that split."
+IMPLEMENTATION_NOTES: "Forward boundary: further Spacebar events are ignored while the final hold is settled. They must not queue a ghost transition. Alt: Three paths. Apps in preview, Agents with no single status, Codex generally available. The line Platform first."
+LANGUAGE_AUDIT: "English only."
+POINTER_CONTRAST_CHECK: "Outline required on the Preview chip and the GA chip, same as S04 and S08."
+COVER_AUTHENTICITY: NOT_APPLICABLE
+QA_ASSERTIONS:
+  - "AC-006: ordinary line is only Platform first. Hold total 7. No closing sentence on the canvas."
+  - "AC-011: Spacebar on the final hold does not advance or loop. R returns to S01 initial."
+  - "AC-001: Apps chip stays Preview, Codex chip stays GA, Agents has no chip (C05, C11, C20, DS22)."
+  - "AC-007: no arrows between paths."
+  - "AC-008 / AC-010 / AC-012 / AC-022: three reveals then a static hold; reduced motion matches; pointer outline on both chips."
+~~~
+
+### Timing / cue map — S10
+
+| Beat | Spoken cue | Presenter action | Visual change | Duration/easing | Settled endpoint | Hold / advance condition |
+|---|---|---|---|---|---|---|
+| Entry | แล้วบิลเดอร์ควรทำอะไรต่อ | Spacebar from S09 | Title Platform first | 500 ms + 200 ms settle | Title only | Indefinite hold |
+| Reveal 1 | Apps SDK แบบพรีวิว | Spacebar | Apps card, Preview chip | 700 ms + 200 ms settle | Preview visible | Indefinite hold |
+| Reveal 2 | เอเจนต์ในผลิตภัณฑ์ | Spacebar | Agents card, no chip | 700 ms + 200 ms settle | Agents unlabeled by status | Indefinite hold |
+| Reveal 3 | Codex ที่เป็นจีเอ | Spacebar | Codex card, GA chip | 700 ms + 200 ms settle | Three paths | Indefinite hold while the closing sentence is spoken |
+| Exit | End of story | None. Spacebar does nothing | No change | n/a | Stay on the three paths | R returns to S01 initial |
+
+## Chart specification
+
+No scene uses a statistical chart. Card sizes, column heights, and the S05 frame-size change are layout, not data. Builder must not add axes.
+
+### S08 footnote, not a chart
+
+| Field | Value |
+|---|---|
+| Claim/source IDs | C13. Company-reported. Do not add C14's token-volume figure. |
+| Dataset path and exact values | No dataset file. The only painted number is 10×. |
+| Unit / period / denominator | OpenAI's statement of daily Codex usage growth since early August, as recorded in the claim register. Methodology is not independently audited. |
+| Encoding and scale | Two text tokens, 10× and OpenAI-reported, in #6B7280, at least 32 px. Not bar length. |
+| Uncertainty / missing data | Shown by the words OpenAI-reported. No error bar, because no interval was published in the claim. |
+| Ordinary copy budget | Codex is GA. 3 ordinary words on the settled hold. |
+| Essential data label exclusions | Slack, SDK, Admin, 10×, OpenAI-reported. |
+| Narrated detail | Plan-tier gates and the early-August window. |
+| Misinterpretation to prevent | A chart would look like a third-party time series. The footnote is the correction. |
+
+S09's percent labels are specified in that scene. They are not redrawn here as a chart.
 
 ## Asset manifest
 
-Store in assets/manifest.md or as a maintained section here.
+The maintained table is `assets/manifest.md`. It matches this section. Runtime diagrams for S02–S10 are drawn from the tokens above. They are not image files.
 
 | Asset ID | Repo-relative runtime path | Origin/source URL | Rights/license | Type/resolution/size | Crop/focal point | Attribution | Generated? | Fallback | State |
 |---|---|---|---|---|---|---|---|---|---|
-| A01 | assets/<name> | <actual source> | <permission> | <spec> | <coordinates> | <requirements> | YES/NO | <path/behavior> | READY/PENDING |
+| A-COVER-WORDMARK | assets/cover/openai-wordmark-2025.svg | https://commons.wikimedia.org/wiki/File:OpenAI_logo_2025_(wordmark).svg ; file path https://commons.wikimedia.org/wiki/Special:FilePath/OpenAI_logo_2025_(wordmark).svg ; upstream cited on Commons https://openai.com/brand/ | OpenAI trademark. Commons PD-textlogo note does not remove trademark. Educational local cover, not sponsorship. | SVG, viewBox 0 0 269.6592 72.5157, 1799 bytes, paths only | Full wordmark, no crop. Display width 691 px, centered. | No on-canvas credit line. Provenance in assets/cover/PROVENANCE.md. | NO | A-COVER-BLOSSOM alone | READY |
+| A-COVER-BLOSSOM | assets/cover/openai-blossom-2025.svg | https://commons.wikimedia.org/wiki/File:OpenAI_logo_2025_(symbol).svg ; upstream https://openai.com/brand/ | Same trademark limits. Symbol only. | SVG, viewBox 1.68 1.75 16.65 16.5, 1894 bytes, paths only | Full symbol, no crop. Display about 200 px square. | No on-canvas credit line. | NO | If this also fails, no drawn logo. Package is an asset failure. | READY |
+| A-FONT-INTER | assets/fonts/ (not vendored yet) | Inter, SIL Open Font License. Builder obtains the Latin woff2. | OFL-1.1. Ship the license notice with the font file. | Latin woff2, regular and medium, or a variable font. Not downloaded in this stage. | n/a | OFL notice inside the package, not on the audience canvas. | NO | system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif | PENDING_BUILDER |
 
-Add authenticity (official logo/original character/real photograph/illustration), verification notes and any required credit for the cover. If attribution must appear on the canvas, include it in the copy budget; prefer an asset whose permitted use fits the presentation. An authentic fallback must itself be available in the package.
+Cover authenticity: Agent 3 re-read both SVG files. They contain no `<text>` nodes and no Thai. The wordmark is the required S01 asset. The blossom is the fallback only. Do not trace, recolor the path data, or generate a substitute. White treatment is CSS fill `#F5F5F7` on the inlined paths. Do not stack the two files.
 
-Reference-only material belongs in references/. Runtime assets must be available from the repo/build's portable asset path; never depend on a local absolute path or an expiring authenticated Drive URL or external CDN. All required presentation assets, including cover and fonts, must be included in the local package.
+Partner marks for Coursera, Canva, Zillow, and Slack are intentionally absent. DS15 locks text labels unless a later provenanced file exists. None exists. Do not add one in the build.
+
+## QA assertion map
+
+Scene assertions above point at these rows in `05_QA.md`. Builder does not self-award a pass. QA checks the packaged build.
+
+| Criterion | What the visual plan requires QA to see |
+|---|---|
+| AC-001 | Claim IDs on each scene. No price, no attendee count, no C14 token volume, no beta painted as GA. |
+| AC-002 | Cue tables. Each Spacebar beat matches one spoken step. |
+| AC-003 | S01–S10 only. S01 is the first frame. No extra scene. |
+| AC-004 | 1920×1080 logical stage, letterboxed, not stretched. |
+| AC-005 | Safe area, one focal subject, English labels at least 32 px when they carry a claim. |
+| AC-006 | State inventories. Ordinary words 0–8 in every state. S07 total 12 is essential chips. |
+| AC-007 | No chrome. The only content arrow is S04 Apps SDK down to MCP. |
+| AC-008 | Spacebar settles then advances. R returns to S01 initial. Clicks not required. |
+| AC-009 | Motion ends on the semantic endpoint. No loop. |
+| AC-010 | Holds stay still, including a 30 s hold. No auto-advance. |
+| AC-011 | R during motion cancels tweens. S10 Spacebar does not leave the scene. |
+| AC-012 | Reduced motion crossfades at most 150 ms to the same words and chips. |
+| AC-013 | Wordmark and blossom packaged. No generated cover. Inter packaged by Builder or the named fallback. |
+| AC-014 | Status is a word plus a fill. Chip ink follows DS04. |
+| AC-022 | Cyan dot, dark outline, 14 px, no trail, no click capture, hidden outside the stage. |
+| AC-023 | Wordmark visible at load and after R. Blossom only if the wordmark fails. |
+| AC-024 | Canvas and alt text English. Thai only in narration and the notes below. |
+
+AC-015 through AC-021 are build and package checks. This plan does not invent performance numbers. There is no WebGL fallback to test (AC-013 WebGL is not applicable because no scene uses WebGL).
+
+## Builder brief inputs
+
+`04_BUILD.md` stays the implementation brief. Do not treat this visual plan as a license to build during the visual stage. When Builder starts, these inputs are already decided:
+
+- Logical stage 1920×1080, fit and letterbox, safe area 5 percent.
+- Scene order S01–S10. Data should carry the scene IDs, claim IDs, and the state inventories in this file.
+- Draw S02–S10 in CSS or SVG from the tokens. Do not generate illustrations.
+- Inline the cover SVG. Package both cover files. Package Inter Latin woff2 under `assets/fonts/` with the OFL notice before the ZIP, per DS02 and DS24.
+- Implement the keyboard and pointer rules in the shared contract. Document optional Left Arrow, F, and P only if they are actually built, and only outside the canvas.
+- English `lang=en` on the presentation root. Alt strings are the ones in each scene's implementation notes.
+- No chart library is required.
+- After the build, Agent 4 writes Thai `06_SCENE_RATIONALE` from the notes below plus what the build actually shows. Those notes are a draft, not the Drive document.
 
 ## Owner rationale draft input
 
-For each scene supply a short Thai plain-language note: what it helps the audience understand, why this medium/composition was chosen, what motion demonstrates, and what remains uncertain. Keep this draft in GitHub. Agent 4 turns it into 06_SCENE_RATIONALE in the existing topic folder after verifying the actual build.
+Thai draft for Agent 4. Keep it in GitHub. The Drive document is created after the build, in the existing topic folder.
+
+~~~yaml
+S01: "ฉากนี้ปักหมุดว่าเรื่องคือ OpenAI DevDay 2025 และเป็นจอที่ปุ่ม R ต้องกลับมาทุกครั้ง ใช้เวิร์ดมาร์กทางการทั้งไฟล์บนพื้นเข้ม ไม่ใช่ภาพที่วาดขึ้น การเคลื่อนไหวมีแค่บรรทัดชื่อใต้โลโก้ โลโก้เองทึบตั้งแต่เฟรมแรก สิ่งที่จงใจไม่โชว์คือจำนวนผู้ร่วมงานหรือคำโฆษณางาน"
+S02: "ช่วยให้จำภาพเดียวว่าซอฟต์แวร์กำลังถูกวางให้วิ่งในการสนทนา กรอบวงเล็บคือขอบเขตของพื้นผิวแชท ไม่ใช่ระบบปฏิบัติการ จึงไม่มีชิปสถานะและไม่มีหน้าต่างเดสก์ท็อป ประโยคภาษาอังกฤษโผล่ทีหลังกรอบ"
+S03: "เป็นแผนที่สี่เสาก่อนลงรายละเอียด เผยทีละใบตามคำบรรยาย ไม่มีลูกศรเพราะไม่ใช่ปุ่มถัดไป และไม่ได้บอกว่านี่คือกำหนดการทุกเซสชัน วันที่กับเมืองอยู่ในเสียงบรรยาย"
+S04: "แสดงว่า Apps SDK อยู่บน MCP และสถานะวันงานคือ Preview ชิปสีอำพันต้องค้างไว้ ลูกศรเส้นเดียวชี้ลงหา MCP ไม่ใช้สีเขียวเพราะไดเรกทอรีสาธารณะยังไม่เปิดวันนั้น"
+S05: "ทำให้เดโมจับต้องได้ด้วยชื่อ Coursera, Canva, Zillow เป็นตัวอักษร เพราะยังไม่มีไฟล์โลโก้ที่ตรวจสิทธิ์แล้ว ขนาดกรอบในใบ Zillow เปลี่ยนจากเล็กเป็นใหญ่เพื่อบอกอินไลน์กับเต็มจอ โดยไม่เพิ่มคำ รายชื่อเป็นตัวอย่าง ไม่ใช่รายชื่อพันธมิตรแบบผูกขาด และไม่ใช่ตัวเลขรายได้"
+S06: "ตั้งชื่อ AgentKit เป็นร่ม แล้วเปิดห้าช่องว่างไว้ให้ฉากถัดไป ช่องว่างไม่มีชื่อและไม่มีชิป เพื่อไม่ให้ผู้ชมเข้าใจว่าชุดนี้แก้ทุกปัญหาของเอเจนต์"
+S07: "นี่คือวิธีไม่ขายเบตาเป็นของพร้อมใช้ Builder เป็น Beta, ChatKit กับ Evals เป็น GA, Guardrails มีแค่ชื่อบนชิปสีกลาง, Connectors เป็น Limited beta สีกับคำต้องไปด้วยกัน"
+S08: "พา Codex จากชิป Preview ไปเป็น GA แล้วค่อยวาง Slack, SDK, Admin เชิงอรรถ 10× บอกว่าเป็นตัวเลขที่ OpenAI รายงานเอง ไม่ทำเป็นกราฟเพราะไม่มีชุดข้อมูลที่ตรวจทานได้"
+S09: "สามการ์ดคือเชื้อเพลิง API ชื่อโมเดลตามที่ล็อกไว้ เปอร์เซ็นต์อยู่บนการ์ดมินิเท่านั้น ไม่ใส่ราคาดอลลาร์ และไม่ติดชิป GA คำว่าเป็นเคลมของผู้ขายอยู่ในเสียงบรรยาย"
+S10: "สามทางให้ลงมือต่อ Apps ยังเป็น Preview, Agents ไม่มีชิปเดียวเพราะสถานะภายในปนกัน, Codex เป็น GA ประโยคปิดอยู่ในเสียง ไม่ขึ้นจอ และไม่มีไทม์ไลน์รายได้"
+~~~
 
 ## Exit criteria and handoff
 
@@ -276,5 +1031,3 @@ For each scene supply a short Thai plain-language note: what it helps the audien
 - 04_BUILD.md remains available as the implementation brief; 05_QA.md is read and scene assertions are mapped to it.
 - Publish artifacts then status: STAGE=READY_FOR_BUILD; NEXT_ACTOR=Agent 4 — Builder.
 - NEXT_ACTION: “Read 01–05 and the asset manifest. Fill 04_BUILD.md's implementation choices, build the planned web presentation, record BUILD_NOTES.md and verified package metadata, and create 06_SCENE_RATIONALE in the exact recorded topic folder. Assemble the prebuilt LOCAL_ZIP with launchers, authentic cover and theme-adaptive pointer. Record BUILD_COMMIT, manifest, PACKAGE_SHA256 and observed package download identity. Prepare independent clean-extraction/offline QA and record any real packaging/delivery blocker.”
-
-
