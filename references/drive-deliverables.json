@@ -33,6 +33,34 @@
       "localSource": "owner-drafts/03A_NARRATION_SCRIPT.md",
       "supersededStubFileId": "1xsmeViTMBTINUoeoQig_ow2zbImdPi1KaQjbAdBoOx0",
       "supersededStubNote": "Empty placeholder Doc created first; current filled Doc is fileId above. Stub left in folder (trash blocked without owner approval)."
+    },
+    {
+      "name": "06_SCENE_RATIONALE",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "actor": "Agent 4",
+      "state": "READY",
+      "fileId": "1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY",
+      "observedUrl": "https://docs.google.com/document/d/1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY/edit?usp=drivesdk",
+      "localSource": "references/06_SCENE_RATIONALE.md",
+      "verifiedBy": "Google Docs read_document after spelling corrections",
+      "packageNote": "Doc states the Drive ZIP is not confirmed."
+    },
+    {
+      "name": "20261003-b4fb-1.0.0-local.zip",
+      "type": "ZIP",
+      "actor": "Agent 4",
+      "state": "NOT_PUBLISHED",
+      "fileId": null,
+      "observedUrl": null,
+      "localSource": "delivery/packages/20261003-b4fb-1.0.0-local.zip",
+      "expectedBytes": 71064,
+      "expectedSha256": "a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1",
+      "rejectedUpload": {
+        "fileId": "1GUkcvPagsFtHBPBnPlLCqeuSo9kUyAyz",
+        "reportedBytes": 59640,
+        "action": "trashed; later metadata read returned not found"
+      }
     }
   ]
 }

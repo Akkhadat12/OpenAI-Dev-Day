@@ -1,0 +1,65 @@
+{
+  "PROJECT_ID": "20261003-b4fb",
+  "PACKAGE_VERSION": "1.0.0",
+  "BUILD_COMMIT": "55f8a78dbdb21b349a224968bfffa247e15d5e41",
+  "LOCAL_RUNTIME": "Python 3",
+  "SERVER_BIND": "127.0.0.1",
+  "files": [
+    {
+      "path": "README_TH.md",
+      "sha256": "e6c7a336f660fc17df2d87a47741039068cbf102b8e8ca1f46d9989f11cb4457"
+    },
+    {
+      "path": "START.bat",
+      "sha256": "4fd60b751761d911141f451ae3fc9e8e197f818b050c20dccea582df07cd9751"
+    },
+    {
+      "path": "STOP.bat",
+      "sha256": "108ea4fad5423380fc1a0ae693189f642878564e61f22427e0d661b0079096e8"
+    },
+    {
+      "path": "app/app.js",
+      "sha256": "44d0817dc880c1ed533f43ba1bf6df1ed4ad9e650e637cdcd06dfad4b6b93a3b"
+    },
+    {
+      "path": "app/assets/cover/openai-blossom-2025.svg",
+      "sha256": "ca35a5723163b6a766b8b37de9bedd24c2b3ae81d3caa4b9429ccb91ef873cc7"
+    },
+    {
+      "path": "app/assets/cover/openai-wordmark-2025.svg",
+      "sha256": "6e4c87d52178f47077b698ced2fb181a8b0115e031cce42f62c6ca7c83d46b9d"
+    },
+    {
+      "path": "app/assets/fonts/OFL.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "path": "app/assets/fonts/SOURCE.txt",
+      "sha256": "112c5f8b881be31d5a72712b0cbe632538ebd2fc1a5d213fb722951dda04c2bd"
+    },
+    {
+      "path": "app/assets/fonts/inter-latin-400-normal.woff2",
+      "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    {
+      "path": "app/assets/fonts/inter-latin-500-normal.woff2",
+      "sha256": "f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f"
+    },
+    {
+      "path": "app/index.html",
+      "sha256": "33cff6ff7a9e74a531e8f2fe18cc3d3453b1a62097c3dfbecd0a668cb7b6440c"
+    },
+    {
+      "path": "app/scenes.js",
+      "sha256": "5b83344b928f38bb38775ed1b89a1019cf460687e030a8c745b4642570ae069f"
+    },
+    {
+      "path": "app/styles.css",
+      "sha256": "da838335d318267ffe02eb6655c78a38308004cc56e5f5b3316613f858ebc391"
+    },
+    {
+      "path": "serve.py",
+      "sha256": "a3c8badc282160a2e087b9361747bb14122b19ae9c6b55b10f1789ea1f6456f5"
+    }
+  ]
+}
