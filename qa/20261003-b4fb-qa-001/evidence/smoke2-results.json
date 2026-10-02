@@ -1,0 +1,48 @@
+[
+  {
+    "started": {
+      "pid": 49988,
+      "port": 8960,
+      "url": "http://127.0.0.1:8960/",
+      "token": "REDACTED_LOOPBACK_TOKEN",
+      "projectId": "20261003-b4fb",
+      "packageVersion": "1.0.0",
+      "app": "/workspace/qa-openai-devday/20261003-b4fb-1.0.0-local/app"
+    }
+  },
+  {
+    "stop_with_app": {
+      "code": 2,
+      "out": "",
+      "err": "Refusing to stop a process that is not this package server.",
+      "state_exists": true
+    }
+  },
+  {
+    "unrelated": {
+      "code": 2,
+      "out": "",
+      "err": "Refusing to stop a process that is not this package server.",
+      "sleep_alive": true
+    }
+  },
+  {
+    "final_stop": {
+      "code": 2,
+      "out": "",
+      "err": "Refusing to stop a process that is not this package server."
+    }
+  },
+  {
+    "canvas_copy_fields": []
+  },
+  {
+    "html_lang_en": true,
+    "has_pointer_id": true,
+    "ui_chrome_suspects": []
+  },
+  {
+    "start_bat_has_py": true,
+    "start_bat_binds_note": true
+  }
+]

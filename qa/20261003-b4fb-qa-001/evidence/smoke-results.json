@@ -1,0 +1,103 @@
+[
+  {
+    "test": "host_reject",
+    "code": 2,
+    "out": "",
+    "err": "This helper binds 127.0.0.1 only."
+  },
+  {
+    "test": "state_after_serve",
+    "state": {
+      "pid": 49597,
+      "port": 8941,
+      "url": "http://127.0.0.1:8941/",
+      "token": "REDACTED_LOOPBACK_TOKEN",
+      "projectId": "20261003-b4fb",
+      "packageVersion": "1.0.0",
+      "app": "/workspace/qa-openai-devday/20261003-b4fb-1.0.0-local/app"
+    }
+  },
+  {
+    "test": "fetch_index",
+    "status": 200,
+    "len": 13672,
+    "lang_en": true,
+    "has_openai": true
+  },
+  {
+    "test": "asset",
+    "path": "assets/fonts/inter-latin-400-normal.woff2",
+    "status": 200,
+    "len": 23664,
+    "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+  },
+  {
+    "test": "asset",
+    "path": "assets/cover/openai-wordmark-2025.svg",
+    "status": 200,
+    "len": 1799,
+    "sha256": "6e4c87d52178f47077b698ced2fb181a8b0115e031cce42f62c6ca7c83d46b9d"
+  },
+  {
+    "test": "asset",
+    "path": "app.js",
+    "status": 200,
+    "len": 10949,
+    "sha256": "44d0817dc880c1ed533f43ba1bf6df1ed4ad9e650e637cdcd06dfad4b6b93a3b"
+  },
+  {
+    "test": "asset",
+    "path": "scenes.js",
+    "status": 200,
+    "len": 2977,
+    "sha256": "5b83344b928f38bb38775ed1b89a1019cf460687e030a8c745b4642570ae069f"
+  },
+  {
+    "test": "asset",
+    "path": "styles.css",
+    "status": 200,
+    "len": 10606,
+    "sha256": "da838335d318267ffe02eb6655c78a38308004cc56e5f5b3316613f858ebc391"
+  },
+  {
+    "test": "repeat_serve",
+    "code": 0,
+    "out": "READY http://127.0.0.1:8941/",
+    "err": ""
+  },
+  {
+    "test": "stop",
+    "code": 2,
+    "out": "",
+    "err": "usage: serve.py [-h] --app APP --state STATE [--port PORT] [--project PROJECT]\n                [--version VERSION] [--host HOST] [--serve | --stop |\n                --status]\nserve.py: error: the following arguments are required: --app",
+    "state_exists": true
+  },
+  {
+    "test": "unrelated_pid_refuse",
+    "code": 2,
+    "out": "",
+    "err": "usage: serve.py [-h] --app APP --state STATE [--port PORT] [--project PROJECT]\n                [--version VERSION] [--host HOST] [--serve | --stop |\n                --status]\nserve.py: error: the following arguments are required: --app",
+    "sleep_alive": true
+  },
+  {
+    "test": "http_urls_in_app",
+    "urls": [
+      [
+        "app/index.html",
+        "http://www.w3.org/2000/svg"
+      ],
+      [
+        "app/index.html",
+        "http://www.w3.org/2000/svg"
+      ],
+      [
+        "app/index.html",
+        "http://www.w3.org/2000/svg"
+      ]
+    ]
+  },
+  {
+    "test": "thai_in_app_sources",
+    "files": []
+  }
+]
