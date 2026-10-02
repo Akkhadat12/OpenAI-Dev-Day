@@ -29,15 +29,15 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: BUILDING
+STAGE: READY_FOR_QA
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Agent 4 — Builder
-UPDATED_AT: 2026-10-03T03:20:34+07:00
-ARTIFACT_COMMIT: 7fc074178dd157bcfc7e3e4ebbe806586c9dab15
+ACTIVE_ACTOR: Agent 5 — QA Acceptance
+UPDATED_AT: 2026-10-03T03:23:42+07:00
+ARTIFACT_COMMIT: 645dfc0ed8171c704318fb3e3e67e361f04af95f
 LAST_VERIFIED_COMMIT: 55f8a78dbdb21b349a224968bfffa247e15d5e41
-LAST_VERIFIED_SCOPE: Extracted local ZIP smoke on Linux loopback. Chrome 148 headless walked S01–S10, cover reset, reduced motion, and letterbox pointer. Windows launchers NOT_RUN. Drive ZIP bytes were not verified.
-NEXT_ACTOR: Agent 4 — Builder
-NEXT_ACTION: "Upload delivery/packages/20261003-b4fb-1.0.0-local.zip into OWNER_DRIVE_FOLDER_ID 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy and verify the observed file is 71064 bytes with SHA-256 a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1. Do not reuse trashed file 1GUkcvPagsFtHBPBnPlLCqeuSo9kUyAyz. Then set PACKAGE_FILE_ID, PACKAGE_DOWNLOAD_URL, and STAGE=READY_FOR_QA. 06_SCENE_RATIONALE Doc 1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY is already in that folder."
+LAST_VERIFIED_SCOPE: Extracted local ZIP smoke on Linux loopback, plus Drive metadata for 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- (application/zip, 71064 bytes, parent 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy). Windows launchers NOT_RUN.
+NEXT_ACTOR: Agent 5 — QA Acceptance
+NEXT_ACTION: "Read 01–05, BUILD_NOTES, OPEN_FINDINGS, package manifest and Thai rationale. Independently download/extract the exact PACKAGE_SHA256 archive, verify source identity, run its loopback payload offline, retest findings and regressions, and record actual environment/Windows verification limits. Return QA_PASS or QA_FAIL with evidence."
 REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md, assets/manifest.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
@@ -60,7 +60,7 @@ EXECUTION_RUNTIME: Python 3.12.3
 EXECUTION_BROWSER: Google Chrome 148.0.7778.96 headless
 EXECUTION_VERIFIED_AT: 2026-10-03T03:20:34+07:00
 EXECUTION_EVIDENCE: BUILD_NOTES.md
-REQUIRED_SERVICES_FOR_NEXT_ACTION: [google_drive]
+REQUIRED_SERVICES_FOR_NEXT_ACTION: []
 SERVICE_CAPABILITIES:
   github:
     state: READ_VERIFIED
@@ -69,21 +69,10 @@ SERVICE_CAPABILITIES:
     verified_at: 2026-10-03T02:02:55+07:00
   google_drive:
     state: WRITE_VERIFIED
-    scope: owner PDFs and 03A narration Doc uploaded into OWNER_DRIVE_FOLDER_ID
+    scope: owner folder; ZIP 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- metadata matches 71064 bytes
     evidence: references/drive-deliverables.json
-    verified_at: 2026-10-03T02:07:54+07:00
-PENDING_SERVICE_TASKS:
-  - id: DRIVE_ZIP_UPLOAD
-    role: Agent 4 — Builder
-    capability: google_drive write of the exact local ZIP bytes
-    artifact: delivery/packages/20261003-b4fb-1.0.0-local.zip
-    expected_bytes: 71064
-    expected_sha256: a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1
-    folder_id: 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy
-    state: PENDING
-    rejected_file_id: 1GUkcvPagsFtHBPBnPlLCqeuSo9kUyAyz
-    rejected_reason: Drive reported 59640 bytes; file was trashed and a later metadata read returned not found
-    next_action: Upload the committed ZIP, verify size and SHA-256, then record PACKAGE_FILE_ID and set READY_FOR_QA
+    verified_at: 2026-10-03T03:23:42+07:00
+PENDING_SERVICE_TASKS: []
 NEXT_EXECUTION_PREFERENCE: ANY_CAPABLE
 WINDOWS_VERIFICATION_ACTOR: UNSET
 WINDOWS_VERIFICATION_PACKAGE_SHA256: NOT_VERIFIED
@@ -99,7 +88,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 | 03_VISUAL_PLAN.md | Agent 3 | READY | 48939cfea75498c5d1948045bd0b1a8c38a1078c | 03_VISUAL_PLAN.md S01–S10, assets/manifest.md | null |
 | 04_BUILD.md | Agent 4 | READY | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | 04_BUILD.md implementation choices and scene map | null |
 | 05_QA.md | Agent 5 | CRITERIA_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
-| BUILD_NOTES.md | Agent 4 | READY | 7fc074178dd157bcfc7e3e4ebbe806586c9dab15 | BUILD_NOTES.md | null |
+| BUILD_NOTES.md | Agent 4 | READY | 645dfc0ed8171c704318fb3e3e67e361f04af95f | BUILD_NOTES.md Drive delivery update | null |
 | assets/cover | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | assets/cover/PROVENANCE.md | null |
 | src/ | Agent 4 | READY | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | BUILD_NOTES.md extracted-package walk | null |
 | qa/ | Agent 5 | PENDING | NOT_VERIFIED | UNSET | null |
@@ -112,7 +101,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 | 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Agent 1 | READY | 1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t | https://drive.google.com/file/d/1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t/view?usp=drivesdk | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | 2026-10-03T02:07:54+07:00 |
 | 03A_NARRATION_SCRIPT | Google Doc | Agent 1 | READY | 1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk | https://docs.google.com/document/d/1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk/edit?usp=drivesdk | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | 2026-10-03T02:07:54+07:00 |
 | 06_SCENE_RATIONALE | Google Doc | Agent 4 | READY | 1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY | https://docs.google.com/document/d/1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY/edit?usp=drivesdk | 7fc074178dd157bcfc7e3e4ebbe806586c9dab15 | 2026-10-03T03:18:37+07:00 |
-| 20261003-b4fb-1.0.0-local.zip | ZIP | Agent 4 | NOT_PUBLISHED | UNSET | NOT_DELIVERED_YET | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | UNSET |
+| 20261003-b4fb-1.0.0-local.zip | ZIP | Agent 4 | READY | 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- | https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | 2026-10-03T03:23:42+07:00 |
 
 ## Local package and build identity
 ~~~yaml
@@ -132,12 +121,12 @@ FIX_COMMITS_BY_FINDING: {}
 PACKAGE_VERSION: 1.0.0
 PACKAGE_PATH: delivery/packages/20261003-b4fb-1.0.0-local.zip
 PACKAGE_MANIFEST_PATH: delivery/manifest.json
-PACKAGE_FILE_ID: UNSET
-PACKAGE_DOWNLOAD_URL: NOT_DELIVERED_YET
+PACKAGE_FILE_ID: 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-
+PACKAGE_DOWNLOAD_URL: https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk
 PACKAGE_SHA256: a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1
-PACKAGE_STATE: BUILT_NOT_PUBLISHED
-PACKAGE_IDENTITY_EVIDENCE: BUILD_NOTES.md
-LAST_PACKAGE_VERIFIED_AT: 2026-10-03T02:54:00+07:00
+PACKAGE_STATE: READY_FOR_QA
+PACKAGE_IDENTITY_EVIDENCE: BUILD_NOTES.md, references/drive-deliverables.json
+LAST_PACKAGE_VERIFIED_AT: 2026-10-03T03:23:42+07:00
 POINTER_MODE: theme_adaptive_presenter_dot
 POINTER_SPEC_PATH: 02_DESIGN_SYSTEM.md
 COVER_SCENE_ID: S01
@@ -164,10 +153,10 @@ OWNER_WINDOWS_SMOKE_EVIDENCE: UNSET
 
 ## Current handoff
 ~~~yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: 7fc074178dd157bcfc7e3e4ebbe806586c9dab15
-LAST_HANDOFF_EVIDENCE: BUILD_NOTES.md, delivery/manifest.json, references/06_SCENE_RATIONALE.md, references/drive-deliverables.json
+LAST_HANDOFF_ARTIFACT_COMMIT: 645dfc0ed8171c704318fb3e3e67e361f04af95f
+LAST_HANDOFF_EVIDENCE: BUILD_NOTES.md, references/drive-deliverables.json, references/workflow-history.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-STAGE=BUILDING; NEXT_ACTOR=Agent 4 — Builder. Local package is built. Drive ZIP byte verification is still pending, so this is not READY_FOR_QA.
+STAGE=READY_FOR_QA; NEXT_ACTOR=Agent 5 — QA Acceptance.
