@@ -1,0 +1,38 @@
+{
+  "PROJECT_ID": "20261003-b4fb",
+  "OWNER_DRIVE_FOLDER_ID": "1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy",
+  "OWNER_DRIVE_FOLDER": "https://drive.google.com/drive/folders/1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy",
+  "verified_at": "2026-10-03T02:06:00+07:00",
+  "deliverables": [
+    {
+      "name": "01_KNOWLEDGE_SUMMARY.pdf",
+      "type": "PDF",
+      "actor": "Agent 1",
+      "state": "READY",
+      "fileId": "13sEknPsHURRwiyt4lYyz0HRe6T7XGI3s",
+      "observedUrl": "https://drive.google.com/file/d/13sEknPsHURRwiyt4lYyz0HRe6T7XGI3s/view?usp=drivesdk",
+      "localSource": "owner-drafts/01_KNOWLEDGE_SUMMARY.pdf"
+    },
+    {
+      "name": "02_RESEARCH_AND_ANALYSIS.pdf",
+      "type": "PDF",
+      "actor": "Agent 1",
+      "state": "READY",
+      "fileId": "1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t",
+      "observedUrl": "https://drive.google.com/file/d/1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t/view?usp=drivesdk",
+      "localSource": "owner-drafts/02_RESEARCH_AND_ANALYSIS.pdf"
+    },
+    {
+      "name": "03A_NARRATION_SCRIPT",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "actor": "Agent 1",
+      "state": "READY",
+      "fileId": "1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk",
+      "observedUrl": "https://docs.google.com/document/d/1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk/edit?usp=drivesdk",
+      "localSource": "owner-drafts/03A_NARRATION_SCRIPT.md",
+      "supersededStubFileId": "1xsmeViTMBTINUoeoQig_ow2zbImdPi1KaQjbAdBoOx0",
+      "supersededStubNote": "Empty placeholder Doc created first; current filled Doc is fileId above. Stub left in folder (trash blocked without owner approval)."
+    }
+  ]
+}
