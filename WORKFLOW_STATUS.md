@@ -29,23 +29,24 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: PLANNING
+STAGE: READY_FOR_DESIGN
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Agent 1 — Content/Research
-UPDATED_AT: 2026-10-03T02:03:50+07:00
-ARTIFACT_COMMIT: fc6871f4a048e612fe195571adf8418fec929efd
-LAST_VERIFIED_COMMIT: fc6871f4a048e612fe195571adf8418fec929efd
-LAST_VERIFIED_SCOPE: Bootstrap seed only. Inspected origin/main @ 5d4841e51bf6e15e9df6ef9bb27c60a2cab5d652 (README.md, .gitignore) and remote heads. Verified Drive folder metadata for OWNER_DRIVE_FOLDER_ID. Local seed commit contains README.md, verbatim 01_CONTENT.md–05_QA.md templates, and references/bootstrap-notes.md. Content research is not complete.
-NEXT_ACTOR: Agent 1 — Content/Research
-NEXT_ACTION: Complete Content research through READY_FOR_DESIGN (claims, scenes, Thai owner editions 01/02/03A; authentic cover asset plan).
-REQUIRED_INPUTS: [01_CONTENT.md, 05_QA.md]
+ACTIVE_ACTOR: Agent 2 — Design System
+UPDATED_AT: 2026-10-03T02:07:54+07:00
+ARTIFACT_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
+LAST_VERIFIED_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
+LAST_VERIFIED_SCOPE: Content complete — 10 scenes, claim/source registers, Thai owner editions on Drive, authentic cover wordmark SVG.
+NEXT_ACTOR: Agent 2 — Design System
+NEXT_ACTION: Read README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, and 05_QA.md. Fill 02_DESIGN_SYSTEM.md for this topic, preserving narration-first, visual-minimal (0–8 English canvas words), Thai narration S01–S10 in references/scenes.md and owner 03A Doc, authentic S01 cover assets/cover/openai-wordmark-2025.svg. Exit: design system ready → READY_FOR_VISUAL.
+REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 05_QA.md, references/scenes.md, references/cover-asset.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
-BLOCKERS: []
+BLOCKERS:
+  - "NOTE: openai.com returned 403 from the research host. Claims were cross-checked via OpenAI Community and API docs. Empty stub Doc 1xsmeViTMBTINUoeoQig_ow2zbImdPi1KaQjbAdBoOx0 was left in the owner Drive folder (optional cleanup). This does not block READY_FOR_DESIGN."
 OWNER_ACTION_REQUIRED: null
 OWNER_DECISIONS:
   SCOPE: "Owner-approved scope (proxy), recorded at bootstrap 2026-10-03T02:03:50+07:00. Thesis target: what OpenAI announced and demoed at Dev Day 2025 that changes how builders ship — models, API, tools, and agent capabilities, platform shifts, and practical build-next implications. Prefer primary sources. Distinguish announced versus shipped. Audience: builders and PMs who missed the event and need a tight visual story. Delivery: LOCAL_ZIP on Windows. English canvas plus Thai narration and Thai owner PDFs."
-  THESIS: "Owner-approved thesis (proxy), same record: what OpenAI announced and demoed at Dev Day 2025 that changes how builders ship — models, API, tools, and agent capabilities, platform shifts, and practical build-next implications. Prefer primary sources and distinguish announced versus shipped."
+  THESIS: "Owner-approved thesis (proxy), same record: what OpenAI announced and demoed at Dev Day 2025 that changes how builders ship — models, API, tools, and agent capabilities, platform shifts, and practical build-next implications. Prefer primary sources and distinguish announced versus shipped. Chosen angle (proxy-approved overnight): Lead Apps in ChatGPT + Apps SDK and AgentKit as platform shift; Codex GA + GPT-5 Pro / Sora 2 / mini models as capability expand (rationale in references/story-outline.md)."
   FINAL_REVIEW: PENDING
   DELIVERY: LOCAL_ZIP
   PUBLICATION: NOT_REQUESTED
@@ -59,7 +60,7 @@ EXECUTION_RUNTIME: NOT_VERIFIED
 EXECUTION_BROWSER: NOT_VERIFIED
 EXECUTION_VERIFIED_AT: 2026-10-03T02:02:55+07:00
 EXECUTION_EVIDENCE: references/bootstrap-notes.md
-REQUIRED_SERVICES_FOR_NEXT_ACTION: [google_drive]
+REQUIRED_SERVICES_FOR_NEXT_ACTION: []
 SERVICE_CAPABILITIES:
   github:
     state: READ_VERIFIED
@@ -67,10 +68,10 @@ SERVICE_CAPABILITIES:
     evidence: references/bootstrap-notes.md
     verified_at: 2026-10-03T02:02:55+07:00
   google_drive:
-    state: READ_VERIFIED
-    scope: folder metadata for OWNER_DRIVE_FOLDER_ID; parent is TOPIC_DRIVE_PARENT; canAddChildren true observed; no file written
-    evidence: references/bootstrap-notes.md
-    verified_at: 2026-10-03T02:02:55+07:00
+    state: WRITE_VERIFIED
+    scope: owner PDFs and 03A narration Doc uploaded into OWNER_DRIVE_FOLDER_ID
+    evidence: references/drive-deliverables.json
+    verified_at: 2026-10-03T02:07:54+07:00
 PENDING_SERVICE_TASKS: []
 NEXT_EXECUTION_PREFERENCE: ANY_CAPABLE
 WINDOWS_VERIFICATION_ACTOR: UNSET
@@ -82,22 +83,23 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 ## Repository deliverables
 | Path | Actor | State | Source/artifact commit | Verified evidence | Invalidated by |
 |---|---|---|---|---|---|
-| 01_CONTENT.md | Agent 1 | PENDING | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
+| 01_CONTENT.md | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | references/source-register.md, references/claim-register.md, references/story-outline.md, references/scenes.md, references/cover-asset.md, references/content-spec-yaml.md, owner-drafts/ | null |
 | 02_DESIGN_SYSTEM.md | Agent 2 | PENDING | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | 03_VISUAL_PLAN.md | Agent 3 | PENDING | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | 04_BUILD.md | Agent 4 | TEMPLATE_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | 05_QA.md | Agent 5 | CRITERIA_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | BUILD_NOTES.md | Agent 4 | PENDING | NOT_VERIFIED | UNSET | null |
-| src/ and assets/ | Agent 4 | PENDING | NOT_VERIFIED | UNSET | null |
+| assets/cover | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | assets/cover/PROVENANCE.md | null |
+| src/ | Agent 4 | PENDING | NOT_VERIFIED | UNSET | null |
 | qa/ | Agent 5 | PENDING | NOT_VERIFIED | UNSET | null |
 | delivery/ launchers, helper and manifest | Agent 4 | PENDING | NOT_VERIFIED | UNSET | null |
 
 ## Owner-facing Drive deliverables
 | Name | Type | Actor | State | File ID | Observed URL | Source commit | Verified at |
 |---|---|---|---|---|---|---|---|
-| 01_KNOWLEDGE_SUMMARY.pdf | PDF | Agent 1 | PENDING | UNSET | UNSET | NOT_VERIFIED | UNSET |
-| 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Agent 1 | PENDING | UNSET | UNSET | NOT_VERIFIED | UNSET |
-| 03A_NARRATION_SCRIPT | Google Doc | Agent 1 | PENDING | UNSET | UNSET | NOT_VERIFIED | UNSET |
+| 01_KNOWLEDGE_SUMMARY.pdf | PDF | Agent 1 | READY | 13sEknPsHURRwiyt4lYyz0HRe6T7XGI3s | https://drive.google.com/file/d/13sEknPsHURRwiyt4lYyz0HRe6T7XGI3s/view?usp=drivesdk | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | 2026-10-03T02:07:54+07:00 |
+| 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Agent 1 | READY | 1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t | https://drive.google.com/file/d/1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t/view?usp=drivesdk | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | 2026-10-03T02:07:54+07:00 |
+| 03A_NARRATION_SCRIPT | Google Doc | Agent 1 | READY | 1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk | https://docs.google.com/document/d/1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk/edit?usp=drivesdk | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | 2026-10-03T02:07:54+07:00 |
 | 06_SCENE_RATIONALE | Google Doc | Agent 4 | PENDING_BUILD | UNSET | UNSET | NOT_VERIFIED | UNSET |
 | 20261003-b4fb-<PACKAGE_VERSION>-local.zip | ZIP | Agent 4 | PENDING_BUILD | UNSET | UNSET | NOT_VERIFIED | UNSET |
 
@@ -128,7 +130,7 @@ LAST_PACKAGE_VERIFIED_AT: UNSET
 POINTER_MODE: theme_adaptive_presenter_dot
 POINTER_SPEC_PATH: 02_DESIGN_SYSTEM.md
 COVER_SCENE_ID: S01
-COVER_ASSET_ID: UNSET
+COVER_ASSET_ID: assets/cover/openai-wordmark-2025.svg
 ~~~
 
 ## QA identity and owner verification
@@ -151,10 +153,10 @@ OWNER_WINDOWS_SMOKE_EVIDENCE: UNSET
 
 ## Current handoff
 ~~~yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: fc6871f4a048e612fe195571adf8418fec929efd
-LAST_HANDOFF_EVIDENCE: references/bootstrap-notes.md
+LAST_HANDOFF_ARTIFACT_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
+LAST_HANDOFF_EVIDENCE: references/workflow-history.md, references/drive-deliverables.json
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-Fresh bootstrap is on the branch. STAGE remains PLANNING. Content/Research still has to finish claims, scenes, the Thai owner editions 01/02/03A, and an authentic cover asset plan before READY_FOR_DESIGN. No webapp, src/, or package exists. PACKAGE_STATE=NOT_BUILT. QA_RESULT=NOT_RUN. OPEN_FINDINGS and BLOCKERS are empty. 06_SCENE_RATIONALE is PENDING_BUILD.
+STAGE=READY_FOR_DESIGN; NEXT_ACTOR=Agent 2 — Design System.
