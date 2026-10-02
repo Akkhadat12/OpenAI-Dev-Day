@@ -29,16 +29,16 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: READY_FOR_DESIGN
+STAGE: READY_FOR_VISUAL
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Agent 2 — Design System
-UPDATED_AT: 2026-10-03T02:07:54+07:00
-ARTIFACT_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
-LAST_VERIFIED_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
-LAST_VERIFIED_SCOPE: Content complete — 10 scenes, claim/source registers, Thai owner editions on Drive, authentic cover wordmark SVG.
-NEXT_ACTOR: Agent 2 — Design System
-NEXT_ACTION: Read README.md, WORKFLOW_STATUS.md, 01_CONTENT.md, and 05_QA.md. Fill 02_DESIGN_SYSTEM.md for this topic, preserving narration-first, visual-minimal (0–8 English canvas words), Thai narration S01–S10 in references/scenes.md and owner 03A Doc, authentic S01 cover assets/cover/openai-wordmark-2025.svg. Exit: design system ready → READY_FOR_VISUAL.
-REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 05_QA.md, references/scenes.md, references/cover-asset.md]
+ACTIVE_ACTOR: Agent 3 — Visual Director
+UPDATED_AT: 2026-10-03T02:15:27+07:00
+ARTIFACT_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
+LAST_VERIFIED_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
+LAST_VERIFIED_SCOPE: Design system filled — dark builder-canvas tokens, status-chip encoding, S01–S10 guidance, authentic cover wordmark, presenter pointer.
+NEXT_ACTOR: Agent 3 — Visual Director
+NEXT_ACTION: Read 01_CONTENT.md, 02_DESIGN_SYSTEM.md, 04_BUILD.md and 05_QA.md. Fill 03_VISUAL_PLAN.md scene by scene, including assets, reveal/settle/hold states, word counts, and factual boundaries. Do not build yet.
+REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 04_BUILD.md, 05_QA.md, references/scenes.md, references/cover-asset.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
 BLOCKERS:
@@ -84,7 +84,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 | Path | Actor | State | Source/artifact commit | Verified evidence | Invalidated by |
 |---|---|---|---|---|---|
 | 01_CONTENT.md | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | references/source-register.md, references/claim-register.md, references/story-outline.md, references/scenes.md, references/cover-asset.md, references/content-spec-yaml.md, owner-drafts/ | null |
-| 02_DESIGN_SYSTEM.md | Agent 2 | PENDING | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
+| 02_DESIGN_SYSTEM.md | Agent 2 | READY | 3a6d60b12f95f840697e56627b070d9a20b2d717 | 02_DESIGN_SYSTEM.md tokens, decisions DS01–DS24, S01–S10 guidance | null |
 | 03_VISUAL_PLAN.md | Agent 3 | PENDING | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | 04_BUILD.md | Agent 4 | TEMPLATE_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | 05_QA.md | Agent 5 | CRITERIA_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
@@ -153,10 +153,10 @@ OWNER_WINDOWS_SMOKE_EVIDENCE: UNSET
 
 ## Current handoff
 ~~~yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: fc124ac6157f48ad468d1ad36b8538b2b5183ea2
-LAST_HANDOFF_EVIDENCE: references/workflow-history.md, references/drive-deliverables.json
+LAST_HANDOFF_ARTIFACT_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
+LAST_HANDOFF_EVIDENCE: references/workflow-history.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-STAGE=READY_FOR_DESIGN; NEXT_ACTOR=Agent 2 — Design System.
+STAGE=READY_FOR_VISUAL; NEXT_ACTOR=Agent 3 — Visual Director.
