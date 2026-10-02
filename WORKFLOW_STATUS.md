@@ -29,16 +29,16 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: READY_FOR_VISUAL
+STAGE: READY_FOR_BUILD
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Agent 3 — Visual Director
-UPDATED_AT: 2026-10-03T02:15:27+07:00
-ARTIFACT_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
-LAST_VERIFIED_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
-LAST_VERIFIED_SCOPE: Design system filled — dark builder-canvas tokens, status-chip encoding, S01–S10 guidance, authentic cover wordmark, presenter pointer.
-NEXT_ACTOR: Agent 3 — Visual Director
-NEXT_ACTION: Read 01_CONTENT.md, 02_DESIGN_SYSTEM.md, 04_BUILD.md and 05_QA.md. Fill 03_VISUAL_PLAN.md scene by scene, including assets, reveal/settle/hold states, word counts, and factual boundaries. Do not build yet.
-REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 04_BUILD.md, 05_QA.md, references/scenes.md, references/cover-asset.md]
+ACTIVE_ACTOR: Agent 4 — Builder
+UPDATED_AT: 2026-10-03T02:27:32+07:00
+ARTIFACT_COMMIT: 48939cfea75498c5d1948045bd0b1a8c38a1078c
+LAST_VERIFIED_COMMIT: 48939cfea75498c5d1948045bd0b1a8c38a1078c
+LAST_VERIFIED_SCOPE: Visual plan complete — S01–S10 scene specs, cue maps, word counts, status chips, authentic cover wordmark, asset manifest. Webapp not built.
+NEXT_ACTOR: Agent 4 — Builder
+NEXT_ACTION: "Read 01–05 and the asset manifest. Fill 04_BUILD.md's implementation choices, build the planned web presentation, record BUILD_NOTES.md and verified package metadata, and create 06_SCENE_RATIONALE in the exact recorded topic folder. Assemble the prebuilt LOCAL_ZIP with launchers, authentic cover and theme-adaptive pointer. Record BUILD_COMMIT, manifest, PACKAGE_SHA256 and observed package download identity. Prepare independent clean-extraction/offline QA and record any real packaging/delivery blocker."
+REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md, assets/manifest.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: UNSET
 BLOCKERS:
@@ -85,7 +85,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 |---|---|---|---|---|---|
 | 01_CONTENT.md | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | references/source-register.md, references/claim-register.md, references/story-outline.md, references/scenes.md, references/cover-asset.md, references/content-spec-yaml.md, owner-drafts/ | null |
 | 02_DESIGN_SYSTEM.md | Agent 2 | READY | 3a6d60b12f95f840697e56627b070d9a20b2d717 | 02_DESIGN_SYSTEM.md tokens, decisions DS01–DS24, S01–S10 guidance | null |
-| 03_VISUAL_PLAN.md | Agent 3 | PENDING | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
+| 03_VISUAL_PLAN.md | Agent 3 | READY | 48939cfea75498c5d1948045bd0b1a8c38a1078c | 03_VISUAL_PLAN.md S01–S10, assets/manifest.md | null |
 | 04_BUILD.md | Agent 4 | TEMPLATE_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | 05_QA.md | Agent 5 | CRITERIA_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
 | BUILD_NOTES.md | Agent 4 | PENDING | NOT_VERIFIED | UNSET | null |
@@ -153,10 +153,10 @@ OWNER_WINDOWS_SMOKE_EVIDENCE: UNSET
 
 ## Current handoff
 ~~~yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: 3a6d60b12f95f840697e56627b070d9a20b2d717
-LAST_HANDOFF_EVIDENCE: references/workflow-history.md
+LAST_HANDOFF_ARTIFACT_COMMIT: 48939cfea75498c5d1948045bd0b1a8c38a1078c
+LAST_HANDOFF_EVIDENCE: references/workflow-history.md, 03_VISUAL_PLAN.md, assets/manifest.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-STAGE=READY_FOR_VISUAL; NEXT_ACTOR=Agent 3 — Visual Director.
+STAGE=READY_FOR_BUILD; NEXT_ACTOR=Agent 4 — Builder.
