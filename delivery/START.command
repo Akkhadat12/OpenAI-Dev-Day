@@ -61,7 +61,12 @@ else
 fi
 
 URL=""
-IFS= read -r URL <"$URLFILE" || URL=""
+if [ -f "$URLFILE" ]; then
+  # serve.py writes the URL with no trailing newline. read returns 1 at EOF
+  # after storing that line, so a failing status must not clear URL.
+  IFS= read -r URL <"$URLFILE" || true
+fi
+URL="${URL%$'\r'}"
 if [ -z "$URL" ]; then
   printf '%s\n' "ไม่พบที่อยู่ของเซิร์ฟเวอร์ / Server URL was not recorded."
   pause_on_mac_failure
