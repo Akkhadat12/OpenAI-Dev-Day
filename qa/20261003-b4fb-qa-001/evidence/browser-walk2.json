@@ -1,0 +1,356 @@
+{
+  "reached_S10": true,
+  "summary": [
+    {
+      "i": 0,
+      "event": "load",
+      "sceneId": "S01",
+      "beat": null,
+      "text": "OpenAI DevDay 2025",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 1,
+      "event": "Space",
+      "sceneId": "S01",
+      "beat": null,
+      "text": "OpenAI DevDay 2025",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 2,
+      "event": "Space",
+      "sceneId": "S02",
+      "beat": null,
+      "text": "Software runs in chat",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 3,
+      "event": "Space",
+      "sceneId": "S02",
+      "beat": null,
+      "text": "Software runs in chat",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 4,
+      "event": "Space",
+      "sceneId": "S03",
+      "beat": null,
+      "text": "Four pillars Apps Agents Codex Models API",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 5,
+      "event": "Space",
+      "sceneId": "S03",
+      "beat": null,
+      "text": "Four pillars Apps Agents Codex Models API",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 6,
+      "event": "Space",
+      "sceneId": "S03",
+      "beat": null,
+      "text": "Four pillars Apps Agents Codex Models API",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 7,
+      "event": "Space",
+      "sceneId": "S03",
+      "beat": null,
+      "text": "Four pillars Apps Agents Codex Models API",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 8,
+      "event": "Space",
+      "sceneId": "S03",
+      "beat": null,
+      "text": "Four pillars Apps Agents Codex Models API",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 9,
+      "event": "Space",
+      "sceneId": "S04",
+      "beat": null,
+      "text": "Apps SDK \u00b7 Preview MCP",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 10,
+      "event": "Space",
+      "sceneId": "S04",
+      "beat": null,
+      "text": "Apps SDK \u00b7 Preview MCP",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 11,
+      "event": "Space",
+      "sceneId": "S04",
+      "beat": null,
+      "text": "Apps SDK \u00b7 Preview MCP",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 12,
+      "event": "Space",
+      "sceneId": "S05",
+      "beat": null,
+      "text": "Partner demos Coursera Canva Zillow",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 13,
+      "event": "Space",
+      "sceneId": "S05",
+      "beat": null,
+      "text": "Partner demos Coursera Canva Zillow",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 14,
+      "event": "Space",
+      "sceneId": "S05",
+      "beat": null,
+      "text": "Partner demos Coursera Canva Zillow",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 15,
+      "event": "Space",
+      "sceneId": "S05",
+      "beat": null,
+      "text": "Partner demos Coursera Canva Zillow",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 16,
+      "event": "Space",
+      "sceneId": "S05",
+      "beat": null,
+      "text": "Partner demos Coursera Canva Zillow",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 17,
+      "event": "Space",
+      "sceneId": "S06",
+      "beat": null,
+      "text": "AgentKit",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 18,
+      "event": "Space",
+      "sceneId": "S06",
+      "beat": null,
+      "text": "AgentKit",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 19,
+      "event": "Space",
+      "sceneId": "S07",
+      "beat": null,
+      "text": "Status matters Builder Beta ChatKit GA Evals GA Guardrails Connectors Limited beta",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 20,
+      "event": "Space",
+      "sceneId": "S07",
+      "beat": null,
+      "text": "Status matters Builder Beta ChatKit GA Evals GA Guardrails Connectors Limited beta",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 21,
+      "event": "Space",
+      "sceneId": "S07",
+      "beat": null,
+      "text": "Status matters Builder Beta ChatKit GA Evals GA Guardrails Connectors Limited beta",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 22,
+      "event": "Space",
+      "sceneId": "S07",
+      "beat": null,
+      "text": "Status matters Builder Beta ChatKit GA Evals GA Guardrails Connectors Limited beta",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 23,
+      "event": "Space",
+      "sceneId": "S07",
+      "beat": null,
+      "text": "Status matters Builder Beta ChatKit GA Evals GA Guardrails Connectors Limited beta",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 24,
+      "event": "Space",
+      "sceneId": "S07",
+      "beat": null,
+      "text": "Status matters Builder Beta ChatKit GA Evals GA Guardrails Connectors Limited beta",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 25,
+      "event": "Space",
+      "sceneId": "S08",
+      "beat": null,
+      "text": "Codex Preview Codex is GA Slack SDK Admin 10\u00d7OpenAI-reported",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 26,
+      "event": "Space",
+      "sceneId": "S08",
+      "beat": null,
+      "text": "Codex Preview Codex is GA Slack SDK Admin 10\u00d7OpenAI-reported",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 27,
+      "event": "Space",
+      "sceneId": "S08",
+      "beat": null,
+      "text": "Codex is GA Slack SDK Admin 10\u00d7OpenAI-reported",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 28,
+      "event": "Space",
+      "sceneId": "S08",
+      "beat": null,
+      "text": "Codex is GA Slack SDK Admin 10\u00d7OpenAI-reported",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 29,
+      "event": "Space",
+      "sceneId": "S08",
+      "beat": null,
+      "text": "Codex is GA Slack SDK Admin 10\u00d7OpenAI-reported",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 30,
+      "event": "Space",
+      "sceneId": "S08",
+      "beat": null,
+      "text": "Codex is GA Slack SDK Admin 10\u00d7OpenAI-reported",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 31,
+      "event": "Space",
+      "sceneId": "S08",
+      "beat": null,
+      "text": "Codex is GA Slack SDK Admin 10\u00d7OpenAI-reported",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 32,
+      "event": "Space",
+      "sceneId": "S09",
+      "beat": null,
+      "text": "API fuel GPT-5 Pro Sora 2 mini \u221270% \u221280%",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 33,
+      "event": "Space",
+      "sceneId": "S09",
+      "beat": null,
+      "text": "API fuel GPT-5 Pro Sora 2 mini \u221270% \u221280%",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 34,
+      "event": "Space",
+      "sceneId": "S09",
+      "beat": null,
+      "text": "API fuel GPT-5 Pro Sora 2 mini \u221270% \u221280%",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 35,
+      "event": "Space",
+      "sceneId": "S09",
+      "beat": null,
+      "text": "API fuel GPT-5 Pro Sora 2 mini \u221270% \u221280%",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 36,
+      "event": "Space",
+      "sceneId": "S10",
+      "beat": null,
+      "text": "Platform first Apps Preview Agents Codex GA",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": 37,
+      "event": "extraSpace",
+      "sceneId": "S10",
+      "beat": null,
+      "text": "Platform first Apps Preview Agents Codex GA",
+      "opacity": 1,
+      "appState": null
+    },
+    {
+      "i": null,
+      "event": "R",
+      "sceneId": "S01",
+      "beat": null,
+      "text": "OpenAI DevDay 2025",
+      "opacity": 1,
+      "appState": null
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "url": "http://127.0.0.1:8980/",
+  "viewports": {
+    "1920x1080": {
+      "stage": {
+        "w": 1920,
+        "h": 1080,
+        "ratio": 1.7777777777777777,
+        "x": 0,
+        "y": 0
+      },
+      "start": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S01",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "OpenAI DevDay 2025"
+      },
+      "after_walk": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S06",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "AgentKit"
+      },
+      "after_extra_space": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S06",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "AgentKit"
+      },
+      "after_R": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S01",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "OpenAI DevDay 2025"
+      }
+    },
+    "1280x720": {
+      "stage": {
+        "w": 1280,
+        "h": 720,
+        "ratio": 1.7777777777777777,
+        "x": 0,
+        "y": 0
+      },
+      "start": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S01",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "OpenAI DevDay 2025"
+      },
+      "after_walk": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S06",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "AgentKit"
+      },
+      "after_extra_space": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S06",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "AgentKit"
+      },
+      "after_R": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S01",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "OpenAI DevDay 2025"
+      }
+    },
+    "1600x1000": {
+      "stage": {
+        "w": 1600,
+        "h": 900,
+        "ratio": 1.7777777777777777,
+        "x": 0,
+        "y": 50
+      },
+      "start": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S01",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "OpenAI DevDay 2025"
+      },
+      "after_walk": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S06",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "AgentKit"
+      },
+      "after_extra_space": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S06",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "AgentKit"
+      },
+      "after_R": {
+        "lang": "en",
+        "title": "OpenAI DevDay 2025",
+        "sceneId": "S01",
+        "pointerHidden": true,
+        "pointerSize": {
+          "w": 0,
+          "h": 0,
+          "bg": "rgb(34, 211, 238)"
+        },
+        "overflowY": 0,
+        "textSample": "OpenAI DevDay 2025"
+      }
+    }
+  },
+  "keys": {},
+  "console": [],
+  "network_external": [],
+  "reduced_motion_end": {
+    "lang": "en",
+    "title": "OpenAI DevDay 2025",
+    "sceneId": "S09",
+    "pointerHidden": true,
+    "pointerSize": {
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(34, 211, 238)"
+    },
+    "overflowY": 0,
+    "textSample": "API fuel\n\nGPT-5 Pro\n\nSora 2\n\nmini\n\n\u221270%\n\u221280%"
+  },
+  "pointer_inside": {
+    "lang": "en",
+    "title": "OpenAI DevDay 2025",
+    "sceneId": "S09",
+    "pointerHidden": false,
+    "pointerSize": {
+      "w": 14,
+      "h": 14,
+      "bg": "rgb(34, 211, 238)"
+    },
+    "overflowY": 0,
+    "textSample": "API fuel\n\nGPT-5 Pro\n\nSora 2\n\nmini\n\n\u221270%\n\u221280%"
+  },
+  "pointer_corner": {
+    "lang": "en",
+    "title": "OpenAI DevDay 2025",
+    "sceneId": "S09",
+    "pointerHidden": false,
+    "pointerSize": {
+      "w": 14,
+      "h": 14,
+      "bg": "rgb(34, 211, 238)"
+    },
+    "overflowY": 0,
+    "textSample": "API fuel\n\nGPT-5 Pro\n\nSora 2\n\nmini\n\n\u221270%\n\u221280%"
+  },
+  "offline_advance": {
+    "before": {
+      "lang": "en",
+      "title": "OpenAI DevDay 2025",
+      "sceneId": "S01",
+      "pointerHidden": true,
+      "pointerSize": {
+        "w": 0,
+        "h": 0,
+        "bg": "rgb(34, 211, 238)"
+      },
+      "overflowY": 0,
+      "textSample": "OpenAI DevDay 2025"
+    },
+    "after": {
+      "lang": "en",
+      "title": "OpenAI DevDay 2025",
+      "sceneId": "S01",
+      "pointerHidden": true,
+      "pointerSize": {
+        "w": 0,
+        "h": 0,
+        "bg": "rgb(34, 211, 238)"
+      },
+      "overflowY": 0,
+      "textSample": "OpenAI DevDay 2025"
+    },
+    "changed": false
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "probe": "offline Space advance on extracted package",
+  "url": "http://127.0.0.1:8971/",
+  "runtime": "Python 3.12.3 serve.py, absolute --app",
+  "browser": "Chrome/148.0.7778.96 headless",
+  "viewport": "1280x720",
+  "offline_set_after_load": true,
+  "before": {
+    "scene": "S01",
+    "beat": "0",
+    "phase": "hold",
+    "lang": "en"
+  },
+  "afterFirstSpace": {
+    "scene": "S01",
+    "beat": "1",
+    "phase": "hold",
+    "titleOpacity": "1"
+  },
+  "afterSecondSpace": {
+    "scene": "S02",
+    "beat": "0",
+    "phase": "hold",
+    "text": "Software runs in chat"
+  },
+  "advancedOffS01": true,
+  "externalRequests": [],
+  "failedRequests": [],
+  "consoleErrors": []
+}

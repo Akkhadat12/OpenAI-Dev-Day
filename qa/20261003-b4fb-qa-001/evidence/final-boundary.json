@@ -1,0 +1,40 @@
+{
+  "probe": "settled Space walk, extra Space, 30s holds",
+  "url": "http://127.0.0.1:8971/",
+  "runtime": "Python 3.12.3 serve.py, absolute --app",
+  "browser": "Chrome/148.0.7778.96 headless",
+  "viewport": "1280x720",
+  "normal": {
+    "settleMs": 1250,
+    "settled": true,
+    "spaces": 40,
+    "final": {
+      "scene": "S10",
+      "beat": "3",
+      "phase": "hold",
+      "reduced": "0"
+    },
+    "extraSpaceStayed": true
+  },
+  "s10Hold30sUnchanged": true,
+  "rReturned": {
+    "scene": "S01",
+    "beat": "0",
+    "phase": "hold",
+    "cover": "wordmark"
+  },
+  "s01Hold30sUnchanged": true,
+  "reduced": {
+    "settleMs": 600,
+    "prefersReducedMotion": true,
+    "settled": true,
+    "spaces": 40,
+    "final": {
+      "scene": "S10",
+      "beat": "3",
+      "phase": "hold",
+      "reduced": "1"
+    },
+    "extraSpaceStayed": true
+  }
+}

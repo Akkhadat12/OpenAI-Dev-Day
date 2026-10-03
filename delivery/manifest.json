@@ -1,0 +1,73 @@
+{
+  "PROJECT_ID": "20261003-b4fb",
+  "PACKAGE_VERSION": "1.0.1",
+  "BUILD_COMMIT": "5d8ac162f8573ef6312c97571238a996c3fec3e8",
+  "LOCAL_RUNTIME": "Python 3",
+  "SERVER_BIND": "127.0.0.1",
+  "files": [
+    {
+      "path": "README_TH.md",
+      "sha256": "488e362cd9158249aa2ce9fbd7197838c96cf343aa82ba2633853bcf43534293"
+    },
+    {
+      "path": "START.bat",
+      "sha256": "6dd331387c6a4651fff43adb267f65d33f6594caa98f64b370daff4ee51a3dc8"
+    },
+    {
+      "path": "START.command",
+      "sha256": "ace26f1fc1026ea8f7c63d13574b2b234496eae09eea543e069abfa87ea148e1"
+    },
+    {
+      "path": "STOP.bat",
+      "sha256": "30653e847141e4d078768b3e5e3bc7e897b8c693bcf071d43dbe5ce69f5bcfac"
+    },
+    {
+      "path": "STOP.command",
+      "sha256": "74a295c6bf84c9f86c516a64a89174568361e4c95c1ad5f5526abba773c168ee"
+    },
+    {
+      "path": "app/app.js",
+      "sha256": "44d0817dc880c1ed533f43ba1bf6df1ed4ad9e650e637cdcd06dfad4b6b93a3b"
+    },
+    {
+      "path": "app/assets/cover/openai-blossom-2025.svg",
+      "sha256": "ca35a5723163b6a766b8b37de9bedd24c2b3ae81d3caa4b9429ccb91ef873cc7"
+    },
+    {
+      "path": "app/assets/cover/openai-wordmark-2025.svg",
+      "sha256": "6e4c87d52178f47077b698ced2fb181a8b0115e031cce42f62c6ca7c83d46b9d"
+    },
+    {
+      "path": "app/assets/fonts/OFL.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "path": "app/assets/fonts/SOURCE.txt",
+      "sha256": "112c5f8b881be31d5a72712b0cbe632538ebd2fc1a5d213fb722951dda04c2bd"
+    },
+    {
+      "path": "app/assets/fonts/inter-latin-400-normal.woff2",
+      "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    {
+      "path": "app/assets/fonts/inter-latin-500-normal.woff2",
+      "sha256": "f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f"
+    },
+    {
+      "path": "app/index.html",
+      "sha256": "33cff6ff7a9e74a531e8f2fe18cc3d3453b1a62097c3dfbecd0a668cb7b6440c"
+    },
+    {
+      "path": "app/scenes.js",
+      "sha256": "5b83344b928f38bb38775ed1b89a1019cf460687e030a8c745b4642570ae069f"
+    },
+    {
+      "path": "app/styles.css",
+      "sha256": "da838335d318267ffe02eb6655c78a38308004cc56e5f5b3316613f858ebc391"
+    },
+    {
+      "path": "serve.py",
+      "sha256": "76a7ddb31d56e3bcdc6a89e39ae06c1efdee0123b9b038d93b517a5c6ba9d053"
+    }
+  ]
+}

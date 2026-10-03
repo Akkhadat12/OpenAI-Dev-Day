@@ -1,0 +1,52 @@
+{
+  "probe": "reduced-motion arrival plus optional keys",
+  "url": "http://127.0.0.1:8971/",
+  "runtime": "Python 3.12.3 serve.py, absolute --app",
+  "browser": "Chrome/148.0.7778.96 headless",
+  "note": "500ms spacing reached S10 beat 0 (first arrival). It is not the final-hold boundary. Final beat 3 is in final-boundary.json.",
+  "start": {
+    "scene": "S01",
+    "beat": "0",
+    "reduced": "1",
+    "cover": "wordmark"
+  },
+  "firstArrivalS10": {
+    "scene": "S10",
+    "beat": "0",
+    "phase": "hold",
+    "reduced": "1"
+  },
+  "spaceAfterFirstArrival": {
+    "scene": "S10",
+    "beat": "1"
+  },
+  "leftFromS10Beat0": {
+    "scene": "S09",
+    "beat": "3",
+    "phase": "hold"
+  },
+  "rFromS09": {
+    "scene": "S01",
+    "beat": "0",
+    "cover": "wordmark"
+  },
+  "rDuringS01Reveal": {
+    "scene": "S01",
+    "beat": "0",
+    "phase": "hold"
+  },
+  "fullscreenKeyInHeadless": {
+    "before": false,
+    "after": true
+  },
+  "pointerToggle": {
+    "beforeHidden": false,
+    "size": "14x14",
+    "background": "rgb(34, 211, 238)",
+    "afterP": {
+      "pointerFlag": "off",
+      "hidden": true
+    }
+  },
+  "consoleErrors": []
+}
