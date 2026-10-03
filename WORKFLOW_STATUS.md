@@ -29,15 +29,15 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: BUILDING
+STAGE: READY_FOR_QA
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Agent 4 — Builder
-UPDATED_AT: 2026-10-03T07:32:00+07:00
-ARTIFACT_COMMIT: e3ee19160207177e0e26dfd5ed0bf7ed371138db
+ACTIVE_ACTOR: Agent 5 — QA Acceptance
+UPDATED_AT: 2026-10-03T07:33:00+07:00
+ARTIFACT_COMMIT: 91b943fdfc1ca092f379fa3bdf992a8de02cc08e
 LAST_VERIFIED_COMMIT: 5d8ac162f8573ef6312c97571238a996c3fec3e8
-LAST_VERIFIED_SCOPE: Linux bash ran extracted START.command and STOP.command from package 1.0.1 assembled from this commit (SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6, 74400 bytes). Not a macOS open or Finder test. Windows launchers NOT_RUN. Not QA_PASS.
-NEXT_ACTOR: Agent 4 — Builder
-NEXT_ACTION: "Upload delivery/packages/20261003-b4fb-1.0.1-local.zip into folder 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy and verify the Drive file is 74400 bytes with SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6. Do not reuse file 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-; that file is package 1.0.0. After the new file id is verified, set PACKAGE_FILE_ID and PACKAGE_DOWNLOAD_URL, then STAGE=READY_FOR_QA. Do not set QA_PASS."
+LAST_VERIFIED_SCOPE: Linux bash ran extracted START.command and STOP.command from package 1.0.1 assembled from this commit (SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6, 74400 bytes). Drive metadata for 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2 is application/zip, 74400 bytes, parent 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy. Not a macOS open or Finder test. Windows launchers NOT_RUN. Not QA_PASS.
+NEXT_ACTOR: Agent 5 — QA Acceptance
+NEXT_ACTION: "Independently download this exact ZIP https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk, verify SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6 and 74400 bytes, clean-extract, retest the Mac launchers and the shared helper on loopback, and record macOS/Windows execution as NOT_RUN unless actually run on that OS. Prior 1.0.0 QA_PASS does not transfer."
 REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md, assets/manifest.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: qa/20261003-b4fb-qa-001/report.md
@@ -61,7 +61,7 @@ EXECUTION_RUNTIME: Python 3.12.3
 EXECUTION_BROWSER: not used for the 1.0.1 launcher run
 EXECUTION_VERIFIED_AT: 2026-10-03T07:27:00+07:00
 EXECUTION_EVIDENCE: BUILD_NOTES.md
-REQUIRED_SERVICES_FOR_NEXT_ACTION: [google_drive]
+REQUIRED_SERVICES_FOR_NEXT_ACTION: []
 SERVICE_CAPABILITIES:
   github:
     state: READ_VERIFIED
@@ -70,20 +70,10 @@ SERVICE_CAPABILITIES:
     verified_at: 2026-10-03T02:02:55+07:00
   google_drive:
     state: WRITE_VERIFIED
-    scope: owner folder; rationale Doc 1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY edited in place and read back for 1.0.1. ZIP 1.0.1 is not uploaded.
+    scope: owner folder; ZIP 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2 metadata is application/zip, 74400 bytes, parent 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy
     evidence: references/drive-deliverables.json, BUILD_NOTES.md
-    verified_at: 2026-10-03T07:28:00+07:00
-PENDING_SERVICE_TASKS:
-  - id: DRIVE_ZIP_UPLOAD_1_0_1
-    role: Agent 4 — Builder
-    capability: google_drive write of the exact local ZIP bytes
-    artifact: delivery/packages/20261003-b4fb-1.0.1-local.zip
-    expected_bytes: 74400
-    expected_sha256: 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6
-    folder_id: 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy
-    state: PENDING
-    do_not_reuse_file_id: 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-
-    next_action: Upload the committed 1.0.1 ZIP, verify size and SHA-256, record PACKAGE_FILE_ID, then set READY_FOR_QA. Do not set QA_PASS.
+    verified_at: 2026-10-03T07:31:32+07:00
+PENDING_SERVICE_TASKS: []
 NEXT_EXECUTION_PREFERENCE: ANY_CAPABLE
 WINDOWS_VERIFICATION_ACTOR: UNSET
 WINDOWS_VERIFICATION_PACKAGE_SHA256: NOT_VERIFIED
@@ -99,7 +89,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 | 03_VISUAL_PLAN.md | Agent 3 | READY | 48939cfea75498c5d1948045bd0b1a8c38a1078c | 03_VISUAL_PLAN.md S01–S10, assets/manifest.md | null |
 | 04_BUILD.md | Agent 4 | READY | e3ee19160207177e0e26dfd5ed0bf7ed371138db | 04_BUILD.md implementation choices for package 1.0.1 | null |
 | 05_QA.md | Agent 5 | CRITERIA_READY | fc6871f4a048e612fe195571adf8418fec929efd | references/bootstrap-notes.md | null |
-| BUILD_NOTES.md | Agent 4 | READY | e3ee19160207177e0e26dfd5ed0bf7ed371138db | BUILD_NOTES.md Linux .command run; Drive ZIP 1.0.1 pending | null |
+| BUILD_NOTES.md | Agent 4 | READY | 91b943fdfc1ca092f379fa3bdf992a8de02cc08e | BUILD_NOTES.md Drive metadata for 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2 | null |
 | assets/cover | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | assets/cover/PROVENANCE.md | null |
 | src/ | Agent 4 | READY | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | App file hashes in the 1.0.1 manifest match this canvas | null |
 | qa/ | Agent 5 | READY | 222c812848695bd769241f020538f6bbe8d6193d | qa/20261003-b4fb-qa-001/report.md is historical for package 1.0.0 only | null |
@@ -112,8 +102,8 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 | 02_RESEARCH_AND_ANALYSIS.pdf | PDF | Agent 1 | READY | 1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t | https://drive.google.com/file/d/1NsyP1tD7ymT2K4d_WHUTj5MxlVSGgN2t/view?usp=drivesdk | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | 2026-10-03T02:07:54+07:00 |
 | 03A_NARRATION_SCRIPT | Google Doc | Agent 1 | READY | 1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk | https://docs.google.com/document/d/1phC0g5b-nViEpiYKxW2Ydxgo6mAGaoZhpIXhoUGwuUk/edit?usp=drivesdk | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | 2026-10-03T02:07:54+07:00 |
 | 06_SCENE_RATIONALE | Google Doc | Agent 4 | READY | 1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY | https://docs.google.com/document/d/1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY/edit?usp=drivesdk | e3ee19160207177e0e26dfd5ed0bf7ed371138db | 2026-10-03T07:28:00+07:00 |
-| 20261003-b4fb-1.0.0-local.zip | ZIP | Agent 4 | HISTORICAL_QA_PASS | 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- | https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | 2026-10-03T03:23:42+07:00 |
-| 20261003-b4fb-1.0.1-local.zip | ZIP | Agent 4 | NOT_PUBLISHED | UNSET | NOT_DELIVERED_YET | 5d8ac162f8573ef6312c97571238a996c3fec3e8 | UNSET |
+| 20261003-b4fb-1.0.0-local.zip | ZIP | Agent 4 | SUPERSEDED | 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- | https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | 2026-10-03T03:23:42+07:00 |
+| 20261003-b4fb-1.0.1-local.zip | ZIP | Agent 4 | READY | 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2 | https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk | 5d8ac162f8573ef6312c97571238a996c3fec3e8 | 2026-10-03T07:31:32+07:00 |
 
 ## Local package and build identity
 ~~~yaml
@@ -135,15 +125,16 @@ PACKAGE_VERSION: 1.0.1
 PACKAGE_PATH: delivery/packages/20261003-b4fb-1.0.1-local.zip
 PACKAGE_BYTES: 74400
 PACKAGE_MANIFEST_PATH: delivery/manifest.json
-PACKAGE_FILE_ID: UNSET
-PACKAGE_DOWNLOAD_URL: NOT_DELIVERED_YET
+PACKAGE_FILE_ID: 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2
+PACKAGE_DOWNLOAD_URL: https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk
 PACKAGE_SHA256: 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6
-PACKAGE_STATE: BUILT_NOT_PUBLISHED
+PACKAGE_STATE: READY_FOR_QA
 PACKAGE_IDENTITY_EVIDENCE: BUILD_NOTES.md, delivery/manifest.json, references/drive-deliverables.json
-LAST_PACKAGE_VERIFIED_AT: 2026-10-03T07:27:00+07:00
+LAST_PACKAGE_VERIFIED_AT: 2026-10-03T07:31:32+07:00
 HISTORICAL_PACKAGE_VERSION: 1.0.0
 HISTORICAL_PACKAGE_SHA256: a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1
 HISTORICAL_PACKAGE_FILE_ID: 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-
+HISTORICAL_PACKAGE_DRIVE_STATE: SUPERSEDED
 HISTORICAL_PACKAGE_STATE: QA_PASS
 POINTER_MODE: theme_adaptive_presenter_dot
 POINTER_SPEC_PATH: 02_DESIGN_SYSTEM.md
@@ -179,10 +170,10 @@ OWNER_WINDOWS_SMOKE_EVIDENCE: UNSET
 
 ## Current handoff
 ~~~yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: e3ee19160207177e0e26dfd5ed0bf7ed371138db
-LAST_HANDOFF_EVIDENCE: BUILD_NOTES.md, delivery/manifest.json, delivery/packages/20261003-b4fb-1.0.1-local.zip, references/06_SCENE_RATIONALE.md, references/drive-deliverables.json
+LAST_HANDOFF_ARTIFACT_COMMIT: 91b943fdfc1ca092f379fa3bdf992a8de02cc08e
+LAST_HANDOFF_EVIDENCE: BUILD_NOTES.md, references/06_SCENE_RATIONALE.md, references/drive-deliverables.json, references/workflow-history.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-STAGE=BUILDING; NEXT_ACTOR=Agent 4 — Builder. TARGET includes macOS as well as Windows. PACKAGE_VERSION=1.0.1 is BUILT_NOT_PUBLISHED. PACKAGE_FILE_ID is UNSET. QA_RESULT=NOT_RUN. Historical QA_PASS is package 1.0.0 only. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. MACOS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. FINAL_REVIEW remains PENDING.
+STAGE=READY_FOR_QA; NEXT_ACTOR=Agent 5 — QA Acceptance. PACKAGE_VERSION=1.0.1. PACKAGE_FILE_ID=1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2. PACKAGE_STATE=READY_FOR_QA. QA_RESULT=NOT_RUN. Historical QA_PASS is package 1.0.0 only and does not transfer. File 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- is SUPERSEDED and was not deleted. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. MACOS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. FINAL_REVIEW remains PENDING.
