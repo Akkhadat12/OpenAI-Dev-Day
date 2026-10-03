@@ -29,18 +29,18 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: READY_FOR_QA
+STAGE: QA_PASS
 BLOCKED_FROM_STAGE: null
 ACTIVE_ACTOR: Agent 5 — QA Acceptance
-UPDATED_AT: 2026-10-03T07:33:00+07:00
-ARTIFACT_COMMIT: 91b943fdfc1ca092f379fa3bdf992a8de02cc08e
+UPDATED_AT: 2026-10-03T07:39:50+07:00
+ARTIFACT_COMMIT: e564c0ffd498b02293a43c31c6d869b9ee48d800
 LAST_VERIFIED_COMMIT: 5d8ac162f8573ef6312c97571238a996c3fec3e8
-LAST_VERIFIED_SCOPE: Linux bash ran extracted START.command and STOP.command from package 1.0.1 assembled from this commit (SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6, 74400 bytes). Drive metadata for 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2 is application/zip, 74400 bytes, parent 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy. Not a macOS open or Finder test. Windows launchers NOT_RUN. Not QA_PASS.
-NEXT_ACTOR: Agent 5 — QA Acceptance
-NEXT_ACTION: "Independently download this exact ZIP https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk, verify SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6 and 74400 bytes, clean-extract, retest the Mac launchers and the shared helper on loopback, and record macOS/Windows execution as NOT_RUN unless actually run on that OS. Prior 1.0.0 QA_PASS does not transfer."
+LAST_VERIFIED_SCOPE: Independent QA of package 1.0.1 (SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6, 74400 bytes, Drive file 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2). Linux bash ran extracted START.command and STOP.command. Canvas scene evidence is reused from qa-001 for unchanged app bytes and was not re-executed. MACOS_LAUNCHER_TEST_RESULT=NOT_RUN. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. Not a macOS Finder or Windows bat test.
+NEXT_ACTOR: Owner — Final review/rehearsal; macOS double-click smoke of START.command/STOP.command (Windows bats still pending if they still care)
+NEXT_ACTION: "Owner extracts 1.0.1 ZIP on the Mac, double-clicks START.command, rehearses, STOP.command, then confirm FINAL_REVIEW"
 REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md, assets/manifest.md]
 OPEN_FINDINGS: []
-QA_FINDINGS_REPORT_PATH: qa/20261003-b4fb-qa-001/report.md
+QA_FINDINGS_REPORT_PATH: qa/20261003-b4fb-qa-002/report.md
 BLOCKERS:
   - "NOTE: openai.com returned 403 from the research host. Claims were cross-checked via OpenAI Community and API docs. Empty stub Doc 1xsmeViTMBTINUoeoQig_ow2zbImdPi1KaQjbAdBoOx0 was left in the owner Drive folder (optional cleanup). This does not block READY_FOR_DESIGN."
 OWNER_ACTION_REQUIRED: null
@@ -57,10 +57,10 @@ OWNER_DECISIONS:
 ~~~yaml
 EXECUTION_MODE: CLOUD
 EXECUTION_OS: linux
-EXECUTION_RUNTIME: Python 3.12.3
-EXECUTION_BROWSER: not used for the 1.0.1 launcher run
-EXECUTION_VERIFIED_AT: 2026-10-03T07:27:00+07:00
-EXECUTION_EVIDENCE: BUILD_NOTES.md
+EXECUTION_RUNTIME: Python 3.13.5 (this QA Linux bash run). Builder earlier recorded 3.12.3.
+EXECUTION_BROWSER: not used; scene evidence reused from qa/20261003-b4fb-qa-001
+EXECUTION_VERIFIED_AT: 2026-10-03T07:38:48+07:00
+EXECUTION_EVIDENCE: qa/20261003-b4fb-qa-002/report.md
 REQUIRED_SERVICES_FOR_NEXT_ACTION: []
 SERVICE_CAPABILITIES:
   github:
@@ -92,7 +92,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 | BUILD_NOTES.md | Agent 4 | READY | 91b943fdfc1ca092f379fa3bdf992a8de02cc08e | BUILD_NOTES.md Drive metadata for 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2 | null |
 | assets/cover | Agent 1 | READY | fc124ac6157f48ad468d1ad36b8538b2b5183ea2 | assets/cover/PROVENANCE.md | null |
 | src/ | Agent 4 | READY | 55f8a78dbdb21b349a224968bfffa247e15d5e41 | App file hashes in the 1.0.1 manifest match this canvas | null |
-| qa/ | Agent 5 | READY | 222c812848695bd769241f020538f6bbe8d6193d | qa/20261003-b4fb-qa-001/report.md is historical for package 1.0.0 only | null |
+| qa/ | Agent 5 | READY | e564c0ffd498b02293a43c31c6d869b9ee48d800 | qa/20261003-b4fb-qa-002/report.md is the 1.0.1 pass. qa-001 stays historical for package 1.0.0 | null |
 | delivery/ launchers, helper and manifest | Agent 4 | READY | e3ee19160207177e0e26dfd5ed0bf7ed371138db | delivery/manifest.json matches the 1.0.1 ZIP; Linux START.command checks in BUILD_NOTES.md | null |
 
 ## Owner-facing Drive deliverables
@@ -128,9 +128,9 @@ PACKAGE_MANIFEST_PATH: delivery/manifest.json
 PACKAGE_FILE_ID: 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2
 PACKAGE_DOWNLOAD_URL: https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk
 PACKAGE_SHA256: 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6
-PACKAGE_STATE: READY_FOR_QA
-PACKAGE_IDENTITY_EVIDENCE: BUILD_NOTES.md, delivery/manifest.json, references/drive-deliverables.json
-LAST_PACKAGE_VERIFIED_AT: 2026-10-03T07:31:32+07:00
+PACKAGE_STATE: QA_PASS
+PACKAGE_IDENTITY_EVIDENCE: qa/20261003-b4fb-qa-002/evidence/note.md, BUILD_NOTES.md, delivery/manifest.json, references/drive-deliverables.json
+LAST_PACKAGE_VERIFIED_AT: 2026-10-03T07:38:48+07:00
 HISTORICAL_PACKAGE_VERSION: 1.0.0
 HISTORICAL_PACKAGE_SHA256: a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1
 HISTORICAL_PACKAGE_FILE_ID: 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-
@@ -144,15 +144,15 @@ COVER_ASSET_ID: assets/cover/openai-wordmark-2025.svg
 
 ## QA identity and owner verification
 ~~~yaml
-QA_TESTED_COMMIT: NOT_VERIFIED
-QA_TESTED_PACKAGE_SHA256: NOT_VERIFIED
-QA_PACKAGE_VERSION: UNSET
-QA_ENVIRONMENT: UNSET
+QA_TESTED_COMMIT: 5d8ac162f8573ef6312c97571238a996c3fec3e8
+QA_TESTED_PACKAGE_SHA256: 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6
+QA_PACKAGE_VERSION: 1.0.1
+QA_ENVIRONMENT: Linux bash; uname not Darwin; cwd /tmp; Python 3.13.5; no browser. Canvas scene evidence reused from qa-001 and not re-executed.
 QA_TARGET: extracted_package_on_loopback
-QA_TARGET_URL: UNSET
-QA_REPORT_PATH: qa/20261003-b4fb-qa-001/report.md
-QA_RESULT: NOT_RUN
-QA_VERIFIED_AT: UNSET
+QA_TARGET_URL: http://127.0.0.1:8765/ (evidence only; not an owner download)
+QA_REPORT_PATH: qa/20261003-b4fb-qa-002/report.md
+QA_RESULT: QA_PASS
+QA_VERIFIED_AT: 2026-10-03T07:38:48+07:00
 QA_FINDING_STATES: {}
 HISTORICAL_QA_RESULT: QA_PASS
 HISTORICAL_QA_PACKAGE_VERSION: 1.0.0
@@ -161,19 +161,19 @@ HISTORICAL_QA_TESTED_COMMIT: 55f8a78dbdb21b349a224968bfffa247e15d5e41
 HISTORICAL_QA_REPORT_PATH: qa/20261003-b4fb-qa-001/report.md
 HISTORICAL_QA_VERIFIED_AT: 2026-10-03T03:39:54+07:00
 WINDOWS_LAUNCHER_TEST_RESULT: NOT_RUN
-WINDOWS_LAUNCHER_TEST_EVIDENCE: This Linux run did not execute START.bat or STOP.bat
+WINDOWS_LAUNCHER_TEST_EVIDENCE: This Linux run did not execute START.bat or STOP.bat. qa/20261003-b4fb-qa-002/evidence/note.md
 MACOS_LAUNCHER_TEST_RESULT: NOT_RUN
-MACOS_LAUNCHER_TEST_EVIDENCE: Linux bash executed extracted START.command and STOP.command. That is not macOS Finder, Terminal.app, or open(1). BUILD_NOTES.md
+MACOS_LAUNCHER_TEST_EVIDENCE: Linux bash executed extracted START.command and STOP.command. That is not macOS Finder, Terminal.app, or open(1). qa/20261003-b4fb-qa-002/evidence/note.md
 OWNER_WINDOWS_SMOKE_RESULT: NOT_RUN
 OWNER_WINDOWS_SMOKE_EVIDENCE: UNSET
 ~~~
 
 ## Current handoff
 ~~~yaml
-LAST_HANDOFF_ARTIFACT_COMMIT: 91b943fdfc1ca092f379fa3bdf992a8de02cc08e
-LAST_HANDOFF_EVIDENCE: BUILD_NOTES.md, references/06_SCENE_RATIONALE.md, references/drive-deliverables.json, references/workflow-history.md
+LAST_HANDOFF_ARTIFACT_COMMIT: e564c0ffd498b02293a43c31c6d869b9ee48d800
+LAST_HANDOFF_EVIDENCE: qa/20261003-b4fb-qa-002/report.md, qa/20261003-b4fb-qa-002/evidence/note.md, references/workflow-history.md
 BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-STAGE=READY_FOR_QA; NEXT_ACTOR=Agent 5 — QA Acceptance. PACKAGE_VERSION=1.0.1. PACKAGE_FILE_ID=1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2. PACKAGE_STATE=READY_FOR_QA. QA_RESULT=NOT_RUN. Historical QA_PASS is package 1.0.0 only and does not transfer. File 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- is SUPERSEDED and was not deleted. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. MACOS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. FINAL_REVIEW remains PENDING.
+STAGE=QA_PASS; NEXT_ACTOR=Owner — Final review/rehearsal; macOS double-click smoke of START.command/STOP.command (Windows bats still pending if they still care). PACKAGE_VERSION=1.0.1. PACKAGE_FILE_ID=1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2. PACKAGE_STATE=QA_PASS. QA_RESULT=QA_PASS. QA_PACKAGE_VERSION=1.0.1. QA_TESTED_COMMIT=5d8ac162f8573ef6312c97571238a996c3fec3e8. QA_TESTED_PACKAGE_SHA256=5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6. QA_REPORT_PATH=qa/20261003-b4fb-qa-002/report.md. Historical QA_PASS is package 1.0.0 only. File 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- is SUPERSEDED and was not deleted. MACOS_LAUNCHER_TEST_RESULT=NOT_RUN. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. FINAL_REVIEW remains PENDING. ARTIFACT_COMMIT is the report commit, not this status commit.
