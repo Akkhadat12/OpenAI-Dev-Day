@@ -29,15 +29,15 @@ QUICK_START_LANGUAGE: Thai
 
 ## Current workflow
 ~~~yaml
-STAGE: QA_PASS
+STAGE: BUILDING
 BLOCKED_FROM_STAGE: null
-ACTIVE_ACTOR: Agent 5 — QA Acceptance
-UPDATED_AT: 2026-10-03T03:41:00+07:00
+ACTIVE_ACTOR: Agent 4 — Builder
+UPDATED_AT: 2026-10-03T07:12:00+07:00
 ARTIFACT_COMMIT: 222c812848695bd769241f020538f6bbe8d6193d
 LAST_VERIFIED_COMMIT: 55f8a78dbdb21b349a224968bfffa247e15d5e41
-LAST_VERIFIED_SCOPE: Independent QA of the extracted ZIP on Linux loopback (package SHA-256 a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1). Windows launchers NOT_RUN. Report qa/20261003-b4fb-qa-001/report.md.
-NEXT_ACTOR: Owner — Final review/rehearsal and Windows smoke
-NEXT_ACTION: "Owner downloads PACKAGE from Drive, runs START.bat/STOP.bat on Windows, rehearses S01–S10, then confirm FINAL_REVIEW."
+LAST_VERIFIED_SCOPE: Historical QA_PASS of package 1.0.0 only (SHA-256 a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1) on Linux loopback. Windows launchers NOT_RUN. Report qa/20261003-b4fb-qa-001/report.md. That pass does not cover the macOS delivery package, which is not built yet.
+NEXT_ACTOR: Agent 4 — Builder
+NEXT_ACTION: "Add macOS START.command and STOP.command beside START.bat and STOP.bat. Keep the Windows launchers. Bump PACKAGE_VERSION to 1.0.1, assemble the LOCAL_ZIP, and record its SHA-256. Leave PACKAGE_FILE_ID unset until a coordinator upload into folder 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy is byte-verified. Do not set QA_PASS or READY_FOR_QA for 1.0.1."
 REQUIRED_INPUTS: [01_CONTENT.md, 02_DESIGN_SYSTEM.md, 03_VISUAL_PLAN.md, 04_BUILD.md, 05_QA.md, assets/manifest.md]
 OPEN_FINDINGS: []
 QA_FINDINGS_REPORT_PATH: qa/20261003-b4fb-qa-001/report.md
@@ -45,7 +45,8 @@ BLOCKERS:
   - "NOTE: openai.com returned 403 from the research host. Claims were cross-checked via OpenAI Community and API docs. Empty stub Doc 1xsmeViTMBTINUoeoQig_ow2zbImdPi1KaQjbAdBoOx0 was left in the owner Drive folder (optional cleanup). This does not block READY_FOR_DESIGN."
 OWNER_ACTION_REQUIRED: null
 OWNER_DECISIONS:
-  SCOPE: "Owner-approved scope (proxy), recorded at bootstrap 2026-10-03T02:03:50+07:00. Thesis target: what OpenAI announced and demoed at Dev Day 2025 that changes how builders ship — models, API, tools, and agent capabilities, platform shifts, and practical build-next implications. Prefer primary sources. Distinguish announced versus shipped. Audience: builders and PMs who missed the event and need a tight visual story. Delivery: LOCAL_ZIP on Windows. English canvas plus Thai narration and Thai owner PDFs."
+  SCOPE: "Owner-approved scope (proxy), recorded at bootstrap 2026-10-03T02:03:50+07:00. Thesis target: what OpenAI announced and demoed at Dev Day 2025 that changes how builders ship — models, API, tools, and agent capabilities, platform shifts, and practical build-next implications. Prefer primary sources. Distinguish announced versus shipped. Audience: builders and PMs who missed the event and need a tight visual story. Delivery: LOCAL_ZIP. English canvas plus Thai narration and Thai owner PDFs. The 2026-10-03 bootstrap sentence said Windows; TARGET below adds macOS."
+  TARGET: "Owner note recorded 2026-10-03T07:12:00+07:00: TARGET includes macOS as well as Windows. The owner now uses a Mac. Delivery remains LOCAL_ZIP. Package 1.0.0 QA_PASS stays historical for that Windows package only and does not transfer to the new bytes."
   THESIS: "Owner-approved thesis (proxy), same record: what OpenAI announced and demoed at Dev Day 2025 that changes how builders ship — models, API, tools, and agent capabilities, platform shifts, and practical build-next implications. Prefer primary sources and distinguish announced versus shipped. Chosen angle (proxy-approved overnight): Lead Apps in ChatGPT + Apps SDK and AgentKit as platform shift; Codex GA + GPT-5 Pro / Sora 2 / mini models as capability expand (rationale in references/story-outline.md)."
   FINAL_REVIEW: PENDING
   DELIVERY: LOCAL_ZIP
@@ -106,7 +107,7 @@ Capability states: READ_VERIFIED, WRITE_VERIFIED, READ_ONLY, BLOCKED, NOT_VERIFI
 ## Local package and build identity
 ~~~yaml
 DELIVERY_MODE: LOCAL_ZIP
-TARGET_OS: Windows
+TARGET_OS: Windows and macOS
 PUBLIC_DEPLOYMENT_REQUIRED: false
 OFFLINE_AFTER_SETUP: true
 LOCAL_RUNTIME: Python 3
@@ -159,4 +160,4 @@ BOOTSTRAP_NOTES_PATH: references/bootstrap-notes.md
 WORKFLOW_HISTORY_PATH: references/workflow-history.md
 ~~~
 
-STAGE=QA_PASS; NEXT_ACTOR=Owner — Final review/rehearsal and Windows smoke. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. FINAL_REVIEW remains PENDING.
+STAGE=BUILDING; NEXT_ACTOR=Agent 4 — Builder. TARGET includes macOS as well as Windows. Package 1.0.0 QA_PASS stays historical. WINDOWS_LAUNCHER_TEST_RESULT=NOT_RUN. OWNER_WINDOWS_SMOKE_RESULT=NOT_RUN. FINAL_REVIEW remains PENDING. Do not set QA_PASS for the new package.
