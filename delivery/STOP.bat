@@ -27,5 +27,5 @@ if not defined PY_CMD (
   exit /b 1
 )
 
-%PY_CMD% "%ROOT%serve.py" --stop --app "%APP%" --state "%STATE%" --project 20261003-b4fb --version 1.0.0
+%PY_CMD% "%ROOT%serve.py" --stop --app "%APP%" --state "%STATE%" --project 20261003-b4fb --version 1.0.1
 exit /b %ERRORLEVEL%

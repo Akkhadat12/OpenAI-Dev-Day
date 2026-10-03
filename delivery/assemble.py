@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 PROJECT_ID = "20261003-b4fb"
-PACKAGE_VERSION = "1.0.0"
+PACKAGE_VERSION = "1.0.1"
 ROOT_NAME = f"{PROJECT_ID}-{PACKAGE_VERSION}-local"
 ZIP_TIME = (2026, 10, 3, 2, 40, 0)
 
@@ -46,7 +46,7 @@ def build_tree(repo: Path, stage: Path, commit: str) -> Path:
         if not relative.parts or relative.parts[0] not in {"cover", "fonts"}:
             continue
         copy_file(path, app / "assets" / relative)
-    for name in ("START.bat", "STOP.bat", "serve.py", "README_TH.md"):
+    for name in ("START.bat", "STOP.bat", "START.command", "STOP.command", "serve.py", "README_TH.md"):
         copy_file(repo / "delivery" / name, package_root / name)
     files = sorted(
         path.relative_to(package_root).as_posix()
@@ -76,7 +76,8 @@ def zip_package(package_root: Path, destination: Path) -> str:
             info = zipfile.ZipInfo(str(Path(ROOT_NAME) / path.relative_to(package_root)).replace("\\", "/"))
             info.date_time = ZIP_TIME
             info.compress_type = zipfile.ZIP_DEFLATED
-            info.external_attr = 0o644 << 16
+            mode = 0o755 if path.suffix == ".command" else 0o644
+            info.external_attr = mode << 16
             archive.writestr(info, path.read_bytes())
     return sha256(destination)
 

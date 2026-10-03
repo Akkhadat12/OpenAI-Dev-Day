@@ -24,10 +24,10 @@ OWNER_DOCUMENT_LANGUAGE: Thai
 QUICK_START_LANGUAGE: Thai
 
 DELIVERY_MODE: LOCAL_ZIP
-TARGET_OS: Windows
+TARGET_OS: Windows and macOS
 PUBLIC_DEPLOYMENT_REQUIRED: false
 OFFLINE_AFTER_SETUP: true
-LOCAL_ZIP: Prebuilt Windows ZIP is the delivery. No public deployment is required. After one-time runtime setup the presentation runs offline. Package identity, the Drive file, and setup commands are in WORKFLOW_STATUS.md, BUILD_NOTES.md, and delivery/.
+LOCAL_ZIP: Prebuilt LOCAL_ZIP is the delivery for Windows and macOS. No public deployment is required. After one-time runtime setup the presentation runs offline. Package identity, the Drive file, and setup commands are in WORKFLOW_STATUS.md, BUILD_NOTES.md, and delivery/.
 
 Open this README.md first, then WORKFLOW_STATUS.md immediately after.
 Infer your role from NEXT_ACTOR and NEXT_ACTION before doing any work.
@@ -38,7 +38,7 @@ Use the five specifications on this branch and repo-relative paths.
 GitHub is the canonical agent workspace. Drive contains owner-facing editions.
 Only Agent 1 creates this run's topic folder; later agents reuse its exact recorded ID.
 BOOTSTRAP_MODE=FRESH records this assignment's origin. A branch-URL continuation never creates a new run or restarts this one.
-Setup/build/run instructions: see BUILD_NOTES.md and delivery/README_TH.md. The owner quick-start in the ZIP is Thai. Ordinary launch uses START.bat after one-time Python 3 setup. No npm install and no public deploy.
+Setup/build/run instructions: see BUILD_NOTES.md and delivery/README_TH.md. The owner quick-start in the ZIP is Thai. Ordinary launch uses START.bat on Windows or START.command on macOS after one-time Python 3 setup. No npm install and no public deploy.
 Presentation keyboard guide: Spacebar advances (settles the active beat first). R returns to the S01 cover initial state. Left Arrow shows the previous scene's final hold. F requests or exits fullscreen. P shows or hides the presenter dot. None of these controls are drawn on the canvas.
 
 ## Continuation prompt

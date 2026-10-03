@@ -33,10 +33,10 @@ if not defined PY_CMD (
   exit /b 1
 )
 
-%PY_CMD% "%ROOT%serve.py" --status --app "%APP%" --state "%STATE%" --project 20261003-b4fb --version 1.0.0 >nul 2>&1
+%PY_CMD% "%ROOT%serve.py" --status --app "%APP%" --state "%STATE%" --project 20261003-b4fb --version 1.0.1 >nul 2>&1
 if %ERRORLEVEL%==0 goto openbrowser
 
-start "OpenAI Dev Day local" /MIN %PY_CMD% "%ROOT%serve.py" --serve --app "%APP%" --state "%STATE%" --project 20261003-b4fb --version 1.0.0 --host 127.0.0.1
+start "OpenAI Dev Day local" /MIN %PY_CMD% "%ROOT%serve.py" --serve --app "%APP%" --state "%STATE%" --project 20261003-b4fb --version 1.0.1 --host 127.0.0.1
 
 set /a TRIES=0
 :waitloop

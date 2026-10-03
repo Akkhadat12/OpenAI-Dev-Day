@@ -185,10 +185,10 @@ FRAMEWORK: static HTML, CSS, and JavaScript with no runtime framework
 RUNTIME_VERSION: Python 3.12.3 on the Linux build host for serve.py; presentation itself has no server runtime
 PACKAGE_MANAGER: none
 LOCKFILE_PATH: NOT_APPLICABLE
-INSTALL_COMMAND: none for the presentation; Windows owners install Python 3 once from https://www.python.org/downloads/
-DEV_COMMAND: python3 delivery/serve.py --serve --app <staged app dir> --state <state.json> --project 20261003-b4fb --version 1.0.0 --host 127.0.0.1
-BUILD_COMMAND: python3 delivery/assemble.py --commit <BUILD_COMMIT> --repo . --output delivery/packages/20261003-b4fb-1.0.0-local.zip
-OUTPUT_DIRECTORY: delivery/packages/20261003-b4fb-1.0.0-local.zip
+INSTALL_COMMAND: none for the presentation; install Python 3 once from https://www.python.org/downloads/ (Windows: Add python.exe to PATH; macOS: python3 on PATH)
+DEV_COMMAND: python3 delivery/serve.py --serve --app <staged app dir> --state <state.json> --project 20261003-b4fb --version 1.0.1 --host 127.0.0.1
+BUILD_COMMAND: python3 delivery/assemble.py --commit <BUILD_COMMIT> --repo . --output delivery/packages/20261003-b4fb-1.0.1-local.zip
+OUTPUT_DIRECTORY: delivery/packages/20261003-b4fb-1.0.1-local.zip
 APP_ENTRY_PATH: src/index.html
 SCENE_DATA_PATH: src/scenes.js
 ASSET_MANIFEST_PATH: assets/manifest.md
@@ -206,13 +206,14 @@ PERFORMANCE_TARGETS: no continuous animation loop during hold; pointer tracking 
 LOCAL_RUNTIME: Python 3 standard library http.server via delivery/serve.py
 LOCAL_RUNTIME_TESTED_VERSION: Python 3.12.3
 WINDOWS_RUNTIME_PREREQUISITE: Install Python 3 once from https://www.python.org/downloads/ and enable Add python.exe to PATH. START.bat accepts the py -3 launcher or python on PATH.
+MACOS_RUNTIME_PREREQUISITE: Install Python 3 once from https://www.python.org/downloads/ so python3 is on PATH. START.command and STOP.command are the macOS launchers. They stay beside START.bat and STOP.bat.
 SERVER_BIND: 127.0.0.1
 OFFLINE_AFTER_SETUP: true
 POINTER_IMPLEMENTATION_PATH: src/app.js and src/styles.css (#pointer)
 COVER_ASSET_ID: assets/cover/openai-wordmark-2025.svg
 PACKAGE_ASSEMBLY_PATH: delivery/
 PACKAGE_MANIFEST_PATH: delivery/manifest.json
-PACKAGE_VERSION: 1.0.0
+PACKAGE_VERSION: 1.0.1
 ~~~
 
 ### Scene implementation map
@@ -236,6 +237,7 @@ Name the artifact <PROJECT_ID>-<PACKAGE_VERSION>-local.zip. Include one clearly 
 - app/: the already built HTML/CSS/JS/data and packaged images, fonts and media.
 - START.bat: detects the selected runtime, starts this package's loopback server, waits for readiness and opens the browser.
 - STOP.bat: stops only the server started for this package; leaves other apps and servers alone.
+- START.command and STOP.command: the same loopback contract for macOS, beside the Windows launchers. Both pass an absolute app path. Git mode 100755.
 - serve.py or the selected equivalent: a standard-library server/helper, with no network dependency installation at launch.
 - README_TH.md: short Thai instructions for runtime setup once, unzip/start/stop/restart, keyboard controls, pointer behavior, fullscreen, recording and basic troubleshooting.
 - manifest.json: PROJECT_ID, PACKAGE_VERSION, BUILD_COMMIT, selected runtime and file hashes for the relevant payload/launcher assets.

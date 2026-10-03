@@ -19,7 +19,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 PROJECT_ID = "20261003-b4fb"
-PACKAGE_VERSION = "1.0.0"
+PACKAGE_VERSION = "1.0.1"
 BIND_HOST = "127.0.0.1"
 DEFAULT_PORT = 8765
 PORT_SPAN = 100
@@ -246,7 +246,31 @@ def status_code(state_path: Path, app_dir: Path) -> int:
     return 1
 
 
+def relaunch_with_absolute_app() -> None:
+    """Re-exec --serve so the live command line carries an absolute --app.
+
+    --stop accepts a process only when that command line contains the resolved
+    app directory. A relative --app never matches. Launchers pass an absolute
+    path; this covers a direct relative --app the same way.
+    """
+    if "--stop" in sys.argv or "--status" in sys.argv:
+        return
+    try:
+        index = sys.argv.index("--app")
+    except ValueError:
+        return
+    if index + 1 >= len(sys.argv):
+        return
+    given = sys.argv[index + 1]
+    if Path(given).is_absolute():
+        return
+    argv = list(sys.argv)
+    argv[index + 1] = str(Path(given).resolve())
+    os.execv(sys.executable, [sys.executable, *argv])
+
+
 def main() -> int:
+    relaunch_with_absolute_app()
     parser = argparse.ArgumentParser(description="Serve the local DevDay package on 127.0.0.1")
     parser.add_argument("--app", required=True, help="Path to the app directory")
     parser.add_argument("--state", required=True, help="Path to the package server state file")
