@@ -9,7 +9,10 @@ SHA-256 ของไฟล์ ZIP: 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d5
 ขนาดไฟล์: 74400 ไบต์
 เอกสาร Google Doc เดิมในโฟลเดอร์เจ้าของ: https://docs.google.com/document/d/1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY/edit
 รหัสไฟล์: 1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY
-ลิงก์ดาวน์โหลดบน Drive ของเวอร์ชัน 1.0.1: ยังไม่มี รออัปโหลดเข้าโฟลเดอร์เดิม 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy แล้วตรวจขนาดกับแฮชก่อนใช้ซ้อม ไฟล์ Drive ของเวอร์ชัน 1.0.0 (รหัส 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-) เป็นชุดเก่าที่ผ่านการตรวจแล้ว และไม่ใช่ไฟล์ 1.0.1 ชุดที่ตรงแฮชของ 1.0.1 อยู่ที่ GitHub ใน delivery/packages/20261003-b4fb-1.0.1-local.zip
+ลิงก์ดาวน์โหลดบน Drive ของเวอร์ชัน 1.0.1: https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk
+รหัสไฟล์แพ็กเกจ: 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2
+โฟลเดอร์: 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy
+ข้อมูลเมตาบน Drive ที่อ่านได้: ชื่อ 20261003-b4fb-1.0.1-local.zip, ชนิด application/zip, ขนาด 74400 ไบต์ ไฟล์ Drive ของเวอร์ชัน 1.0.0 (รหัส 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-) ถูกแทนที่แล้ว แต่ไม่ได้ลบ และไม่ใช่ไฟล์ 1.0.1 สำเนาใน GitHub อยู่ที่ delivery/packages/20261003-b4fb-1.0.1-local.zip
 
 เอกสารนี้เป็นฉบับภาษาไทยสำหรับเจ้าของงาน อธิบายว่าแต่ละฉากพูดอะไร ภาพที่ขึ้นจริงคืออะไร และทำไมถึงช่วยการเล่า ไม่มีซอร์สโค้ด
 

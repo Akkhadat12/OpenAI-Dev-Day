@@ -12,7 +12,7 @@ ZIP root folder: 20261003-b4fb-1.0.1-local/
 
 The archive SHA-256 is not stored inside the ZIP. `manifest.json` records BUILD_COMMIT and per-file SHA-256 values only.
 
-Package 1.0.0 remains in the repo at `delivery/packages/20261003-b4fb-1.0.0-local.zip` (71064 bytes, SHA-256 `a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1`). Its QA_PASS is historical and does not apply to 1.0.1. The 1.0.1 Drive file is not uploaded from this run.
+Package 1.0.0 remains in the repo at `delivery/packages/20261003-b4fb-1.0.0-local.zip` (71064 bytes, SHA-256 `a80b6c83c6e916e3987ac2cbfb710c76c458457321c91a4c4f5de18f9be8c6a1`). Its QA_PASS is historical and does not apply to 1.0.1. Drive file `1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-` is superseded and was not deleted. The current Drive file is `1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2`.
 
 ## What changed in 1.0.1
 
@@ -149,22 +149,23 @@ These numbers are from the clean extract of `20261003-b4fb-1.0.0-local.zip` (SHA
 
 ## Drive
 
-1.0.0 package file, already verified by metadata in an earlier run, is not the 1.0.1 archive:
+Recorded 2026-10-03T07:31:32+07:00 after a metadata read of the coordinator upload.
 
-- PACKAGE_FILE_ID: `1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-`
-- Title: 20261003-b4fb-1.0.0-local.zip
-- Observed size: 71064
+- PACKAGE_FILE_ID: `1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2`
+- PACKAGE_DOWNLOAD_URL: https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk
 - Parent folder: `1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy`
+- Observed title: 20261003-b4fb-1.0.1-local.zip
+- Observed mimeType: application/zip
+- Observed Drive fileSize: 74400
+- PACKAGE_SHA256 remains `5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6` for the local archive of that size. This metadata read did not hash the downloaded Drive bytes again.
+- Prior file `1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-` is package 1.0.0. It is superseded and was not deleted.
 
-1.0.1 was not uploaded from this run. PACKAGE_FILE_ID for 1.0.1 is unset. PACKAGE_DOWNLOAD_URL is not delivered. Do not treat the 1.0.0 Drive file as 1.0.1.
-
-Rationale Doc `1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY` stays the owner document in that same folder. This run edited that Doc in place. A read-back showed package version 1.0.1, SHA-256 `5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6`, 74400 bytes, and the sentence that the 1.0.1 Drive download link is not yet present. Revision id after the edit: `ANLCKQlXEsxk7eHCClEuHLysDyBddeUIhKZmQnbEiFCA4L3j-HpxYY8GZ-65RF0p3q5oOdHbXUWoO4i3DMgRant2KOESDKuA3Il_nK1GbLE`. The repo source `references/06_SCENE_RATIONALE.md` matches that text. This run did not create a folder.
+Rationale Doc `1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY` stays the owner document in that same folder. The repo source `references/06_SCENE_RATIONALE.md` now uses the verified 1.0.1 URL. The live Doc still has the earlier “link not yet present” sentence until the coordinator refreshes it. This run did not create a Doc or a folder.
 
 ## Limitations
 
 - macOS execution of `START.command` / `STOP.command`: NOT_RUN.
 - Windows execution of `START.bat` / `STOP.bat`: NOT_RUN.
 - Owner Windows smoke: NOT_RUN.
-- 1.0.1 is not QA_PASS. The 1.0.0 QA_PASS stays historical.
+- 1.0.1 is not QA_PASS. The 1.0.0 QA_PASS stays historical. Drive file `1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2` is the package handed to QA.
 - No new headless scene walk was taken for 1.0.1. `check_canvas.py` on the extracted app passed.
-- 1.0.1 Drive upload is pending. READY_FOR_QA is not claimed.

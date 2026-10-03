@@ -44,13 +44,13 @@
       "observedUrl": "https://docs.google.com/document/d/1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY/edit?usp=drivesdk",
       "localSource": "references/06_SCENE_RATIONALE.md",
       "verifiedBy": "Google Docs read_document after spelling corrections",
-      "packageNote": "Edited in place on 2026-10-03 for package 1.0.1. Read-back shows version 1.0.1, SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6, and that the 1.0.1 Drive ZIP link is pending. Revision ANLCKQlXEsxk7eHCClEuHLysDyBddeUIhKZmQnbEiFCA4L3j-HpxYY8GZ-65RF0p3q5oOdHbXUWoO4i3DMgRant2KOESDKuA3Il_nK1GbLE."
+      "packageNote": "Repo source references/06_SCENE_RATIONALE.md now names Drive file 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2. The live Doc still needs the coordinator refresh and was not edited in this update."
     },
     {
       "name": "20261003-b4fb-1.0.0-local.zip",
       "type": "ZIP",
       "actor": "Agent 4",
-      "state": "READY",
+      "state": "SUPERSEDED",
       "fileId": "1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-",
       "observedUrl": "https://drive.google.com/file/d/1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498-/view?usp=drivesdk",
       "localSource": "delivery/packages/20261003-b4fb-1.0.0-local.zip",
@@ -67,25 +67,25 @@
         "reportedBytes": 59640,
         "action": "trashed; not the package"
       },
-      "historicalNote": "QA_PASS applies to this 1.0.0 file only. It is not package 1.0.1."
+      "historicalNote": "QA_PASS applies to this 1.0.0 file only. Superseded by 1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2. Not deleted."
     },
     {
       "name": "20261003-b4fb-1.0.1-local.zip",
       "type": "ZIP",
       "actor": "Agent 4",
-      "state": "NOT_PUBLISHED",
-      "fileId": null,
-      "observedUrl": null,
+      "state": "READY",
+      "fileId": "1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2",
+      "observedUrl": "https://drive.google.com/file/d/1cS_V9h8N2exv4E795pQwXsiLFRXI0fJ2/view?usp=drivesdk",
       "localSource": "delivery/packages/20261003-b4fb-1.0.1-local.zip",
       "parentId": "1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy",
-      "observedBytes": null,
+      "observedBytes": 74400,
       "localBytes": 74400,
       "mimeType": "application/zip",
       "expectedSha256": "5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6",
       "buildCommit": "5d8ac162f8573ef6312c97571238a996c3fec3e8",
       "packageVersion": "1.0.1",
-      "verified_at": null,
-      "verification": "Local archive only. Drive upload is pending. Do not reuse the 1.0.0 file id for this ZIP."
+      "verified_at": "2026-10-03T07:31:32+07:00",
+      "verification": "Drive metadata read: title 20261003-b4fb-1.0.1-local.zip, mime application/zip, fileSize 74400, parent 1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy. SHA-256 is the local archive hash. This read did not hash the downloaded Drive bytes. Coordinator identity matches these fields. File 1Ia1Z9ynXPf2PHu9sAXAV2_Qjl7X8498- is superseded and was not deleted."
     }
   ]
 }
