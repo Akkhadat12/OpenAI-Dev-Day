@@ -1,21 +1,29 @@
 {
   "PROJECT_ID": "20261003-b4fb",
-  "PACKAGE_VERSION": "1.0.0",
-  "BUILD_COMMIT": "55f8a78dbdb21b349a224968bfffa247e15d5e41",
+  "PACKAGE_VERSION": "1.0.1",
+  "BUILD_COMMIT": "5d8ac162f8573ef6312c97571238a996c3fec3e8",
   "LOCAL_RUNTIME": "Python 3",
   "SERVER_BIND": "127.0.0.1",
   "files": [
     {
       "path": "README_TH.md",
-      "sha256": "e6c7a336f660fc17df2d87a47741039068cbf102b8e8ca1f46d9989f11cb4457"
+      "sha256": "488e362cd9158249aa2ce9fbd7197838c96cf343aa82ba2633853bcf43534293"
     },
     {
       "path": "START.bat",
-      "sha256": "4fd60b751761d911141f451ae3fc9e8e197f818b050c20dccea582df07cd9751"
+      "sha256": "6dd331387c6a4651fff43adb267f65d33f6594caa98f64b370daff4ee51a3dc8"
+    },
+    {
+      "path": "START.command",
+      "sha256": "ace26f1fc1026ea8f7c63d13574b2b234496eae09eea543e069abfa87ea148e1"
     },
     {
       "path": "STOP.bat",
-      "sha256": "108ea4fad5423380fc1a0ae693189f642878564e61f22427e0d661b0079096e8"
+      "sha256": "30653e847141e4d078768b3e5e3bc7e897b8c693bcf071d43dbe5ce69f5bcfac"
+    },
+    {
+      "path": "STOP.command",
+      "sha256": "74a295c6bf84c9f86c516a64a89174568361e4c95c1ad5f5526abba773c168ee"
     },
     {
       "path": "app/app.js",
@@ -59,7 +67,7 @@
     },
     {
       "path": "serve.py",
-      "sha256": "a3c8badc282160a2e087b9361747bb14122b19ae9c6b55b10f1789ea1f6456f5"
+      "sha256": "76a7ddb31d56e3bcdc6a89e39ae06c1efdee0123b9b038d93b517a5c6ba9d053"
     }
   ]
 }

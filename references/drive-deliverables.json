@@ -44,7 +44,7 @@
       "observedUrl": "https://docs.google.com/document/d/1l2QblFVexHdVPvGv10Vj2bIiSInq47MOsRwX-x4OBrY/edit?usp=drivesdk",
       "localSource": "references/06_SCENE_RATIONALE.md",
       "verifiedBy": "Google Docs read_document after spelling corrections",
-      "packageNote": "Doc text still describes the earlier unconfirmed upload. Delivery identity is the ZIP row below."
+      "packageNote": "Edited in place on 2026-10-03 for package 1.0.1. Read-back shows version 1.0.1, SHA-256 5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6, and that the 1.0.1 Drive ZIP link is pending. Revision ANLCKQlXEsxk7eHCClEuHLysDyBddeUIhKZmQnbEiFCA4L3j-HpxYY8GZ-65RF0p3q5oOdHbXUWoO4i3DMgRant2KOESDKuA3Il_nK1GbLE."
     },
     {
       "name": "20261003-b4fb-1.0.0-local.zip",
@@ -66,7 +66,26 @@
         "fileId": "1GUkcvPagsFtHBPBnPlLCqeuSo9kUyAyz",
         "reportedBytes": 59640,
         "action": "trashed; not the package"
-      }
+      },
+      "historicalNote": "QA_PASS applies to this 1.0.0 file only. It is not package 1.0.1."
+    },
+    {
+      "name": "20261003-b4fb-1.0.1-local.zip",
+      "type": "ZIP",
+      "actor": "Agent 4",
+      "state": "NOT_PUBLISHED",
+      "fileId": null,
+      "observedUrl": null,
+      "localSource": "delivery/packages/20261003-b4fb-1.0.1-local.zip",
+      "parentId": "1QU7tkNth3-1W_4fPvptXqqck6OY2v3yy",
+      "observedBytes": null,
+      "localBytes": 74400,
+      "mimeType": "application/zip",
+      "expectedSha256": "5fef0f0836bb53db4baea5f4e5404854a8876354fa3d58e77f28a9f1b6fb31c6",
+      "buildCommit": "5d8ac162f8573ef6312c97571238a996c3fec3e8",
+      "packageVersion": "1.0.1",
+      "verified_at": null,
+      "verification": "Local archive only. Drive upload is pending. Do not reuse the 1.0.0 file id for this ZIP."
     }
   ]
 }

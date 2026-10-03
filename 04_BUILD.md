@@ -187,7 +187,7 @@ PACKAGE_MANAGER: none
 LOCKFILE_PATH: NOT_APPLICABLE
 INSTALL_COMMAND: none for the presentation; install Python 3 once from https://www.python.org/downloads/ (Windows: Add python.exe to PATH; macOS: python3 on PATH)
 DEV_COMMAND: python3 delivery/serve.py --serve --app <staged app dir> --state <state.json> --project 20261003-b4fb --version 1.0.1 --host 127.0.0.1
-BUILD_COMMAND: python3 delivery/assemble.py --commit <BUILD_COMMIT> --repo . --output delivery/packages/20261003-b4fb-1.0.1-local.zip
+BUILD_COMMAND: python3 delivery/assemble.py --commit 5d8ac162f8573ef6312c97571238a996c3fec3e8 --repo . --output delivery/packages/20261003-b4fb-1.0.1-local.zip
 OUTPUT_DIRECTORY: delivery/packages/20261003-b4fb-1.0.1-local.zip
 APP_ENTRY_PATH: src/index.html
 SCENE_DATA_PATH: src/scenes.js
